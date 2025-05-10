@@ -22,3 +22,10 @@ format:
     theme: sandstone
 #    css: styles.css
 #    include-after-body: footer.html
+comments:
+  giscus: 
+    repo: "manishdatt/TidyTuesday"
+    category: General           # Must match the category name in GitHub Discussions
+    mapping: pathname           # Ensures each page creates its own thread
+    theme: light                # or dark / preferred_color_scheme
+    loading: lazy               # optional: improves load performance
