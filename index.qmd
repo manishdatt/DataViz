@@ -1,5 +1,5 @@
 ---
-title: "Welcome!"
+title: "Visualization of `#TidyTuesday` datasets"
 listing:
   contents: posts
   sort: "date desc"
@@ -11,5 +11,5 @@ page-layout: full
 title-block-banner: false
 ---
 :::{.mb-5 .welcome-message}
-# TidyTuesday Data Visualization
+# 
 :::
