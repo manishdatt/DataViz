@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  post-render:
+    - cmd.exe /c copy CNAME docs\\CNAME
 
 website:
   title: "TidyT.manishdatt.com"
