@@ -25,6 +25,7 @@ resources:
 format:
   html:
     theme: sandstone
+    include-after-body: _giscus.html
 #    css: styles.css
 #    include-after-body: footer.html
 comments:
