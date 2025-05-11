@@ -35,3 +35,6 @@ comments:
     mapping: pathname           # Ensures each page creates its own thread
     theme: light                # or dark / preferred_color_scheme
     loading: lazy               # optional: improves load performance
+execute:
+    warning: false
+    eval: true
