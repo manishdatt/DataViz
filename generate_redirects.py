@@ -3,13 +3,11 @@ import re
 import yaml
 import nbformat
 
-print("Python file")
-POSTS_DIR = "posts"
-REDIRECTS_DIR = "redirects"
+print("Creating redirects...")
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 POSTS_DIR = os.path.join(SCRIPT_DIR, "posts")
-REDIRECTS_DIR = os.path.join(SCRIPT_DIR, "redirects")
+REDIRECTS_DIR = os.path.join(SCRIPT_DIR, "r")
 
 os.makedirs(REDIRECTS_DIR, exist_ok=True)
 

@@ -21,7 +21,7 @@ website:
 #  page-footer:
 #      href: "footer.html"
 resources:
-    - redirects
+    - r
 format:
   html:
     theme: sandstone
