@@ -3,6 +3,7 @@ project:
   output-dir: docs
   post-render:
     - cmd.exe /c copy CNAME docs\\CNAME
+  pre-render: generate_redirects.py
 
 website:
   title: "TidyT.manishdatt.com"
@@ -19,6 +20,8 @@ website:
 #      - href: https://bsky.app/profile/manishdatt.com
 #  page-footer:
 #      href: "footer.html"
+resources:
+    - redirects
 format:
   html:
     theme: sandstone
