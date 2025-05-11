@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "redirects/2551/index.html",
-    "href": "redirects/2551/index.html",
-    "title": "Redirecting…",
-    "section": "",
-    "text": "Redirecting…"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Visualization of #TidyTuesday datasets",
-    "section": "",
-    "text": "NSF funding cut in April 2025\n\n\n\nsunburst\n\nplotly\n\nNSF\n\n\n\nDistribution of funding cuts across directorates and divisions.\n\n\n\n\n\nApr 7, 2025\n\n\nManish Datt\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/NSF_grants/NSF_grants_cut.html",
     "href": "posts/NSF_grants/NSF_grants_cut.html",
     "title": "NSF funding cut in April 2025",
@@ -26,5 +12,12 @@
     "title": "NSF funding cut in April 2025",
     "section": "Sunburst plot using plotly",
     "text": "Sunburst plot using plotly\n\nnsf_grp = nsf_terminations.groupby(['directorate', 'division'], as_index=False)['usaspending_obligated'].sum()\n\ncustom_colorscale = [\n    [0.0, 'black'],       # 0 → black\n    [0.000001, 'rgb(68,1,84)'],   # Start of Viridis after 0\n    [0.25, 'rgb(59,82,139)'],\n    [0.5, 'rgb(33,145,140)'],\n    [0.75, 'rgb(94,201,98)'],\n    [1.0, 'rgb(253,231,37)']\n]\n\nfig = px.sunburst(nsf_grp, path=['directorate', 'division'], values='usaspending_obligated', \\\n                  color='usaspending_obligated', color_continuous_scale=custom_colorscale, width=900, height=700, \\\n                  title=f\"Distribution of the NSF funding cut of &lt;b&gt;${nsf_grp[\"usaspending_obligated\"].sum():,.0f}&lt;/b&gt; in April 2025.\"\n                 )\nfig.update_traces(textinfo='label+percent entry')\nfor i in range(len(fig.data[0].marker.colors) - len(nsf_grp['directorate'].unique()), len(fig.data[0].marker.colors)):\n    fig.data[0].marker.colors[i] = 0\n#fig.write_image(\"sunburst_plot.png\")\nfig.show()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Visualization of #TidyTuesday datasets",
+    "section": "",
+    "text": "NSF funding cut in April 2025\n\n\n\nsunburst\n\nplotly\n\nNSF\n\n\n\nDistribution of funding cuts across directorates and divisions.\n\n\n\n\n\nApr 7, 2025\n\n\nManish Datt\n\n\n\n\n\nNo matching items"
   }
 ]

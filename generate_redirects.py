@@ -50,7 +50,7 @@ for root, dirs, files in os.walk(POSTS_DIR):
             full_path = os.path.join(root, file)
             rel_path = os.path.relpath(full_path, ".")
 
-            print(f"📄 Processing: {rel_path}")
+            print(f"Processing: {rel_path}")
 
             if file.endswith(".qmd"):
                 slug = extract_slug_qmd(full_path)
@@ -60,7 +60,7 @@ for root, dirs, files in os.walk(POSTS_DIR):
             if not slug or not isinstance(slug, str):
                 slug = os.path.splitext(file)[0].lower()
 
-            print(f"🔗 Using slug for folder: {slug}")
+            print(f"Using slug for folder: {slug}")
 
             target_path = rel_path.replace(os.sep, "/")
             target_path = target_path.replace(".ipynb", ".html").replace(".qmd", ".html")
