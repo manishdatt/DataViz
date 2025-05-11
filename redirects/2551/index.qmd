@@ -1,9 +1,0 @@
----
-title: "Redirecting..."
-format: html
-execute: 
-    eval: false
-redirect: /posts/NSF_grants/NSF_grants_cut.html
----
-
-Redirecting...
