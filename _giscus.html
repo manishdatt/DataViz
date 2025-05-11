@@ -14,7 +14,11 @@
     giscusDiv.setAttribute("data-theme", "light");
     giscusDiv.setAttribute("data-lang", "en");
 
-    document.body.appendChild(giscusDiv);
+    // Find the main content container
+    const container = document.querySelector('.page-body') || document.querySelector('main') || document.querySelector('.content');
+
+    // Append to container if found, else fallback to body
+    (container || document.body).appendChild(giscusDiv);
 
     const giscusScript = document.createElement("script");
     giscusScript.src = "https://giscus.app/client.js";
@@ -32,6 +36,6 @@
     giscusScript.setAttribute("data-lang", "en");
     giscusScript.crossOrigin = "anonymous";
 
-    document.body.appendChild(giscusScript);
+    (container || document.body).appendChild(giscusScript);
   }
 </script>

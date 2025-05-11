@@ -290,7 +290,15 @@ Manish Datt
 
 
 
-    document.body.appendChild(giscusDiv);
+    // Find the main content container
+
+    const container = document.querySelector('.page-body') || document.querySelector('main') || document.querySelector('.content');
+
+
+
+    // Append to container if found, else fallback to body
+
+    (container || document.body).appendChild(giscusDiv);
 
 
 
@@ -326,7 +334,7 @@ Manish Datt
 
 
 
-    document.body.appendChild(giscusScript);
+    (container || document.body).appendChild(giscusScript);
 
   }
 
