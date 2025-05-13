@@ -4,9 +4,7 @@ project:
   post-render:
     - cmd.exe /c copy CNAME docs\\CNAME
   pre-render: generate_redirects.py
-#extensions:
-#  - mcanouil/iconify
-
+    
 website:
   title: "DViz.manishdatt.com"
   search: false
@@ -18,8 +16,8 @@ website:
         href: https://in.linkedin.com/in/manishdatt
       - icon: bi-twitter-x
         href: https://twitter.com/dr_manishdatt
-#      - text: "{{< iconify fa6-brands bluesky >}}"
-#      - href: https://bsky.app/profile/manishdatt.com
+      - text: "{{< fa brands bluesky size=xl >}}"
+        href: https://bsky.app/profile/manishdatt.com
 #  page-footer:
 #      href: "footer.html"
 resources:
@@ -28,8 +26,6 @@ format:
   html:
     theme: sandstone
     include-after-body: _giscus.html
-    icon:
-      library: fa6
 #    css: styles.css
 #    include-after-body: footer.html
 comments:

@@ -1,20 +1,24 @@
 {
   "index.qmd": {
-    "index.html": "f7faf6e5"
-  },
-  "drafts/sunburst.ipynb": {
-    "sunburst.html": "7788412a"
+    "index.html": "55830705"
   },
   "posts/NSF_grants/NSF_grants_cut.ipynb": {
-    "NSF_grants_cut.html": "b8cf6c1b"
-  },
-  "redirects/2551/index.qmd": {
-    "index.html": "9d09728c"
-  },
-  "posts/useR2025/useR2025.qmd": {
-    "useR2025.html": "8ebe4539"
+    "NSF_grants_cut.html": "a51269f5"
   },
   "posts/Seismic_Vesuvius/Mt_vesuvius.ipynb": {
-    "Mt_vesuvius.html": "ed5eabea"
+    "Mt_vesuvius.html": "2953f14b"
+  },
+  "posts/useR2025/useR2025.qmd": {
+    "useR2025.html": "8d5e2145"
+  },
+  "fontawesome/CHANGELOG.md": {
+    "CHANGELOG.html": "7dc0c807"
+  },
+  "fontawesome/example.qmd": {
+    "example.html": "a8615b5a",
+    "example.tex": "7fe3b2bf"
+  },
+  "quarto-iconify/example.qmd": {
+    "index.html": "1e7e2815"
   }
 }
