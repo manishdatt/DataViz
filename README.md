@@ -1,2 +1,2 @@
-# TidyTuesday
-Data visualization for the TidyTuesday datasets
+# DataViz
+Data visualization for the TidyTuesday and other datasets
