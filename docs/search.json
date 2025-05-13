@@ -30,7 +30,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Visualization of various datasets",
+    "title": "Visualization of various datasets using Python and R",
     "section": "",
     "text": "Seismic events at Mount Vesuvius\n\n\n\nplotly\n\npolar\n\nPyDyTuesday\n\nTidyTuesday\n\n\n\nFrequency of earthquakes at different times of the day.\n\n\n\n\n\nMay 13, 2025\n\n\nManish Datt\n\n\n\n\n\n\n\n\n\n\n\n\nNSF funding cut in April 2025\n\n\n\nsunburst\n\nplotly\n\nNSF\n\nPyDyTuesday\n\nTidyTuesday\n\n\n\nDistribution of funding cuts across directorates and divisions.\n\n\n\n\n\nMay 7, 2025\n\n\nManish Datt\n\n\n\n\n\n\n\n\n\n\n\n\nuseR2025 conference data analysis\n\n\n\nggplot2\n\nword count\n\nTidyTuesday\n\n\n\nTop keywords in useR 2025 talks\n\n\n\n\n\nMay 1, 2025\n\n\nManish Datt\n\n\n\n\n\nNo matching items"
   },
