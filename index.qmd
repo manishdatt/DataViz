@@ -1,5 +1,5 @@
 ---
-title: "Visualization of `#TidyTuesday` datasets"
+title: "Visualization of various datasets"
 listing:
   contents: posts
   sort: "date desc"

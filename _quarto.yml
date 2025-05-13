@@ -6,7 +6,7 @@ project:
   pre-render: generate_redirects.py
 
 website:
-  title: "TidyT.manishdatt.com"
+  title: "DViz.manishdatt.com"
   search: false
   navbar:
     right:
@@ -30,7 +30,7 @@ format:
 #    include-after-body: footer.html
 comments:
   giscus: 
-    repo: "manishdatt/TidyTuesday"
+    repo: "manishdatt/DataViz"
     category: General           # Must match the category name in GitHub Discussions
     mapping: pathname           # Ensures each page creates its own thread
     theme: light                # or dark / preferred_color_scheme

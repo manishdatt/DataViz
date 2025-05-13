@@ -4,7 +4,7 @@ author: "Manish Datt"
 date: "5/1/2025"
 description: "Top keywords in useR 2025 talks"
 image: "user2025_keywords.png"
-categories: ggplot2, word count
+categories: [ggplot2,word count,TidyTuesday]
 slug: "2550"
 ---
 
