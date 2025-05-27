@@ -193,17 +193,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="tidytuesday-dataset-of-2025-05-27" class="level1">
 <h1>TidyTuesday dataset of <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-05-27">2025-05-27</a></h1>
-<div id="8d97ac7b-c8b6-402c-ace3-1ebf02652c41" class="cell" data-execution_count="2">
+<div id="8d97ac7b-c8b6-402c-ace3-1ebf02652c41" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="7a1b0d6c-3de7-4b3b-8442-2416a5e78f8b" class="cell" data-execution_count="3">
+<div id="7a1b0d6c-3de7-4b3b-8442-2416a5e78f8b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>monsters <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-05-27/monsters.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="3a7330f8-2fd5-476b-8872-0a0fdd082a7e" class="cell" data-execution_count="4">
+<div id="3a7330f8-2fd5-476b-8872-0a0fdd082a7e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>monsters</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -506,9 +506,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="57b7b8a1-5e45-44a7-bed0-3ce7c17f12c7" class="cell" data-execution_count="5">
+<div id="57b7b8a1-5e45-44a7-bed0-3ce7c17f12c7" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>monsters.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>Index(['name', 'category', 'cr', 'size', 'type', 'descriptive_tags',
        'alignment', 'ac', 'initiative', 'hp', 'hp_number', 'speed',
        'speed_base_number', 'str', 'dex', 'con', 'int', 'wis', 'cha',
@@ -518,9 +518,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       dtype='object')</code></pre>
 </div>
 </div>
-<div id="42faf1a1-f4bd-42b5-9c5b-306e1953347e" class="cell" data-execution_count="6">
+<div id="42faf1a1-f4bd-42b5-9c5b-306e1953347e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>monsters.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -714,9 +714,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="6992f46f-b3c9-493b-83dd-66e84f0fdb4b" class="cell" data-execution_count="7">
+<div id="6992f46f-b3c9-493b-83dd-66e84f0fdb4b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>monsters.groupby([<span class="st">"senses"</span>]).size().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>senses
 Darkvision 60 ft.; Passive Perception 10                         24
 Passive Perception 10                                            23
@@ -732,9 +732,9 @@ Truesight 60 ft.; Passive Perception 19                           1
 Length: 100, dtype: int64</code></pre>
 </div>
 </div>
-<div id="2d449251-b399-406c-843e-a28279313498" class="cell" data-execution_count="8">
+<div id="2d449251-b399-406c-843e-a28279313498" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>monsters.groupby([<span class="st">"size"</span>]).describe()[<span class="st">"cr"</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -847,7 +847,7 @@ Length: 100, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="ab18e005-05ba-4f49-be28-9375a48f6b9d" class="cell" data-execution_count="9">
+<div id="ab18e005-05ba-4f49-be28-9375a48f6b9d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sns.heatmap(monsters.select_dtypes(include<span class="op">=</span><span class="st">'number'</span>).corr())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -857,9 +857,9 @@ Length: 100, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="09eb518e-0356-40d8-a372-07f5ae979b0b" class="cell" data-execution_count="10">
+<div id="09eb518e-0356-40d8-a372-07f5ae979b0b" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>monsters[<span class="st">'senses'</span>].values[:<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>array(['Darkvision 120 ft.; Passive Perception 20',
        'Darkvision 60 ft.; Passive Perception 10',
        'Blindsight 60 ft.; Passive Perception 6',
@@ -870,9 +870,9 @@ Length: 100, dtype: int64</code></pre>
        'Passive Perception 10', 'Passive Perception 10'], dtype=object)</code></pre>
 </div>
 </div>
-<div id="a63dd603-c559-4a0a-b0fe-64f33dd12fe7" class="cell" data-execution_count="11">
+<div id="a63dd603-c559-4a0a-b0fe-64f33dd12fe7" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>monsters[monsters[<span class="st">'senses'</span>].astype(<span class="bu">str</span>).<span class="bu">str</span>.contains(<span class="st">'unimpeded'</span>, case<span class="op">=</span><span class="va">False</span>, na<span class="op">=</span><span class="va">False</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 
 
@@ -1079,10 +1079,10 @@ Length: 100, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="c30d63bc-d8f7-4118-9764-2aeb1b9a608a" class="cell" data-execution_count="12">
+<div id="c30d63bc-d8f7-4118-9764-2aeb1b9a608a" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a004948e-e319-442a-a59a-0b3e6edbf0b9" class="cell" data-execution_count="13">
+<div id="a004948e-e319-442a-a59a-0b3e6edbf0b9" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_senses(sense_str):</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> {}</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(sense_str, <span class="bu">str</span>):</span>
@@ -1106,13 +1106,13 @@ Length: 100, dtype: int64</code></pre>
 <span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span>
 <span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c5614d43-4861-498a-aedb-c5aefb1f4327" class="cell" data-execution_count="14">
+<div id="c5614d43-4861-498a-aedb-c5aefb1f4327" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>senses_df <span class="op">=</span> monsters[<span class="st">'senses'</span>].<span class="bu">apply</span>(extract_senses).<span class="bu">apply</span>(pd.Series).fillna(<span class="dv">0</span>).astype(<span class="bu">int</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>senses_df</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#(senses_df['passive perception'] == 0).any()</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#senses_df[(senses_df == 0).sum(axis=1) == 2]</span></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">#senses_df[senses_df["tremorsense"] &gt; 0]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
@@ -1223,10 +1223,10 @@ Length: 100, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="228fad45-be8d-4c11-aea1-b91c75583252" class="cell" data-execution_count="15">
+<div id="228fad45-be8d-4c11-aea1-b91c75583252" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>senses_df_filtered <span class="op">=</span> senses_df[(senses_df <span class="op">==</span> <span class="dv">0</span>).<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>) <span class="op">!=</span> <span class="dv">2</span>]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>senses_df_filtered</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 
 
@@ -1337,16 +1337,16 @@ Length: 100, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="9556eb16-bf47-47fd-867d-c3af2c59c744" class="cell" data-execution_count="16">
+<div id="9556eb16-bf47-47fd-867d-c3af2c59c744" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>monsters_mod <span class="op">=</span> pd.concat([monsters, senses_df], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c31e6282-a6ea-4250-81dc-2433224b2fa2" class="cell" data-execution_count="17">
+<div id="c31e6282-a6ea-4250-81dc-2433224b2fa2" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>monsters_mod <span class="op">=</span> monsters_mod[[<span class="st">"size"</span>]<span class="op">+</span><span class="bu">list</span>(monsters_mod.columns[<span class="op">-</span><span class="dv">5</span>:])]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="444996a9-295a-40ba-8e85-6dca9aa21817" class="cell" data-execution_count="18">
+<div id="444996a9-295a-40ba-8e85-6dca9aa21817" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="188d7afe-5a8c-4be6-96a0-947457361264" class="cell" data-execution_count="19">
+<div id="188d7afe-5a8c-4be6-96a0-947457361264" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>long_df <span class="op">=</span> pd.melt(</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    senses_df, <span class="co">#filtered</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    id_vars<span class="op">=</span>[<span class="st">'passive perception'</span>], <span class="co">#,'size'],             </span></span>
@@ -1355,7 +1355,7 @@ Length: 100, dtype: int64</code></pre>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    value_name<span class="op">=</span><span class="st">'distance'</span></span>
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>long_df <span class="co">#[(long_df["sense_type"] == "tremorsense") &amp; (long_df["distance"] != 0)]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <div>
 
 
@@ -1448,7 +1448,7 @@ Length: 100, dtype: int64</code></pre>
 <li>Cases with only passive perception are not there. If only <code>long_df</code> is used then there are lot many extra points.</li>
 <li>Two points for cases with more than two senses.</li>
 </ol>
-<div id="3f9a9317-4793-4c1f-a81d-fee091d82f3b" class="cell" data-execution_count="21">
+<div id="3f9a9317-4793-4c1f-a81d-fee091d82f3b" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"dark"</span>, font<span class="op">=</span><span class="st">"Comic Sans MS"</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>current_style <span class="op">=</span> sns.axes_style()</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">"grey"</span>, <span class="st">"orange"</span>, <span class="st">"dodgerblue"</span>, <span class="st">"salmon"</span>]</span>
@@ -1478,7 +1478,7 @@ Length: 100, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="0020bbaa-27ef-40fc-8e3f-79461317f7d8" class="cell">
+<div id="0020bbaa-27ef-40fc-8e3f-79461317f7d8" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plot1 = sns.catplot(data=long_df, x="distance", y="passive perception", hue="size",\</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">#            kind="strip", dodge=True, height=4, aspect=2, size=4, native_scale=True,\</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                   jitter=1, col="sense_type", col_wrap=2)</span></span>
@@ -1489,9 +1489,9 @@ Length: 100, dtype: int64</code></pre>
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.tight_layout()</span></span>
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.show()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="6977f732-aade-4995-8358-9412af9d306f" class="cell" data-execution_count="169">
+<div id="6977f732-aade-4995-8358-9412af9d306f" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sns.dark_palette(<span class="st">"xkcd:golden"</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="169">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <svg width="220" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#282522;stroke-width:2;stroke:rgb(255,255,255)"></rect><rect x="55" y="0" width="55" height="55" style="fill:#6c5918;stroke-width:2;stroke:rgb(255,255,255)"></rect><rect x="110" y="0" width="55" height="55" style="fill:#b18c0d;stroke-width:2;stroke:rgb(255,255,255)"></rect><rect x="165" y="0" width="55" height="55" style="fill:#f5bf03;stroke-width:2;stroke:rgb(255,255,255)"></rect></svg>
 </div>
 </div>
@@ -1504,36 +1504,35 @@ Length: 100, dtype: int64</code></pre>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> textwrap</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>sns.reset_defaults()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="3e75b87b-3f52-4d34-a8e0-cc5be6bdd43c" class="cell" data-execution_count="24">
+<div id="3e75b87b-3f52-4d34-a8e0-cc5be6bdd43c" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>binary_df <span class="op">=</span> senses_df <span class="op">&gt;</span> <span class="dv">0</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> binary_df.value_counts().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c89d0344-3261-47ac-b788-c89f0f65ab54" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> plt.style.context(<span class="st">"grayscale"</span>):</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    upset <span class="op">=</span> UpSet(counts, sort_by<span class="op">=</span> <span class="st">"cardinality"</span>, show_percentages<span class="op">=</span><span class="va">True</span>, facecolor<span class="op">=</span><span class="st">"dodgerblue"</span>)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    upset.style_subsets(present<span class="op">=</span><span class="st">"truesight"</span>, edgecolor<span class="op">=</span><span class="st">"lightgreen"</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    upset.style_subsets(present<span class="op">=</span><span class="st">"tremorsense"</span>, edgecolor<span class="op">=</span><span class="st">"salmon"</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#upset.add_catplot(value="progression", kind="strip", color="blue")</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    upset.plot()</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> ind, ax <span class="kw">in</span> <span class="bu">enumerate</span>(plt.gcf().get_axes()):</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(ind <span class="op">==</span> <span class="dv">3</span>):</span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>            ax.set_yticks(<span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">151</span>,<span class="dv">50</span>))</span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>            ax.set_facecolor(<span class="st">"#BEBEBE"</span>)</span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>            ax.yaxis.grid(<span class="va">True</span>, color<span class="op">=</span><span class="st">"#D0D0D0"</span>)</span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(ind <span class="op">==</span> <span class="dv">2</span>):</span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>            ax.xaxis.grid(<span class="va">True</span>, color<span class="op">=</span><span class="st">"#D0D0D0"</span>)</span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>        ax.spines[<span class="st">'left'</span>].set_visible(<span class="va">False</span>)</span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>        ax.tick_params(axis<span class="op">=</span><span class="st">'both'</span>, length<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> text <span class="kw">in</span> ax.texts:</span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">"%"</span> <span class="kw">in</span> text.get_text():  </span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>                text.set_fontsize(<span class="dv">9</span>)</span>
-<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a><span class="co">#                text.set_fontfamily("Consolas")</span></span>
-<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>    title_text <span class="op">=</span> <span class="st">"Frequency of five senses and their combinations across all the characters in Dungeons and Dragons Monsters (2024)"</span></span>
-<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>    plt.suptitle(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>.join(textwrap.wrap(title_text, width<span class="op">=</span><span class="dv">20</span>)), x<span class="op">=</span><span class="fl">0.075</span>, y<span class="op">=</span><span class="fl">0.8</span>, ha<span class="op">=</span><span class="st">"left"</span>, fontfamily<span class="op">=</span><span class="st">"Serif"</span>)</span>
-<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>    plt.savefig(<span class="st">"senses_comb.png"</span>, dpi<span class="op">=</span><span class="dv">300</span>, facecolor<span class="op">=</span><span class="st">"#BEBEBE"</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
-<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c89d0344-3261-47ac-b788-c89f0f65ab54" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>upset <span class="op">=</span> UpSet(counts, sort_by<span class="op">=</span> <span class="st">"cardinality"</span>, show_percentages<span class="op">=</span><span class="va">True</span>, facecolor<span class="op">=</span><span class="st">"dodgerblue"</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>upset.style_subsets(present<span class="op">=</span><span class="st">"truesight"</span>, edgecolor<span class="op">=</span><span class="st">"lightgreen"</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>upset.style_subsets(present<span class="op">=</span><span class="st">"tremorsense"</span>, edgecolor<span class="op">=</span><span class="st">"salmon"</span>, linewidth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">#upset.add_catplot(value="progression", kind="strip", color="blue")</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>upset.plot()</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ind, ax <span class="kw">in</span> <span class="bu">enumerate</span>(plt.gcf().get_axes()):</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(ind <span class="op">==</span> <span class="dv">3</span>):</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>        ax.set_yticks(<span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">151</span>,<span class="dv">50</span>))</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>        ax.set_facecolor(<span class="st">"whitesmoke"</span>)</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>        ax.yaxis.grid(<span class="va">True</span>, color<span class="op">=</span><span class="st">"#D0D0D0"</span>)</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(ind <span class="op">==</span> <span class="dv">2</span>):</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>        ax.xaxis.grid(<span class="va">True</span>, color<span class="op">=</span><span class="st">"#D0D0D0"</span>)</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    ax.spines[<span class="st">'left'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    ax.tick_params(axis<span class="op">=</span><span class="st">'both'</span>, length<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> text <span class="kw">in</span> ax.texts:</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">"%"</span> <span class="kw">in</span> text.get_text():  </span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>            text.set_fontsize(<span class="dv">9</span>)</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a><span class="co">#                text.set_fontfamily("Consolas")</span></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>title_text <span class="op">=</span> <span class="st">"Frequency of five senses and their combinations across all the characters in Dungeons and Dragons Monsters (2024)"</span></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>.join(textwrap.wrap(title_text, width<span class="op">=</span><span class="dv">20</span>)), x<span class="op">=</span><span class="fl">0.075</span>, y<span class="op">=</span><span class="fl">0.8</span>, ha<span class="op">=</span><span class="st">"left"</span>, fontfamily<span class="op">=</span><span class="st">"Serif"</span>)</span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"senses_comb.png"</span>, dpi<span class="op">=</span><span class="dv">300</span>, facecolor<span class="op">=</span><span class="st">"whitesmoke"</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
