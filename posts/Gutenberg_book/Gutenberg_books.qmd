@@ -1,0 +1,95 @@
+---
+title: "Project Gutenberg"
+author: "Manish Datt"
+date: "6/3/2025"
+description: "Frequency of books in different languages."
+image: "word_cloud.png"
+categories: [ggplot2, wordcloud,TidyTuesday, magick]
+slug: "2561"
+---
+
+## TidyTuesday data for [2025-06-03](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-06-03/readme.md)
+
+```{r}
+library(tidyverse)
+library(wordcloud)
+library(RColorBrewer)
+library(ISOcodes)
+library(scales)
+library(magick)
+```
+
+```{r}
+gutenberg_authors <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-06-03/gutenberg_authors.csv')
+gutenberg_languages <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-06-03/gutenberg_languages.csv')
+gutenberg_metadata <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-06-03/gutenberg_metadata.csv')
+gutenberg_subjects <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-06-03/gutenberg_subjects.csv')
+
+glimpse(gutenberg_authors)
+glimpse(gutenberg_languages)
+glimpse(gutenberg_metadata)
+glimpse(gutenberg_subjects)
+```
+
+```{r}
+lang_counts <- gutenberg_languages %>% 
+  group_by(language) %>%
+  summarise(total_languages = sum(total_languages), .groups = 'drop') %>%
+  arrange(desc(total_languages)) %>% 
+  left_join(ISO_639_2, by = c("language" = "Alpha_2")) %>% 
+  select(language, Name, total_languages)
+glimpse(lang_counts)
+```
+
+```{r}
+lang_counts2 <- lang_counts %>% 
+  filter(Name != "English")
+png("word_cloud.png", width = 4, height = 4, units = "in", res = 300, bg = "black")
+p1 <- wordcloud(words = lang_counts2$Name, freq = lang_counts2$total_languages,
+          min.freq = 0,
+          random.order = FALSE,
+          colors = brewer.pal(9, "Pastel1"))
+dev.off()
+```
+
+```{r}
+lang_counts %>% 
+  filter(Name != "English") %>% 
+  arrange(desc(total_languages)) %>% 
+  slice(1:10) %>% 
+  ggplot(aes(x = total_languages, y =reorder(Name, total_languages))) +
+  geom_col(alpha=0) +
+  geom_text(aes(label = comma(total_languages), x=70), color = "grey", hjust=1) +
+  theme_minimal() +
+  scale_y_discrete(labels = function(x) paste0(x, ":"))+
+  coord_cartesian(xlim = c(0, 100)) +
+  theme(axis.title = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.text.y = element_text(color = "grey"),
+        axis.line = element_blank(),
+        panel.grid = element_blank(),
+        plot.margin = margin(75, 0, 75, 0))
+ggsave("plot1.png", width = 1.75, height = 4, units = "in", bg="black")
+```
+
+```{r}
+img1 <- image_read("word_cloud.png")
+img2 <- image_read("plot1.png")
+combined <- image_append(c(img1, img2), stack = FALSE)
+#image_write(combined, "combined.png")
+
+title_text <- paste("In Project Gutenberg, ", comma(lang_counts$total_languages[1]), " out of ", comma(dim(gutenberg_languages)[1]), "books are in English. The word cloud is based on the book counts in different languages, excluding English. Counts for top ten languages are shown on the right.")
+title_text <- paste(strwrap(title_text, width = 75), collapse = "\n")
+title_image <- image_blank(width = image_info(combined)$width,
+                           height = 160, # adjust height as needed
+                           color = "black") %>%
+  image_annotate(text = title_text,
+                 size = 40, # adjust font size
+                 color = "grey",
+                 gravity = "center")
+
+final_image <- image_composite(combined, title_image, offset = "+0+0")
+image_write(final_image, "combined_with_title.png")
+
+```
