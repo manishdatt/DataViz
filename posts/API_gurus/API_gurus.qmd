@@ -41,9 +41,9 @@ normalize_to_hex <- function(color_str) {
     return(rgb(nums[1], nums[2], nums[3], maxColorValue = 255))
   }
   
-  # If it's already hex (e.g. starts with "#"), return it as-is
+  # If it's already hex return it as-is
   if (grepl("^#[0-9a-f]{6}$", color_str)) {
-    return(toupper(color_str))  # Optionally make it uppercase
+    return(toupper(color_str))  
   }
   
   # Handle named colors or invalid inputs
@@ -72,7 +72,6 @@ hex_brightness <- function(hex) {
 api_logos_mod <- api_logos %>%
   filter(!is.na(hex_color)) %>%
   select(name, hex_color) %>%
-  mutate(hex_color = toupper(hex_color)) %>%
   group_by(hex_color) %>%
   summarize(n = n()) %>% 
   arrange(hex_color) %>% 
