@@ -263,7 +263,7 @@ $ alt_text         &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N
 <section id="plotting" class="level2">
 <h2 class="anchored" data-anchor-id="plotting">Plotting</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="st">"&lt;span style='color:white;'&gt;White&lt;/span&gt; is the most preferred &lt;br&gt;background color in the API logos.&lt;br&gt; Only one logo has a transparent &lt;br&gt; background."</span></span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>title <span class="ot">&lt;-</span> <span class="st">"&lt;span style='color:white;'&gt;White&lt;/span&gt; is the preferred background &lt;br&gt;color in the API logos. Only one &lt;br&gt;logo has a transparent background."</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>api_logos_mod <span class="sc">%&gt;%</span> </span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">factor</span>(<span class="fu">seq_len</span>(<span class="fu">nrow</span>(api_logos_mod))),<span class="at">x=</span><span class="dv">1</span>, <span class="at">fill =</span> hex_color)) <span class="sc">+</span></span>

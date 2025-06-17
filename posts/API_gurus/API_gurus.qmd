@@ -85,7 +85,7 @@ api_logos_mod <- api_logos %>%
 
 ```{r}
 #| warning: false
-title <- "<span style='color:white;'>White</span> is the most preferred <br>background color in the API logos.<br> Only one logo has a transparent <br> background."
+title <- "<span style='color:white;'>White</span> is the preferred background <br>color in the API logos. Only one <br>logo has a transparent background."
 
 api_logos_mod %>% 
 ggplot(aes(y = factor(seq_len(nrow(api_logos_mod))),x=1, fill = hex_color)) +
