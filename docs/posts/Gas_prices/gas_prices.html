@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Manish Datt">
-<meta name="dcterms.date" content="2025-06-24">
-<meta name="description" content="Timeline for the global Measles and Rubella cases.">
+<meta name="dcterms.date" content="2025-07-01">
+<meta name="description" content="Timeline of gasoline and diesel prices.">
 
-<title>Measles cases across the world – DViz.manishdatt.com</title>
+<title>Gas prices in the US – DViz.manishdatt.com</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -144,16 +144,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Measles cases across the world</h1>
+      <h1 class="title">Gas prices in the US</h1>
                   <div>
         <div class="description">
-          Timeline for the global Measles and Rubella cases.
+          Timeline of gasoline and diesel prices.
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Timeline</div>
-                <div class="quarto-category">PyDyTuesday</div>
+                <div class="quarto-category">Timeseries</div>
                 <div class="quarto-category">TidyTuesday</div>
+                <div class="quarto-category">PydyTuesday</div>
               </div>
                   </div>
   </div>
@@ -171,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 24, 2025</p>
+        <p class="date">July 1, 2025</p>
       </div>
     </div>
     
@@ -190,17 +190,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="tidytuesday-data-for-2025-06-24" class="level1">
-<h1>TidyTuesday data for <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-06-24/readme.md">2025-06-24</a></h1>
-<div id="a01b34a7-3eb6-43c3-83e7-434d6ff07d37" class="cell" data-execution_count="152">
+<section id="tidytuesday-data-for-2025-06-17" class="level2">
+<h2 class="anchored" data-anchor-id="tidytuesday-data-for-2025-06-17"><strong>TidyTuesday data for <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-07-01/readme.md">2025-06-17</a></strong></h2>
+<div id="6f54a1be" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>cases_month <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-06-24/cases_month.csv'</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>cases_year <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-06-24/cases_year.csv'</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>cases_month</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="152">
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.colors <span class="im">as</span> mcolors</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.axes_grid1.inset_locator <span class="im">import</span> inset_axes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="106d0b7b" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>weekly_gas_prices <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-07-01/weekly_gas_prices.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="dcc8f593" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>weekly_gas_prices[<span class="st">'date'</span>] <span class="op">=</span> pd.to_datetime(weekly_gas_prices[<span class="st">'date'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="b11caaf7" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>weekly_gas_prices</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -208,113 +214,183 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">region</th>
-<th data-quarto-table-cell-role="th">country</th>
-<th data-quarto-table-cell-role="th">iso3</th>
-<th data-quarto-table-cell-role="th">year</th>
-<th data-quarto-table-cell-role="th">month</th>
-<th data-quarto-table-cell-role="th">measles_suspect</th>
-<th data-quarto-table-cell-role="th">measles_clinical</th>
-<th data-quarto-table-cell-role="th">measles_epi_linked</th>
-<th data-quarto-table-cell-role="th">measles_lab_confirmed</th>
-<th data-quarto-table-cell-role="th">measles_total</th>
-<th data-quarto-table-cell-role="th">rubella_clinical</th>
-<th data-quarto-table-cell-role="th">rubella_epi_linked</th>
-<th data-quarto-table-cell-role="th">rubella_lab_confirmed</th>
-<th data-quarto-table-cell-role="th">rubella_total</th>
-<th data-quarto-table-cell-role="th">discarded</th>
+<th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th">fuel</th>
+<th data-quarto-table-cell-role="th">grade</th>
+<th data-quarto-table-cell-role="th">formulation</th>
+<th data-quarto-table-cell-role="th">price</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>AFR</td>
-<td>Algeria</td>
-<td>DZA</td>
-<td>2012</td>
-<td>1</td>
-<td>8.0</td>
-<td>6.0</td>
-<td>0.0</td>
-<td>2.0</td>
-<td>8.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>0.0</td>
+<td>1990-08-20</td>
+<td>gasoline</td>
+<td>regular</td>
+<td>all</td>
+<td>1.191</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>AFR</td>
-<td>Algeria</td>
-<td>DZA</td>
-<td>2012</td>
-<td>2</td>
-<td>10.0</td>
-<td>10.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>10.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>0.0</td>
+<td>1990-08-20</td>
+<td>gasoline</td>
+<td>regular</td>
+<td>conventional</td>
+<td>1.191</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>AFR</td>
-<td>Algeria</td>
-<td>DZA</td>
-<td>2012</td>
-<td>3</td>
-<td>17.0</td>
-<td>17.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>17.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>0.0</td>
+<td>1990-08-27</td>
+<td>gasoline</td>
+<td>regular</td>
+<td>all</td>
+<td>1.245</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>AFR</td>
-<td>Algeria</td>
-<td>DZA</td>
-<td>2012</td>
-<td>4</td>
-<td>7.0</td>
-<td>5.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>5.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>2.0</td>
+<td>1990-08-27</td>
+<td>gasoline</td>
+<td>regular</td>
+<td>conventional</td>
+<td>1.245</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>AFR</td>
-<td>Algeria</td>
-<td>DZA</td>
-<td>2012</td>
-<td>5</td>
-<td>14.0</td>
-<td>11.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>11.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>3.0</td>
-<td>3.0</td>
-<td>3.0</td>
+<td>1990-09-03</td>
+<td>gasoline</td>
+<td>regular</td>
+<td>all</td>
+<td>1.242</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">22355</td>
+<td>2025-06-23</td>
+<td>gasoline</td>
+<td>premium</td>
+<td>all</td>
+<td>4.128</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">22356</td>
+<td>2025-06-23</td>
+<td>gasoline</td>
+<td>premium</td>
+<td>conventional</td>
+<td>3.950</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">22357</td>
+<td>2025-06-23</td>
+<td>gasoline</td>
+<td>premium</td>
+<td>reformulated</td>
+<td>4.333</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">22358</td>
+<td>2025-06-23</td>
+<td>diesel</td>
+<td>all</td>
+<td>NaN</td>
+<td>3.775</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">22359</td>
+<td>2025-06-23</td>
+<td>diesel</td>
+<td>ultra_low_sulfur</td>
+<td>NaN</td>
+<td>3.775</td>
+</tr>
+</tbody>
+</table>
+
+<p>22360 rows × 5 columns</p>
+</div>
+</div>
+</div>
+<div id="c0e8533d" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>weekly_gas_prices[<span class="st">'year'</span>] <span class="op">=</span> weekly_gas_prices[<span class="st">'date'</span>].dt.year</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="d023ad62" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a new col fuel_grade by combining values from fuel and grade columns</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>weekly_gas_prices[<span class="st">'fuel_grade'</span>] <span class="op">=</span> weekly_gas_prices[<span class="st">'fuel'</span>] <span class="op">+</span> <span class="st">'-'</span> <span class="op">+</span> weekly_gas_prices[<span class="st">'grade'</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>weekly_gas_prices</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th">fuel</th>
+<th data-quarto-table-cell-role="th">grade</th>
+<th data-quarto-table-cell-role="th">formulation</th>
+<th data-quarto-table-cell-role="th">price</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">fuel_grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1990-08-20</td>
+<td>gasoline</td>
+<td>regular</td>
+<td>all</td>
+<td>1.191</td>
+<td>1990</td>
+<td>gasoline-regular</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1990-08-20</td>
+<td>gasoline</td>
+<td>regular</td>
+<td>conventional</td>
+<td>1.191</td>
+<td>1990</td>
+<td>gasoline-regular</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1990-08-27</td>
+<td>gasoline</td>
+<td>regular</td>
+<td>all</td>
+<td>1.245</td>
+<td>1990</td>
+<td>gasoline-regular</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1990-08-27</td>
+<td>gasoline</td>
+<td>regular</td>
+<td>conventional</td>
+<td>1.245</td>
+<td>1990</td>
+<td>gasoline-regular</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1990-09-03</td>
+<td>gasoline</td>
+<td>regular</td>
+<td>all</td>
+<td>1.242</td>
+<td>1990</td>
+<td>gasoline-regular</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -325,564 +401,166 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>...</td>
 <td>...</td>
 <td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">22775</td>
-<td>WPR</td>
-<td>Viet Nam</td>
-<td>VNM</td>
-<td>2024</td>
-<td>10</td>
-<td>379.0</td>
-<td>19.0</td>
-<td>56.0</td>
-<td>256.0</td>
-<td>331.0</td>
-<td>5.0</td>
-<td>0.0</td>
-<td>5.0</td>
-<td>10.0</td>
-<td>48.0</td>
+<td data-quarto-table-cell-role="th">22355</td>
+<td>2025-06-23</td>
+<td>gasoline</td>
+<td>premium</td>
+<td>all</td>
+<td>4.128</td>
+<td>2025</td>
+<td>gasoline-premium</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">22776</td>
-<td>WPR</td>
-<td>Viet Nam</td>
-<td>VNM</td>
-<td>2024</td>
-<td>11</td>
-<td>584.0</td>
-<td>37.0</td>
-<td>125.0</td>
-<td>347.0</td>
-<td>509.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>75.0</td>
+<td data-quarto-table-cell-role="th">22356</td>
+<td>2025-06-23</td>
+<td>gasoline</td>
+<td>premium</td>
+<td>conventional</td>
+<td>3.950</td>
+<td>2025</td>
+<td>gasoline-premium</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">22777</td>
-<td>WPR</td>
-<td>Viet Nam</td>
-<td>VNM</td>
-<td>2024</td>
-<td>12</td>
-<td>588.0</td>
-<td>56.0</td>
-<td>134.0</td>
-<td>338.0</td>
-<td>528.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>60.0</td>
+<td data-quarto-table-cell-role="th">22357</td>
+<td>2025-06-23</td>
+<td>gasoline</td>
+<td>premium</td>
+<td>reformulated</td>
+<td>4.333</td>
+<td>2025</td>
+<td>gasoline-premium</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">22778</td>
-<td>WPR</td>
-<td>Viet Nam</td>
-<td>VNM</td>
+<td data-quarto-table-cell-role="th">22358</td>
+<td>2025-06-23</td>
+<td>diesel</td>
+<td>all</td>
+<td>NaN</td>
+<td>3.775</td>
 <td>2025</td>
-<td>1</td>
-<td>156.0</td>
-<td>7.0</td>
-<td>0.0</td>
-<td>124.0</td>
-<td>131.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>25.0</td>
+<td>diesel-all</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">22779</td>
-<td>WPR</td>
-<td>Viet Nam</td>
-<td>VNM</td>
+<td data-quarto-table-cell-role="th">22359</td>
+<td>2025-06-23</td>
+<td>diesel</td>
+<td>ultra_low_sulfur</td>
+<td>NaN</td>
+<td>3.775</td>
 <td>2025</td>
-<td>2</td>
-<td>22.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>20.0</td>
-<td>20.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>2.0</td>
+<td>diesel-ultra_low_sulfur</td>
 </tr>
 </tbody>
 </table>
 
-<p>22780 rows × 15 columns</p>
+<p>22360 rows × 7 columns</p>
 </div>
 </div>
 </div>
-<div id="efa58ad2-bb3a-4a40-9498-70d6647dff72" class="cell" data-execution_count="153">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cases_year</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="153">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">region</th>
-<th data-quarto-table-cell-role="th">country</th>
-<th data-quarto-table-cell-role="th">iso3</th>
-<th data-quarto-table-cell-role="th">year</th>
-<th data-quarto-table-cell-role="th">total_population</th>
-<th data-quarto-table-cell-role="th">annualized_population_most_recent_year_only</th>
-<th data-quarto-table-cell-role="th">total_suspected_measles_rubella_cases</th>
-<th data-quarto-table-cell-role="th">measles_total</th>
-<th data-quarto-table-cell-role="th">measles_lab_confirmed</th>
-<th data-quarto-table-cell-role="th">measles_epi_linked</th>
-<th data-quarto-table-cell-role="th">measles_clinical</th>
-<th data-quarto-table-cell-role="th">measles_incidence_rate_per_1000000_total_population</th>
-<th data-quarto-table-cell-role="th">rubella_total</th>
-<th data-quarto-table-cell-role="th">rubella_lab_confirmed</th>
-<th data-quarto-table-cell-role="th">rubella_epi_linked</th>
-<th data-quarto-table-cell-role="th">rubella_clinical</th>
-<th data-quarto-table-cell-role="th">rubella_incidence_rate_per_1000000_total_population</th>
-<th data-quarto-table-cell-role="th">discarded_cases</th>
-<th data-quarto-table-cell-role="th">discarded_non_measles_rubella_cases_per_100000_total_population</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>AFRO</td>
-<td>Algeria</td>
-<td>DZA</td>
-<td>2012</td>
-<td>37646166</td>
-<td>37646166</td>
-<td>76.0</td>
-<td>55</td>
-<td>2</td>
-<td>0</td>
-<td>53</td>
-<td>1.46</td>
-<td>13</td>
-<td>13</td>
-<td>0</td>
-<td>0</td>
-<td>0.35</td>
-<td>8.0</td>
-<td>0.02</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>AFRO</td>
-<td>Algeria</td>
-<td>DZA</td>
-<td>2013</td>
-<td>38414172</td>
-<td>38414172</td>
-<td>85.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0.00</td>
-<td>29</td>
-<td>29</td>
-<td>0</td>
-<td>0</td>
-<td>0.75</td>
-<td>56.0</td>
-<td>0.15</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>AFRO</td>
-<td>Algeria</td>
-<td>DZA</td>
-<td>2014</td>
-<td>39205031</td>
-<td>39205031</td>
-<td>49.0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0.00</td>
-<td>3</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>0.08</td>
-<td>46.0</td>
-<td>0.12</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>AFRO</td>
-<td>Algeria</td>
-<td>DZA</td>
-<td>2015</td>
-<td>40019529</td>
-<td>40019529</td>
-<td>109.0</td>
-<td>62</td>
-<td>2</td>
-<td>60</td>
-<td>0</td>
-<td>1.55</td>
-<td>2</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0.05</td>
-<td>45.0</td>
-<td>0.11</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>AFRO</td>
-<td>Algeria</td>
-<td>DZA</td>
-<td>2016</td>
-<td>40850721</td>
-<td>40850721</td>
-<td>93.0</td>
-<td>49</td>
-<td>21</td>
-<td>27</td>
-<td>1</td>
-<td>1.20</td>
-<td>11</td>
-<td>11</td>
-<td>0</td>
-<td>0</td>
-<td>0.27</td>
-<td>33.0</td>
-<td>0.08</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2377</td>
-<td>WPRO</td>
-<td>Viet Nam</td>
-<td>VNM</td>
-<td>2021</td>
-<td>98935099</td>
-<td>98935099</td>
-<td>346.0</td>
-<td>180</td>
-<td>33</td>
-<td>0</td>
-<td>147</td>
-<td>1.82</td>
-<td>6</td>
-<td>5</td>
-<td>0</td>
-<td>1</td>
-<td>0.06</td>
-<td>160.0</td>
-<td>0.16</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2378</td>
-<td>WPRO</td>
-<td>Viet Nam</td>
-<td>VNM</td>
-<td>2022</td>
-<td>99680655</td>
-<td>99680655</td>
-<td>585.0</td>
-<td>38</td>
-<td>10</td>
-<td>1</td>
-<td>27</td>
-<td>0.38</td>
-<td>25</td>
-<td>21</td>
-<td>0</td>
-<td>4</td>
-<td>0.25</td>
-<td>522.0</td>
-<td>0.52</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2379</td>
-<td>WPRO</td>
-<td>Viet Nam</td>
-<td>VNM</td>
-<td>2023</td>
-<td>100352192</td>
-<td>100352192</td>
-<td>499.0</td>
-<td>98</td>
-<td>8</td>
-<td>2</td>
-<td>88</td>
-<td>0.98</td>
-<td>42</td>
-<td>34</td>
-<td>0</td>
-<td>8</td>
-<td>0.42</td>
-<td>359.0</td>
-<td>0.36</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2380</td>
-<td>WPRO</td>
-<td>Viet Nam</td>
-<td>VNM</td>
-<td>2024</td>
-<td>100987687</td>
-<td>100987687</td>
-<td>2807.0</td>
-<td>2105</td>
-<td>1500</td>
-<td>412</td>
-<td>193</td>
-<td>20.84</td>
-<td>41</td>
-<td>22</td>
-<td>0</td>
-<td>19</td>
-<td>0.41</td>
-<td>661.0</td>
-<td>0.65</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2381</td>
-<td>WPRO</td>
-<td>Viet Nam</td>
-<td>VNM</td>
-<td>2025</td>
-<td>101598527</td>
-<td>42332720</td>
-<td>178.0</td>
-<td>151</td>
-<td>144</td>
-<td>0</td>
-<td>7</td>
-<td>3.57</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0.00</td>
-<td>27.0</td>
-<td>0.06</td>
-</tr>
-</tbody>
-</table>
-
-<p>2382 rows × 19 columns</p>
-</div>
-</div>
-</div>
-<div id="e4f999db-e968-43a8-b74b-e7cf3128b3f4" class="cell" data-execution_count="154">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cases_month.groupby(<span class="st">"country"</span>).size().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="154">
-<pre><code>country
-Pakistan                            162
-Afghanistan                         161
-Thailand                            161
-Democratic Republic of the Congo    161
-Côte d'Ivoire                       161
-                                   ... 
-Cabo Verde                            7
-Samoa                                 6
-Dominica                              5
-Tonga                                 3
-Monaco                                3
-Length: 193, dtype: int64</code></pre>
-</div>
-</div>
-<div id="86c487df-0921-4c5f-b1d3-39c583acabcf" class="cell" data-execution_count="155">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_grp <span class="op">=</span> cases_month.groupby([<span class="st">"month"</span>,<span class="st">"year"</span>])[[<span class="st">"measles_total"</span>, <span class="st">"rubella_total"</span>]].<span class="bu">sum</span>().reset_index()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df_grp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="155">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">month</th>
-<th data-quarto-table-cell-role="th">year</th>
-<th data-quarto-table-cell-role="th">measles_total</th>
-<th data-quarto-table-cell-role="th">rubella_total</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>1</td>
-<td>2012</td>
-<td>15412.0</td>
-<td>897.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>1</td>
-<td>2013</td>
-<td>18572.0</td>
-<td>3990.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>1</td>
-<td>2014</td>
-<td>38442.0</td>
-<td>4378.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>1</td>
-<td>2015</td>
-<td>26097.0</td>
-<td>2788.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>1</td>
-<td>2016</td>
-<td>22264.0</td>
-<td>3596.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">157</td>
-<td>12</td>
-<td>2020</td>
-<td>1631.0</td>
-<td>352.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">158</td>
-<td>12</td>
-<td>2021</td>
-<td>3593.0</td>
-<td>639.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">159</td>
-<td>12</td>
-<td>2022</td>
-<td>22938.0</td>
-<td>871.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">160</td>
-<td>12</td>
-<td>2023</td>
-<td>29330.0</td>
-<td>493.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">161</td>
-<td>12</td>
-<td>2024</td>
-<td>11199.0</td>
-<td>1288.0</td>
-</tr>
-</tbody>
-</table>
-
-<p>162 rows × 4 columns</p>
-</div>
-</div>
-</div>
-<div id="59c81589-77a9-4893-8765-368a4a018066" class="cell" data-execution_count="157">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.font_manager <span class="im">as</span> fm</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>monospace_font <span class="op">=</span> fm.FontProperties(family<span class="op">=</span><span class="st">'monospace'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="325020a2-f855-4983-855b-b8cb0a5a9d59" class="cell" data-execution_count="201">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>months_order <span class="op">=</span> [<span class="st">'Jan'</span>, <span class="st">'Feb'</span>, <span class="st">'Mar'</span>, <span class="st">'Apr'</span>, <span class="st">'May'</span>, <span class="st">'Jun'</span>,</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Jul'</span>, <span class="st">'Aug'</span>, <span class="st">'Sep'</span>, <span class="st">'Oct'</span>, <span class="st">'Nov'</span>, <span class="st">'Dec'</span>]</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>jitter <span class="op">=</span> <span class="fl">0.15</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>df_grp[<span class="st">'month_measles'</span>] <span class="op">=</span> df_grp[<span class="st">'month'</span>] <span class="op">-</span> jitter</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>df_grp[<span class="st">'month_rubella'</span>] <span class="op">=</span> df_grp[<span class="st">'month'</span>] <span class="op">+</span> jitter</span>
+</section>
+<section id="plotting" class="level2">
+<h2 class="anchored" data-anchor-id="plotting">Plotting</h2>
+<div id="d5f9f47f" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>intervals <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">2.0</span>, <span class="fl">3.0</span>, <span class="fl">4.0</span>, <span class="fl">5.0</span>, <span class="fl">6.0</span>]  </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">'#D6ECF3'</span>, <span class="st">'#87CEEB'</span>, <span class="st">'#1E90FF'</span>, <span class="st">'#0000CD'</span>, <span class="st">'red'</span>]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> mcolors.ListedColormap(colors)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> mcolors.BoundaryNorm(intervals, cmap.N)</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> sns.scatterplot(data<span class="op">=</span>df_grp, y<span class="op">=</span><span class="st">"month_measles"</span>, x<span class="op">=</span><span class="st">"year"</span>, size<span class="op">=</span><span class="st">"measles_total"</span>, sizes<span class="op">=</span>(<span class="dv">25</span>,<span class="dv">250</span>),</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                hue<span class="op">=</span><span class="st">"measles_total"</span>, marker<span class="op">=</span><span class="st">"o"</span>, palette<span class="op">=</span><span class="st">"Oranges"</span>, legend<span class="op">=</span><span class="st">'brief'</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>handles1, labels1 <span class="op">=</span> s1.get_legend_handles_labels()</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>labels1 <span class="op">=</span> [<span class="ss">f"</span><span class="sc">{</span><span class="bu">int</span>(x)<span class="sc">:,}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> labels1]</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>legend1 <span class="op">=</span> ax.legend(handles1, labels1, title<span class="op">=</span><span class="st">"Measles Cases"</span>, loc<span class="op">=</span><span class="st">"upper left"</span>, </span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                    bbox_to_anchor<span class="op">=</span>(<span class="dv">1</span>, <span class="fl">0.6</span>), frameon<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>ax.add_artist(legend1)  </span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> sns.scatterplot(data<span class="op">=</span>df_grp, y<span class="op">=</span><span class="st">"month_rubella"</span>, x<span class="op">=</span><span class="st">"year"</span>, size<span class="op">=</span><span class="st">"rubella_total"</span>, sizes<span class="op">=</span>(<span class="dv">5</span>,<span class="dv">50</span>),</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>                hue<span class="op">=</span><span class="st">"rubella_total"</span>, marker<span class="op">=</span><span class="st">"s"</span>, palette<span class="op">=</span><span class="st">"Blues"</span>, legend<span class="op">=</span><span class="st">'brief'</span>)</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>all_handles, all_labels <span class="op">=</span> s2.get_legend_handles_labels()</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>rubella_handles <span class="op">=</span> all_handles[<span class="bu">len</span>(handles1):]</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>rubella_labels <span class="op">=</span> all_labels[<span class="bu">len</span>(labels1):] <span class="co">#[l for h, l in zip(all_handles, all_labels) if h not in handles1]</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>rubella_labels <span class="op">=</span> [<span class="ss">f"</span><span class="sc">{</span><span class="bu">int</span>(x)<span class="sc">:,}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> rubella_labels]</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>legend2 <span class="op">=</span> ax.legend(rubella_handles, rubella_labels, title<span class="op">=</span><span class="st">"Rubella Cases"</span>, loc<span class="op">=</span><span class="st">"upper left"</span>, </span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>                    bbox_to_anchor<span class="op">=</span>(<span class="dv">1</span>, <span class="fl">0.3</span>), frameon<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>df_max_price <span class="op">=</span> weekly_gas_prices.groupby([<span class="st">'year'</span>, <span class="st">'fuel_grade'</span>])[<span class="st">'price'</span>].<span class="bu">max</span>().reset_index()</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>fuel_cat <span class="op">=</span> [<span class="st">'gasoline-all'</span>, <span class="st">'gasoline-premium'</span>, <span class="st">'gasoline-midgrade'</span>, <span class="st">'gasoline-regular'</span>, <span class="st">'diesel-all'</span>, <span class="st">'diesel-ultra_low_sulfur'</span>, <span class="st">'diesel-low_sulfur'</span>]</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>df_max_price[<span class="st">'fuel_grade'</span>] <span class="op">=</span> pd.Categorical(df_max_price[<span class="st">'fuel_grade'</span>], categories<span class="op">=</span>fuel_cat, ordered<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># sort by year and fuel_grade</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>df_max_price <span class="op">=</span> df_max_price.sort_values(by<span class="op">=</span>[<span class="st">'fuel_grade'</span>])</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># remove rows where fuel_grade contains "all"</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>df_max_price <span class="op">=</span> df_max_price[<span class="op">~</span>df_max_price[<span class="st">'fuel_grade'</span>].<span class="bu">str</span>.contains(<span class="st">'all'</span>)]</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> ax.scatter(</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    df_max_price[<span class="st">'year'</span>], </span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    df_max_price[<span class="st">'fuel_grade'</span>], </span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span>df_max_price[<span class="st">'price'</span>], </span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span>cmap, </span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    norm<span class="op">=</span>norm,</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="st">'s'</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
 <span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>title <span class="op">=</span> <span class="st">"Timeline of global measles and rubella (M&amp;R) cases."</span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>sub_title <span class="op">=</span> <span class="st">"Contagious diseases like M&amp;R exhibit seasonality, with incidence peaking during the winter/spring transition.</span><span class="ch">\n</span><span class="st">Restrictions imposed due to Covid-19 led to a reduction in the spread of M&amp;R viruses."</span></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>plt.title(textwrap.fill(title, width<span class="op">=</span><span class="dv">60</span>), fontfamily<span class="op">=</span><span class="st">"Serif"</span>, loc<span class="op">=</span><span class="st">'left'</span>,pad<span class="op">=</span><span class="dv">35</span>, fontweight<span class="op">=</span><span class="st">"bold"</span>)</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.suptitle(textwrap.fill(sub_title, width=90), fontfamily="Serif", y=0.82, x=.05, ha="left", fontsize=10)</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>plt.suptitle(sub_title, fontfamily<span class="op">=</span><span class="st">"Serif"</span>, y<span class="op">=</span><span class="fl">0.86</span>, x<span class="op">=</span><span class="fl">.05</span>, ha<span class="op">=</span><span class="st">"left"</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">""</span>)</span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">""</span>)</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>plt.yticks(ticks<span class="op">=</span><span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">13</span>), labels<span class="op">=</span>months_order,fontfamily<span class="op">=</span><span class="st">'monospace'</span>)</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>plt.xticks(ticks<span class="op">=</span><span class="bu">range</span>(<span class="dv">2012</span>,<span class="dv">2026</span>),fontfamily<span class="op">=</span><span class="st">'monospace'</span>)</span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig('measles_cases.png', bbox_inches='tight', pad_inches=0.1, dpi=300)</span></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>cbar_ax <span class="op">=</span> inset_axes(ax,</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>                     width<span class="op">=</span><span class="st">"50%"</span>,  <span class="co"># Width as a percent of the parent axis</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>                     height<span class="op">=</span><span class="st">"5%"</span>,  <span class="co"># Height as a percent of the parent axis</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>                     loc<span class="op">=</span><span class="st">'lower center'</span>,  <span class="co"># Position inside the main plot</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>                     bbox_to_anchor<span class="op">=</span>(<span class="op">-</span><span class="fl">0.025</span>, <span class="fl">0.15</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>),</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>                     bbox_transform<span class="op">=</span>ax.transAxes)</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>cbar <span class="op">=</span> plt.colorbar(s1, cax<span class="op">=</span>cbar_ax, shrink<span class="op">=</span><span class="fl">0.5</span>, orientation<span class="op">=</span><span class="st">'horizontal'</span>)</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>cbar.set_ticklabels([<span class="ss">f'$</span><span class="sc">{</span>interval<span class="sc">:.0f}</span><span class="ss">'</span> <span class="cf">for</span> interval <span class="kw">in</span> intervals])</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>cbar.outline.set_visible(<span class="va">False</span>)</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>cbar.set_label(<span class="st">'Price per gallon'</span>, fontsize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>cbar.ax.xaxis.set_label_position(<span class="st">'top'</span>)   </span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>cbar.ax.tick_params(length<span class="op">=</span><span class="dv">0</span>, labelsize<span class="op">=</span><span class="dv">8</span>)  </span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label <span class="kw">in</span> ax.get_yticklabels():</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"diesel"</span> <span class="kw">in</span> label.get_text():</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>        label.set_color(<span class="st">'#666666'</span>)</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(ax.get_yticks())</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>ax.set_yticklabels([k.get_text().split(<span class="st">'-'</span>)[<span class="dv">1</span>] <span class="cf">for</span> k <span class="kw">in</span> ax.get_yticklabels()])</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="fl">0.01</span>, <span class="fl">0.925</span>, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(<span class="st">"GASOLINE"</span>), transform<span class="op">=</span>ax.transAxes, fontsize<span class="op">=</span><span class="dv">10</span>,</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>        verticalalignment<span class="op">=</span><span class="st">'top'</span>, fontfamily<span class="op">=</span><span class="st">'Consolas'</span>)</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="fl">0.01</span>, <span class="fl">0.30</span>, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join(<span class="st">"DIESEL"</span>), transform<span class="op">=</span>ax.transAxes, fontsize<span class="op">=</span><span class="dv">10</span>,</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>        verticalalignment<span class="op">=</span><span class="st">'top'</span>, color<span class="op">=</span><span class="st">'#666666'</span>, fontfamily<span class="op">=</span><span class="st">'Consolas'</span>)</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>ax.spines[[<span class="st">'top'</span>, <span class="st">'right'</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Label max and min for each fuel_grade</span></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> grade <span class="kw">in</span> df_max_price[<span class="st">'fuel_grade'</span>].unique():</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>    subset <span class="op">=</span> df_max_price[df_max_price[<span class="st">'fuel_grade'</span>] <span class="op">==</span> grade]</span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Skip if empty or NaNs</span></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> subset.empty <span class="kw">or</span> subset[<span class="st">'price'</span>].isnull().<span class="bu">all</span>():</span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>    max_row <span class="op">=</span> subset.loc[subset[<span class="st">'price'</span>].idxmax()]</span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>    min_row <span class="op">=</span> subset.loc[subset[<span class="st">'price'</span>].idxmin()]</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>    arrow <span class="op">=</span> <span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'&lt;-'</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Annotate max</span></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>    ax.annotate(</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"$</span><span class="sc">{</span>max_row[<span class="st">'price'</span>]<span class="sc">:.2f}</span><span class="ss">"</span>,</span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>        xy<span class="op">=</span>(max_row[<span class="st">'year'</span>], max_row[<span class="st">'fuel_grade'</span>]),</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>        xytext<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">13</span>),  </span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>        textcoords<span class="op">=</span><span class="st">'offset points'</span>,</span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>        ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'bottom'</span>,</span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>        fontsize<span class="op">=</span><span class="dv">8</span>, color<span class="op">=</span><span class="st">'red'</span>,</span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>        arrowprops<span class="op">=</span>arrow</span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Annotate min</span></span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>    ax.annotate(</span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"$</span><span class="sc">{</span>min_row[<span class="st">'price'</span>]<span class="sc">:.2f}</span><span class="ss">"</span>,</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>        xy<span class="op">=</span>(min_row[<span class="st">'year'</span>], min_row[<span class="st">'fuel_grade'</span>]),</span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>        xytext<span class="op">=</span>(<span class="dv">0</span>, <span class="op">-</span><span class="dv">20</span>),  </span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>        textcoords<span class="op">=</span><span class="st">'offset points'</span>,</span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>        ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'bottom'</span>,</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>        fontsize<span class="op">=</span><span class="dv">8</span>, color<span class="op">=</span><span class="st">'blue'</span>,</span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>        arrowprops<span class="op">=</span>arrow</span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'Year-wise maximum fuel prices in the US across five different categories. </span><span class="ch">\n</span><span class="st"> For each series, the highest and lowest prices are labeled.'</span>,x<span class="op">=</span><span class="dv">0</span>, ha<span class="op">=</span><span class="st">'left'</span>, fontfamily<span class="op">=</span><span class="st">'Serif'</span>)</span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'gas_prices.png'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Measles_cases_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="gas_prices_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>

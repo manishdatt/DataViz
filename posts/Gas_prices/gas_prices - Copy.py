@@ -1,0 +1,222 @@
+import marimo
+
+__generated_with = "0.14.9"
+app = marimo.App(width="medium")
+
+
+@app.cell
+def _():
+    import marimo as mo
+    import pandas as pd
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    import matplotlib.colors as mcolors
+    from mpl_toolkits.axes_grid1.inset_locator import inset_axes
+    return inset_axes, mcolors, mo, pd, plt, sns
+
+
+@app.cell
+def _(pd):
+    weekly_gas_prices = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-07-01/weekly_gas_prices.csv')
+    #
+    return (weekly_gas_prices,)
+
+
+@app.cell
+def _(pd, weekly_gas_prices):
+    weekly_gas_prices['date'] = pd.to_datetime(weekly_gas_prices['date'])
+    return
+
+
+@app.cell
+def _(weekly_gas_prices):
+    weekly_gas_prices[weekly_gas_prices['price'] == weekly_gas_prices['price'].min()]
+    return
+
+
+@app.cell
+def _(weekly_gas_prices):
+    weekly_gas_prices['month'] = weekly_gas_prices['date'].dt.month
+    weekly_gas_prices['year'] = weekly_gas_prices['date'].dt.year
+    weekly_gas_prices[weekly_gas_prices['grade'] == "all"]
+    return
+
+
+@app.cell
+def _(sns, weekly_gas_prices):
+    sns.lineplot(data=weekly_gas_prices, x='date', y='price', hue='fuel')
+    return
+
+
+@app.cell
+def _(sns, weekly_gas_prices):
+    g = sns.FacetGrid(weekly_gas_prices, col='fuel')
+    g.map_dataframe(sns.lineplot, x='date', y='price', hue='grade')
+    g.add_legend()
+    return
+
+
+@app.cell
+def _(weekly_gas_prices):
+    # create a new col fuel_grade by combining values from fuel and grade columns
+    weekly_gas_prices['fuel_grade'] = weekly_gas_prices['fuel'] + '-' + weekly_gas_prices['grade']
+    weekly_gas_prices
+    return
+
+
+@app.cell
+def _(plt, sns, weekly_gas_prices):
+    sns.stripplot(data=weekly_gas_prices, x='date', y='price', hue='fuel_grade')
+    plt.show()
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""## Plotting""")
+    return
+
+
+@app.cell
+def _(inset_axes, mcolors, pd, plt, weekly_gas_prices):
+    fig, ax = plt.subplots(figsize=(8, 4))
+
+    intervals = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0]  
+    colors = ['#D6ECF3', '#87CEEB', '#1E90FF', '#0000CD', 'red']
+
+    cmap = mcolors.ListedColormap(colors)
+    norm = mcolors.BoundaryNorm(intervals, cmap.N)
+
+    df_avg_price = weekly_gas_prices.groupby(['year', 'fuel_grade'])['price'].max().reset_index().sort_values(by='fuel_grade')
+
+    fuel_cat = ['gasoline-all', 'gasoline-premium', 'gasoline-midgrade', 'gasoline-regular', 'diesel-all', 'diesel-ultra_low_sulfur', 'diesel-low_sulfur']
+    df_avg_price['fuel_grade'] = pd.Categorical(df_avg_price['fuel_grade'], categories=fuel_cat, ordered=True)
+    # sort by year and fuel_grade
+    df_avg_price = df_avg_price.sort_values(by=['fuel_grade'])
+
+    # remove rows where fuel_grade contains "all"
+    df_avg_price = df_avg_price[~df_avg_price['fuel_grade'].str.contains('all')]
+
+    s1 = ax.scatter(
+        df_avg_price['year'], 
+        df_avg_price['fuel_grade'], 
+        c=df_avg_price['price'], 
+        cmap=cmap, 
+        norm=norm,
+        marker='s'
+    )
+
+    ax.invert_yaxis()
+
+    cbar_ax = inset_axes(ax,
+                         width="50%",  # Width as a percent of the parent axis
+                         height="5%",  # Height as a percent of the parent axis
+                         loc='lower center',  # Position inside the main plot
+                         bbox_to_anchor=(-0.025, 0.15, 0.5, 0.5),
+                         bbox_transform=ax.transAxes)
+
+    cbar = plt.colorbar(s1, cax=cbar_ax, shrink=0.5, orientation='horizontal')
+    cbar.set_ticklabels([f'${interval:.0f}' for interval in intervals])
+    cbar.outline.set_visible(False)
+    cbar.set_label('Price per gallon', fontsize=8)
+    cbar.ax.xaxis.set_label_position('top')   
+    cbar.ax.tick_params(length=0, labelsize=8)  
+
+    for label in ax.get_yticklabels():
+        if "diesel" in label.get_text():
+            label.set_color('#666666')
+
+    ax.set_yticks(ax.get_yticks())
+    ax.set_yticklabels([k.get_text().split('-')[1] for k in ax.get_yticklabels()])
+
+    ax.text(0.01, 0.925, '\n'.join("GASOLINE"), transform=ax.transAxes, fontsize=10,
+            verticalalignment='top', fontfamily='Consolas')
+    ax.text(0.01, 0.30, '\n'.join("DIESEL"), transform=ax.transAxes, fontsize=10,
+            verticalalignment='top', color='#666666', fontfamily='Consolas')
+    ax.spines[['top', 'right']].set_visible(False)
+
+
+
+    # Label max and min for each fuel_grade
+    for grade in df_avg_price['fuel_grade'].unique():
+        subset = df_avg_price[df_avg_price['fuel_grade'] == grade]
+
+        # Skip if empty or NaNs
+        if subset.empty or subset['price'].isnull().all():
+            continue
+
+        max_row = subset.loc[subset['price'].idxmax()]
+        min_row = subset.loc[subset['price'].idxmin()]
+
+        arrow = dict(arrowstyle='<-', color='black', linewidth=0.8)
+
+        # Annotate max
+        ax.annotate(
+            f"${max_row['price']:.2f}",
+            xy=(max_row['year'], max_row['fuel_grade']),
+            xytext=(0, 13),  
+            textcoords='offset points',
+            ha='center', va='bottom',
+            fontsize=8, color='red',
+            arrowprops=arrow
+        )
+        # Annotate min
+        ax.annotate(
+            f"${min_row['price']:.2f}",
+            xy=(min_row['year'], min_row['fuel_grade']),
+            xytext=(0, -20),  
+            textcoords='offset points',
+            ha='center', va='bottom',
+            fontsize=8, color='blue',
+            arrowprops=arrow
+        )
+    fig.suptitle('Year-wise maximum fuel prices in the US across five different categories. \n For each series, the highest and lowest prices are labeled.',x=0, ha='left', fontfamily='Serif')
+    plt.savefig('gas_prices.png', dpi=300, bbox_inches='tight')
+    plt.show()
+
+    return
+
+
+@app.cell
+def _(weekly_gas_prices):
+    weekly_gas_prices[weekly_gas_prices['fuel']=='gasoline']
+    return
+
+
+@app.cell
+def _(weekly_gas_prices):
+    df_avg_price2 = weekly_gas_prices.groupby(['year', 'fuel_grade'])['price'].mean().reset_index()
+
+    return
+
+
+@app.cell
+def _(weekly_gas_prices):
+    df_grp = weekly_gas_prices.groupby(['fuel','year', 'month', 'grade'])['price'].mean().reset_index()
+    return (df_grp,)
+
+
+@app.cell
+def _(df_grp):
+    df_grp
+    return
+
+
+@app.cell
+def _(df_grp, plt, sns):
+    sns.scatterplot(data=df_grp, x='year', y='month', hue='price', palette='viridis_r')
+    plt.show()
+    return
+
+
+@app.cell
+def _(df_grp, plt, sns):
+    # calculate moving averages
+    df_grp['moving_avg'] = df_grp.groupby(['fuel', 'grade'])['price'].transform(lambda x: x.rolling(window=10, min_periods=1).mean())
+    sns.scatterplot(data=df_grp, x='year', y='month', hue='moving_avg', palette='viridis_r')
+    plt.show()
+    return
+
+
+if __name__ == "__main__":
+    app.run()
