@@ -9,7 +9,7 @@ slug: "2571"
 jupyter: python3
 ---
 
-## **TidyTuesday data for [2025-06-17](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-07-01/readme.md)**
+## **TidyTuesday data for [2025-07-1](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-07-01/readme.md)**
 
 ```{python}
 import pandas as pd
