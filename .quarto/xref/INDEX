@@ -41,5 +41,8 @@
   },
   "posts/Gas_prices/gas_prices.qmd": {
     "gas_prices.html": "aede5031"
+  },
+  "posts/xkcd_colors/xkcd_colors.qmd": {
+    "xkcd_colors.html": "c55d246b"
   }
 }

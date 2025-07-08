@@ -1,0 +1,172 @@
+---
+title: The xkcd color survey
+marimo-version: 0.14.9
+author: Manish Datt
+date: 7/8/2025
+description: Identification of colors by the participants.
+image: xkcd_colors.png
+categories:
+- sklearn
+- colors
+- TidyTuesday
+- PydyTuesday
+slug: '2572'
+filters:
+- marimo-team/marimo
+---
+
+## TidyTuesday data for [2025-07-08](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-07-08/readme.md)
+
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import colors
+import colorsys
+from sklearn.cluster import KMeans
+from sklearn.metrics import pairwise_distances_argmin_min
+import textwrap
+```
+
+```{python}
+answers = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-07-08/answers.csv')
+color_ranks = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-07-08/color_ranks.csv')
+users = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-07-08/users.csv')
+
+```
+
+```{python}
+answers
+```
+
+```{python}
+answers['rank'].unique()
+```
+
+```{python}
+color_ranks
+```
+
+```{python}
+def hex_to_hsl(hex_color):
+    rgb = colors.to_rgb(hex_color)  # Returns RGB as floats (0-1)
+    h, l, s = colorsys.rgb_to_hls(*rgb)  # Note: HLS order
+#    return round(h * 360, 1), round(s * 100, 1), round(l * 100, 1)
+    return h, s, l
+
+print(hex_to_hsl("#ff5733"))
+
+```
+
+```{python}
+# merge answers and color_rank based on rank column
+merged_data = pd.merge(answers, color_ranks, on='rank', how='left')
+merged_data[['h', 's', 'l']] = merged_data['hex_x'].apply(hex_to_hsl).apply(pd.Series)
+```
+
+```{python}
+merged_data
+```
+
+```{python}
+merged_data.groupby('color').count()
+```
+
+```{python}
+f"{merged_data.groupby('color')['hex_x'].nunique().loc['blue']:,}"
+
+```
+
+```{python}
+cluster_results = {}
+for color, group_df in merged_data.groupby('color'):
+    kmeans = KMeans(n_clusters=100, random_state=2025)
+    kmeans.fit(group_df[['h', 's', 'l']])
+
+    # Store the result: labels and cluster centers
+    cluster_results[color] = {
+        'labels': kmeans.labels_,
+        'centers': kmeans.cluster_centers_,
+        'data': group_df.copy()
+    }
+#    cluster_results[color]['data']['cluster'] = kmeans.labels_
+
+#print(cluster_results["blue"]["data"])
+
+for color in cluster_results:
+    group_data = cluster_results[color]['data']
+    centers = cluster_results[color]['centers']
+    closest_idxs, _ = pairwise_distances_argmin_min(centers, group_data[['h', 's', 'l']].values)
+    closest_points = group_data.iloc[closest_idxs]
+    cluster_results[color]['closest_points'] = closest_points
+
+```
+
+```{python}
+print(cluster_results['blue']['closest_points'][['h', 's', 'l']].head(10).values)
+```
+
+```{python}
+from scipy.optimize import root_scalar
+def hsl_to_rgb(h, s, l):
+    # colorsys expects H, L, S in [0,1]
+    r, g, b = colorsys.hls_to_rgb(h, l, s)
+    return r, g, b
+    
+# Arc length function of theta
+def arc_length(theta, b):
+    return (b/2) * (theta * np.sqrt(1 + theta**2) + np.arcsinh(theta))
+
+# Inverse function: find theta given s (arc length)
+def theta_for_s(s, b):
+    # Use root finding to solve arc_length(theta) - s = 0
+    sol = root_scalar(lambda t: arc_length(t, b) - s, bracket=[0, 100], method='bisect')
+    return sol.root
+
+d = 4  # distance from center to corner
+# Define corner offsets using Cartesian product of [-d, d]
+corners = np.array(np.meshgrid([-d, d], [-d, d])).T.reshape(-1, 2)
+offsets = np.vstack([[0, 0],corners])
+
+fig, ax = plt.subplots(figsize=(8, 8))
+
+for ind, color_name in enumerate(cluster_results):
+    cp = cluster_results[color_name]['closest_points'][['h', 's', 'l']].values
+    
+    rgb_colors = [hsl_to_rgb(*hsl) for hsl in cp]
+    
+    b = 0.1  # spiral parameter
+    num_points = len(cp)
+    desired_sep = 0.3  # desired arc length between points
+        
+    # Compute theta values for uniform arc length steps
+    arc_lengths = np.arange(num_points) * desired_sep
+    theta_vals = np.array([theta_for_s(s, b) for s in arc_lengths])
+    
+    # Compute spiral coords
+    r = b * theta_vals
+    x = r * np.cos(theta_vals)
+    y = r * np.sin(theta_vals)
+    
+    #plt.scatter(x, y, color=rgb_colors, s=200, marker="|", linewidths=4)
+    plt.scatter(x+offsets[ind][0], y+offsets[ind][1], color=rgb_colors, s=100) 
+    ax.text(offsets[ind][0], offsets[ind][1]-3.25, f"{color_name}\n{ merged_data.groupby('color')['hex_x'].nunique().loc[color_name]:,}", fontsize=14, ha='center', va='center', color=color_ranks[color_ranks['color'] == color_name]['hex'].values[0], fontfamily="Consolas")
+
+ax.axis("off")
+plt.ylim(-7, 7)
+plt.xlim(-7, 7)
+long_title = "Top 100 of the specified number of color variants selected via K-means clustering for the top five colors in the xkcd color survey."
+wrapped_title = "\n".join(textwrap.wrap(long_title, width=60))
+
+plt.title(wrapped_title, fontsize=16, fontfamily="Consolas", loc='left')
+plt.tight_layout()
+#plt.ylabel("Random value")
+plt.savefig("xkcd_colors.png", dpi=300, bbox_inches='tight')
+plt.show()
+
+```
+
+```{python}
+
+
+```
