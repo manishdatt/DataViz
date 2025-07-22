@@ -44,5 +44,11 @@
   },
   "posts/xkcd_colors/xkcd_colors.qmd": {
     "xkcd_colors.html": "c55d246b"
+  },
+  "posts/BL_funding/BL_funding.ipynb": {
+    "BL_funding.html": "43355d5c"
+  },
+  "posts/MTA_art/MTA_art.ipynb": {
+    "MTA_art.html": "02ce96e2"
   }
 }
