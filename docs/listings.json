@@ -2,11 +2,13 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Netflix_viewing/Netflix_viewing.html",
       "/posts/MTA_art/MTA_art.html",
       "/posts/BL_funding/BL_funding.html",
       "/posts/xkcd_colors/xkcd_colors.html",
       "/posts/Gas_prices/gas_prices.html",
       "/posts/Measles_cases/Measles_cases.html",
+      "/posts/Netflix_viewing/Measles_cases.html",
       "/posts/API_gurus/API_gurus.html",
       "/posts/Judges_appoint/Judges_appoint.html",
       "/posts/Gutenberg_book/Gutenberg_books.html",
