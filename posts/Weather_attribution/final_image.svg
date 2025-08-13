@@ -1,0 +1,1617 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   class="main-svg"
+   width="743.97791"
+   height="478.36823"
+   version="1.1"
+   id="svg141"
+   sodipodi:docname="final_image.svg"
+   inkscape:export-filename="weather_attribution.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview141"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:export-bgcolor="#ffffffff"
+     inkscape:zoom="1.1708911"
+     inkscape:cx="365.96059"
+     inkscape:cy="234.43683"
+     inkscape:window-width="1904"
+     inkscape:window-height="1041"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg141" />
+  <defs
+     id="defs-f9a36f">
+    <g
+       class="clips"
+       id="g1" />
+    <g
+       class="gradients"
+       id="g2" />
+    <g
+       class="patterns"
+       id="g3" />
+  </defs>
+  <g
+     class="bglayer"
+     id="g4"
+     transform="translate(-65.711876,-146.84666)" />
+  <g
+     class="draglayer"
+     id="g5"
+     transform="translate(-65.711876,-146.84666)" />
+  <g
+     class="layer-below"
+     id="g8"
+     transform="translate(-65.711876,-146.84666)">
+    <g
+       class="imagelayer"
+       id="g6" />
+    <g
+       class="shapelayer"
+       id="g7" />
+  </g>
+  <g
+     class="cartesianlayer"
+     id="g9"
+     transform="translate(-65.711876,-146.84666)" />
+  <g
+     class="polarlayer"
+     id="g10"
+     transform="translate(-65.711876,-146.84666)" />
+  <g
+     class="smithlayer"
+     id="g11"
+     transform="translate(-65.711876,-146.84666)" />
+  <g
+     class="ternarylayer"
+     id="g12"
+     transform="translate(-65.711876,-146.84666)" />
+  <g
+     class="geolayer"
+     id="g13"
+     transform="translate(-65.711876,-146.84666)" />
+  <g
+     class="funnelarealayer"
+     id="g14"
+     transform="translate(-65.711876,-146.84666)" />
+  <g
+     class="pielayer"
+     id="g15"
+     transform="translate(-65.711876,-146.84666)" />
+  <g
+     class="iciclelayer"
+     id="g16"
+     transform="translate(-65.711876,-146.84666)" />
+  <g
+     class="treemaplayer"
+     id="g17"
+     transform="translate(-65.711876,-146.84666)" />
+  <g
+     class="sunburstlayer"
+     id="g140"
+     transform="translate(-65.711876,-146.84666)">
+    <g
+       class="trace sunburst"
+       stroke-linejoin="round"
+       style="opacity:1"
+       id="g94">
+      <g
+         class="slice cursor-pointer"
+         id="g19">
+        <path
+           class="surface"
+           d="m 238.175,391.5 h 79.0875 a 79.0875,79.0875 0 1 0 -93.87409,77.69292 z"
+           style="fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path17" />
+        <g
+           class="slicetext"
+           id="g18">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="More Severe/Likely"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="rotate(-39.612142,644.139,-128.08417)"
+             id="text17">More Severe/Likely</text>
+        </g>
+      </g>
+      <g
+         class="slice cursor-pointer"
+         id="g21">
+        <path
+           class="surface"
+           d="m 238.175,391.5 -14.78659,77.69292 a 79.0875,79.0875 0 0 0 50.52347,-7.14004 z"
+           style="fill:#ef553b;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path19" />
+        <g
+           class="slicetext"
+           id="g20">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="No human influence"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.07182858,0.50826448,-0.50826448,0.07182858,242.15902,436.81016)"
+             id="text19">No human influence</text>
+        </g>
+      </g>
+      <g
+         class="slice cursor-pointer"
+         id="g23">
+        <path
+           class="surface"
+           d="m 238.175,391.5 35.73688,70.55288 a 79.0875,79.0875 0 0 0 32.50919,-30.58656 z"
+           style="fill:#00cc96;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path21" />
+        <g
+           class="slicetext"
+           id="g22">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Less Severe/Likely"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.36391066,0.38678569,-0.38678569,0.36391066,268.29613,427.13123)"
+             id="text21">Less Severe/Likely</text>
+        </g>
+      </g>
+      <g
+         class="slice cursor-pointer"
+         id="g25">
+        <path
+           class="surface"
+           d="m 238.175,391.5 68.24607,39.96632 A 79.0875,79.0875 0 0 0 317.2625,391.5 Z"
+           style="fill:#ab63fa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path23" />
+        <g
+           class="slicetext"
+           id="g24">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Insufficient Data"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.55502974,0.1505597,-0.1505597,0.55502974,283.69161,406.62776)"
+             id="text23">Insufficient Data</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g27">
+        <path
+           class="surface"
+           d="M 317.2625,391.5 H 396.35 A 158.175,158.175 0 0 0 240.26989,233.33887 l -1.04745,79.08057 A 79.0875,79.0875 0 0 1 317.2625,391.5 Z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path25" />
+        <g
+           class="slicetext"
+           id="g26">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Heat"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="translate(322.31317,312.83905)"
+             id="text25">Heat</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g29">
+        <path
+           class="surface"
+           d="m 239.22244,312.41944 1.04745,-79.08057 a 158.175,158.175 0 0 0 -126.83588,60.90366 l 62.3705,48.62873 a 79.0875,79.0875 0 0 1 63.41793,-30.45182 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path27" />
+        <g
+           class="slicetext"
+           id="g28">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Rain &amp; flooding"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="rotate(-25.649241,690.58433,-261.72416)"
+             id="text27">Rain &amp; flooding</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g31">
+        <path
+           class="surface"
+           d="m 175.80451,342.87126 -62.3705,-48.62873 a 158.175,158.175 0 0 0 -33.325256,91.39296 l 79.033126,2.93226 a 79.0875,79.0875 0 0 1 16.66263,-45.69649 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path29" />
+        <g
+           class="slicetext"
+           id="g30">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Drought"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="translate(124.22284,354.72398)"
+             id="text29">Drought</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g33">
+        <path
+           class="surface"
+           d="M 159.14188,388.56775 80.108754,385.63549 A 158.175,158.175 0 0 0 90.45093,448.0414 l 73.86203,-28.2707 a 79.0875,79.0875 0 0 1 -5.17108,-31.20295 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path31" />
+        <g
+           class="slicetext"
+           id="g32">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Storm"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="translate(108.13236,417.718)"
+             id="text31">Storm</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g35">
+        <path
+           class="surface"
+           d="m 164.31296,419.7707 -73.86203,28.2707 a 158.175,158.175 0 0 0 18.97433,35.3435 l 64.37487,-45.94245 a 79.0875,79.0875 0 0 1 -9.48717,-17.67175 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path33" />
+        <g
+           class="slicetext"
+           id="g34">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Impact"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="rotate(-28.229342,968.96776,-33.090303)"
+             id="text33">Impact</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g37">
+        <path
+           class="surface"
+           d="m 173.80013,437.44245 -64.37487,45.94245 a 158.175,158.175 0 0 0 22.20615,25.02444 l 53.27179,-58.45467 a 79.0875,79.0875 0 0 1 -11.10307,-12.51222 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path35" />
+        <g
+           class="slicetext"
+           id="g36">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Compound"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="rotate(-41.58516,700.59431,37.399514)"
+             id="text35">Compound</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g39">
+        <path
+           class="surface"
+           d="m 184.9032,449.95467 -53.27179,58.45467 a 158.175,158.175 0 0 0 26.97278,19.79405 l 39.7854,-68.3517 a 79.0875,79.0875 0 0 1 -13.48639,-9.89702 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path37" />
+        <g
+           class="slicetext"
+           id="g38">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Oceans"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="rotate(-53.726813,573.71948,83.811428)"
+             id="text37">Oceans</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g41">
+        <path
+           class="surface"
+           d="m 198.38959,459.85169 -39.7854,68.3517 a 158.175,158.175 0 0 0 28.94208,13.15008 l 25.31437,-74.92673 a 79.0875,79.0875 0 0 1 -14.47105,-6.57505 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path39" />
+        <g
+           class="slicetext"
+           id="g40">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Wildfire"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="rotate(-65.564924,490.35436,107.40649)"
+             id="text39">Wildfire</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g43">
+        <path
+           class="surface"
+           d="m 212.86064,466.42674 -25.31437,74.92673 a 158.175,158.175 0 0 0 6.39471,2.01056 l 22.11701,-75.93202 a 79.0875,79.0875 0 0 1 -3.19735,-1.00527 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path41" />
+        <g
+           class="slicetext"
+           id="g42">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Atmosphere"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="matrix(0.10882024,-0.34611026,0.34611026,0.10882024,196.53064,529.59779)"
+             id="text41">Atmosphere</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g45">
+        <path
+           class="surface"
+           d="m 216.05799,467.43201 -22.11701,75.93202 a 158.175,158.175 0 0 0 6.47415,1.7378 l 18.87994,-76.80091 a 79.0875,79.0875 0 0 1 -3.23708,-0.86891 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path43" />
+        <g
+           class="slicetext"
+           id="g44">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Cold, snow &amp; ice"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="matrix(0.0884418,-0.32948735,0.32948735,0.0884418,203.30067,527.56435)"
+             id="text43">Cold, snow &amp; ice</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g47">
+        <path
+           class="surface"
+           d="m 219.29507,468.30092 -18.87994,76.80091 a 158.175,158.175 0 0 0 6.54197,1.46194 l 15.60895,-77.53188 a 79.0875,79.0875 0 0 1 -3.27098,-0.73097 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path45" />
+        <g
+           class="slicetext"
+           id="g46">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Sunshine"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="matrix(0.08265457,-0.36986734,0.36986734,0.08265457,207.78516,535.59971)"
+             id="text45">Sunshine</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g49">
+        <path
+           class="surface"
+           d="m 222.56605,469.03189 -15.60895,77.53188 a 158.175,158.175 0 0 0 1.64471,0.32206 l 14.7866,-77.69291 a 79.0875,79.0875 0 0 1 -0.82236,-0.16103 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path47" />
+        <g
+           class="slicetext"
+           id="g48">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="River flow"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="matrix(0.02024933,-0.10340982,0.10340982,0.02024933,208.89077,543.60847)"
+             id="text47">River flow</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g51">
+        <path
+           class="surface"
+           d="m 223.38841,469.19292 -14.7866,77.69291 a 158.175,158.175 0 0 0 45.05099,2.03008 l -7.7389,-78.70796 a 79.0875,79.0875 0 0 1 -22.52549,-1.01503 z"
+           style="opacity:0.7;fill:#ef553b;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path49" />
+        <g
+           class="slicetext"
+           id="g50">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Rain &amp; flooding"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.03746278,-0.83136587,0.83136587,0.03746278,236.71726,510.1223)"
+             id="text49">Rain &amp; flooding</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g53">
+        <path
+           class="surface"
+           d="m 245.9139,470.20795 7.7389,78.70796 a 158.175,158.175 0 0 0 29.56014,-5.78836 l -22.51897,-75.81377 a 79.0875,79.0875 0 0 1 -14.78007,2.89417 z"
+           style="opacity:0.7;fill:#ef553b;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path51" />
+        <g
+           class="slicetext"
+           id="g52">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Drought"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="rotate(78.920742,-184.83529,414.96979)"
+             id="text51">Drought</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g55">
+        <path
+           class="surface"
+           d="m 260.69397,467.31378 22.51897,75.81377 a 158.175,158.175 0 0 0 9.54203,-3.1676 l -27.28999,-74.22997 a 79.0875,79.0875 0 0 1 -4.77101,1.5838 z"
+           style="opacity:0.7;fill:#ef553b;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path53" />
+        <g
+           class="slicetext"
+           id="g54">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Storm"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.1790704,0.53942902,-0.53942902,0.1790704,282.02883,532.02346)"
+             id="text53">Storm</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g57">
+        <path
+           class="surface"
+           d="m 265.46498,465.72998 27.28999,74.22997 a 158.175,158.175 0 0 0 7.78485,-3.09847 l -31.18241,-72.68074 a 79.0875,79.0875 0 0 1 -3.89243,1.54924 z"
+           style="opacity:0.7;fill:#ef553b;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path55" />
+        <g
+           class="slicetext"
+           id="g56">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Cold, snow &amp; ice"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.14932737,0.37518203,-0.37518203,0.14932737,287.13221,519.59984)"
+             id="text55">Cold, snow &amp; ice</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g59">
+        <path
+           class="surface"
+           d="m 269.35741,464.18074 31.18241,72.68074 a 158.175,158.175 0 0 0 3.06615,-1.35412 l -32.71549,-72.00368 a 79.0875,79.0875 0 0 1 -1.53307,0.67706 z"
+           style="opacity:0.7;fill:#ef553b;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path57" />
+        <g
+           class="slicetext"
+           id="g58">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Heat"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.08528718,0.19311633,-0.19311633,0.08528718,299.87393,533.64391)"
+             id="text57">Heat</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g61">
+        <path
+           class="surface"
+           d="m 270.89048,463.50368 32.71549,72.00368 a 158.175,158.175 0 0 0 3.03676,-1.41879 l -34.23386,-71.29429 a 79.0875,79.0875 0 0 1 -1.51839,0.7094 z"
+           style="opacity:0.7;fill:#ef553b;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path59" />
+        <g
+           class="slicetext"
+           id="g60">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Wildfire"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.08727911,0.18681165,-0.18681165,0.08727911,302.16362,530.7341)"
+             id="text59">Wildfire</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g63">
+        <path
+           class="surface"
+           d="m 272.40887,462.79428 34.23386,71.29429 a 158.175,158.175 0 0 0 1.50694,-0.73345 l -34.98733,-70.92756 a 79.0875,79.0875 0 0 1 -0.75347,0.36672 z"
+           style="opacity:0.7;fill:#ef553b;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path61" />
+        <g
+           class="slicetext"
+           id="g62">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Atmosphere"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.04568937,0.09387336,-0.09387336,0.04568937,305.22725,530.3788)"
+             id="text61">Atmosphere</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g65">
+        <path
+           class="surface"
+           d="m 273.16234,462.42756 34.98733,70.92756 a 158.175,158.175 0 0 0 1.49908,-0.74937 l -35.73687,-70.55287 a 79.0875,79.0875 0 0 1 -0.74954,0.37468 z"
+           style="opacity:0.7;fill:#ef553b;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path63" />
+        <g
+           class="slicetext"
+           id="g64">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Impact"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.04767475,0.09537108,-0.09537108,0.04767475,307.37481,531.04376)"
+             id="text63">Impact</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g67">
+        <path
+           class="surface"
+           d="m 273.91188,462.05288 35.73687,70.55287 a 158.175,158.175 0 0 0 38.12891,-27.05933 l -54.80133,-57.02321 a 79.0875,79.0875 0 0 1 -19.06445,13.52967 z"
+           style="opacity:0.7;fill:#00cc96;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path65" />
+        <g
+           class="slicetext"
+           id="g66">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Cold, snow &amp; ice"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.43976762,0.61967024,-0.61967024,0.43976762,303.87167,490.19927)"
+             id="text65">Cold, snow &amp; ice</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g69">
+        <path
+           class="surface"
+           d="m 292.97633,448.52321 54.80133,57.02321 a 158.175,158.175 0 0 0 21.53556,-25.6038 l -65.56911,-44.22131 a 79.0875,79.0875 0 0 1 -10.76778,12.8019 z"
+           style="opacity:0.7;fill:#00cc96;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path67" />
+        <g
+           class="slicetext"
+           id="g68">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Rain &amp; flooding"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.63687926,0.53568412,-0.53568412,0.63687926,326.41345,470.79281)"
+             id="text67">Rain &amp; flooding</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g71">
+        <path
+           class="surface"
+           d="m 303.74411,435.72131 65.56911,44.22131 a 158.175,158.175 0 0 0 1.84462,-2.79863 L 304.66642,434.322 a 79.0875,79.0875 0 0 1 -0.92231,1.39931 z"
+           style="opacity:0.7;fill:#00cc96;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path69" />
+        <g
+           class="slicetext"
+           id="g70">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Impact"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.17284156,0.11392276,-0.11392276,0.17284156,365.79146,476.77115)"
+             id="text69">Impact</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g73">
+        <path
+           class="surface"
+           d="m 304.66642,434.322 66.49142,42.82199 a 158.175,158.175 0 0 0 1.78491,-2.83708 l -67.38388,-41.40345 a 79.0875,79.0875 0 0 1 -0.89245,1.41854 z"
+           style="opacity:0.7;fill:#00cc96;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path71" />
+        <g
+           class="slicetext"
+           id="g72">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="River flow"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.1712737,0.10775405,-0.10775405,0.1712737,366.20021,473.16061)"
+             id="text71">River flow</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g75">
+        <path
+           class="surface"
+           d="m 305.55887,432.90346 67.38388,41.40345 a 158.175,158.175 0 0 0 0.8698,-1.43256 l -67.81877,-40.68718 a 79.0875,79.0875 0 0 1 -0.43491,0.71629 z"
+           style="opacity:0.7;fill:#00cc96;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path73" />
+        <g
+           class="slicetext"
+           id="g74">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Drought"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.09071619,0.05507991,-0.05507991,0.09071619,370.75303,472.57646)"
+             id="text73">Drought</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g77">
+        <path
+           class="surface"
+           d="m 305.99378,432.18717 67.81877,40.68718 a 158.175,158.175 0 0 0 0.85458,-1.4417 l -68.24606,-39.96633 a 79.0875,79.0875 0 0 1 -0.42729,0.72085 z"
+           style="opacity:0.7;fill:#00cc96;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path75" />
+        <g
+           class="slicetext"
+           id="g76">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Storm"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.09210645,0.05459682,-0.05459682,0.09210645,372.21356,471.53326)"
+             id="text75">Storm</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g79">
+        <path
+           class="surface"
+           d="m 306.42107,431.46632 68.24606,39.96633 a 158.175,158.175 0 0 0 10.93032,-22.60944 l -73.71122,-28.6616 a 79.0875,79.0875 0 0 1 -5.46516,11.30471 z"
+           style="opacity:0.7;fill:#ab63fa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path77" />
+        <g
+           class="slicetext"
+           id="g78">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Rain &amp; flooding"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.7465593,0.36091713,-0.36091713,0.7465593,343.36685,446.65221)"
+             id="text77">Rain &amp; flooding</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g81">
+        <path
+           class="surface"
+           d="m 311.88623,420.16161 73.71122,28.6616 a 158.175,158.175 0 0 0 4.78829,-14.29739 l -76.10537,-21.51291 a 79.0875,79.0875 0 0 1 -2.39414,7.1487 z"
+           style="opacity:0.7;fill:#ab63fa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path79" />
+        <g
+           class="slicetext"
+           id="g80">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Drought"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.70919783,0.23751479,-0.23751479,0.70919783,368.44605,438.80939)"
+             id="text79">Drought</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g83">
+        <path
+           class="surface"
+           d="m 314.28037,413.01291 76.10537,21.51291 a 158.175,158.175 0 0 0 3.40519,-14.68836 l -77.80796,-14.16873 a 79.0875,79.0875 0 0 1 -1.7026,7.34418 z"
+           style="opacity:0.7;fill:#ab63fa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path81" />
+        <g
+           class="slicetext"
+           id="g82">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Heat"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.81211614,0.18827242,-0.18827242,0.81211614,378.90047,428.11787)"
+             id="text81">Heat</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g85">
+        <path
+           class="surface"
+           d="m 315.98297,405.66873 77.80796,14.16873 a 158.175,158.175 0 0 0 1.67201,-11.60923 l -78.64397,-8.36411 a 79.0875,79.0875 0 0 1 -0.836,5.80461 z"
+           style="opacity:0.7;fill:#ab63fa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path83" />
+        <g
+           class="slicetext"
+           id="g84">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Cold, snow &amp; ice"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.5058716,0.0728577,-0.0728577,0.5058716,368.01211,412.60937)"
+             id="text83">Cold, snow &amp; ice</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g87">
+        <path
+           class="surface"
+           d="m 316.81897,399.86412 78.64397,8.36411 a 158.175,158.175 0 0 0 0.66514,-8.35236 l -78.97654,-4.18794 a 79.0875,79.0875 0 0 1 -0.33257,4.17619 z"
+           style="opacity:0.7;fill:#ab63fa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path85" />
+        <g
+           class="slicetext"
+           id="g86">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Storm"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.4832951,0.03848703,-0.03848703,0.4832951,386.3324,405.56814)"
+             id="text85">Storm</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g89">
+        <path
+           class="surface"
+           d="m 317.15154,395.68793 78.97654,4.18794 a 158.175,158.175 0 0 0 0.14202,-3.34884 l -79.04755,-2.51352 a 79.0875,79.0875 0 0 1 -0.071,1.67442 z"
+           style="opacity:0.7;fill:#ab63fa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path87" />
+        <g
+           class="slicetext"
+           id="g88">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Oceans"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.20656579,0.00875999,-0.00875999,0.20656579,391.44567,398.96557)"
+             id="text87">Oceans</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g91">
+        <path
+           class="surface"
+           d="m 317.22255,394.01351 79.04755,2.51352 a 158.175,158.175 0 0 0 0.071,-3.3511 l -79.08306,-0.83797 a 79.0875,79.0875 0 0 1 -0.0355,1.67555 z"
+           style="opacity:0.7;fill:#ab63fa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path89" />
+        <g
+           class="slicetext"
+           id="g90">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Wildfire"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.20614836,0.00436918,-0.00436918,0.20614836,391.35125,395.70893)"
+             id="text89">Wildfire</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g93">
+        <path
+           class="surface"
+           d="m 317.25806,392.33796 79.08306,0.83797 A 158.175,158.175 0 0 0 396.35,391.5 h -79.0875 a 79.0875,79.0875 0 0 1 -0.004,0.83796 z"
+           style="opacity:0.7;fill:#ab63fa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path91" />
+        <g
+           class="slicetext"
+           id="g92">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Atmosphere"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.10440029,5.5309654e-4,-5.5309654e-4,0.10440029,392.38792,392.80421)"
+             id="text91">Atmosphere</text>
+        </g>
+      </g>
+    </g>
+    <g
+       class="trace sunburst"
+       stroke-linejoin="round"
+       style="opacity:1"
+       id="g139">
+      <g
+         class="slice cursor-pointer"
+         id="g96">
+        <path
+           class="surface"
+           d="m 624.825,391.5 h 79.0875 a 79.0875,79.0875 0 1 0 -36.26667,66.49217 z"
+           style="fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path94" />
+        <g
+           class="slicetext"
+           id="g95">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="More Severe/Likely"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="rotate(-61.390728,630.96235,-323.73714)"
+             id="text94">More Severe/Likely</text>
+        </g>
+      </g>
+      <g
+         class="slice cursor-pointer"
+         id="g98">
+        <path
+           class="surface"
+           d="m 624.825,391.5 42.82083,66.49217 a 79.0875,79.0875 0 0 0 26.61052,-28.62239 z"
+           style="fill:#00cc96;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path96" />
+        <g
+           class="slicetext"
+           id="g97">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Less Severe/Likely"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.37842746,0.35182771,-0.35182771,0.37842746,657.95099,425.59)"
+             id="text96">Less Severe/Likely</text>
+        </g>
+      </g>
+      <g
+         class="slice cursor-pointer"
+         id="g100">
+        <path
+           class="surface"
+           d="m 624.825,391.5 69.43135,37.86978 a 79.0875,79.0875 0 0 0 9.04074,-28.02279 z"
+           style="fill:#ef553b;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path98" />
+        <g
+           class="slicetext"
+           id="g99">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="No human influence"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.43595652,0.14064876,-0.14064876,0.43595652,670.85347,408.59597)"
+             id="text98">No human influence</text>
+        </g>
+      </g>
+      <g
+         class="slice cursor-pointer"
+         id="g102">
+        <path
+           class="surface"
+           d="m 624.825,391.5 78.47209,9.84699 A 79.0875,79.0875 0 0 0 703.9125,391.5 Z"
+           style="fill:#ab63fa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path100" />
+        <g
+           class="slicetext"
+           id="g101">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Insufficient Data"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.33567864,0.02097888,-0.02097888,0.33567864,685.48225,396.86351)"
+             id="text100">Insufficient Data</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g104">
+        <path
+           class="surface"
+           d="M 703.9125,391.5 H 783 A 158.175,158.175 0 0 0 553.45523,250.34163 l 35.68488,70.57918 A 79.0875,79.0875 0 0 1 703.9125,391.5 Z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path102" />
+        <g
+           class="slicetext"
+           id="g103">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Heat"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="translate(686.66696,295.11374)"
+             id="text102">Heat</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g106">
+        <path
+           class="surface"
+           d="m 589.14011,320.92081 -35.68488,-70.57918 a 158.175,158.175 0 0 0 -85.13074,118.20362 l 78.25025,11.47738 a 79.0875,79.0875 0 0 1 42.56537,-59.10182 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path104" />
+        <g
+           class="slicetext"
+           id="g105">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Rain &amp; flooding"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="rotate(-54.238411,567.52918,-349.16099)"
+             id="text104">Rain &amp; flooding</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g108">
+        <path
+           class="surface"
+           d="m 546.57474,380.02263 -78.25025,-11.47738 a 158.175,158.175 0 0 0 16.09219,95.78905 l 70.20416,-36.41715 a 79.0875,79.0875 0 0 1 -8.0461,-47.89452 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path106" />
+        <g
+           class="slicetext"
+           id="g107">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Drought"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="translate(505.18194,416.21626)"
+             id="text106">Drought</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g110">
+        <path
+           class="surface"
+           d="m 554.62084,427.91715 -70.20416,36.41715 a 158.175,158.175 0 0 0 52.01862,58.3396 l 44.19485,-65.58695 a 79.0875,79.0875 0 0 1 -26.00931,-29.1698 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path108" />
+        <g
+           class="slicetext"
+           id="g109">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Compound"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="rotate(-41.721854,891.45718,-470.90324)"
+             id="text108">Compound</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g112">
+        <path
+           class="surface"
+           d="M 580.63015,457.08695 536.4353,522.6739 a 158.175,158.175 0 0 0 47.71595,21.68217 l 20.33688,-76.42804 a 79.0875,79.0875 0 0 1 -23.85798,-10.84108 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path110" />
+        <g
+           class="slicetext"
+           id="g111">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Storm"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="translate(568.6899,519.70463)"
+             id="text110">Storm</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g114">
+        <path
+           class="surface"
+           d="m 604.48813,467.92803 -20.33688,76.42804 a 158.175,158.175 0 0 0 52.18162,4.89975 l -5.75394,-78.87791 a 79.0875,79.0875 0 0 1 -26.0908,-2.44988 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path112" />
+        <g
+           class="slicetext"
+           id="g113">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Wildfire"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="rotate(-84.635762,589.20173,-84.647483)"
+             id="text112">Wildfire</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g116">
+        <path
+           class="surface"
+           d="m 630.57893,470.37791 5.75394,78.87791 a 158.175,158.175 0 0 0 38.62111,-7.73443 l -25.06449,-75.0107 a 79.0875,79.0875 0 0 1 -19.31056,3.86722 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path114" />
+        <g
+           class="slicetext"
+           id="g115">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Impact"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="rotate(78.675497,8.7106916,650.26486)"
+             id="text114">Impact</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g118">
+        <path
+           class="surface"
+           d="m 649.88949,466.51069 25.06449,75.0107 a 158.175,158.175 0 0 0 18.28872,-7.40881 l -34.20885,-71.30629 a 79.0875,79.0875 0 0 1 -9.14436,3.7044 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path116" />
+        <g
+           class="slicetext"
+           id="g117">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Oceans"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="matrix(0.35397753,0.87379799,-0.87379799,0.35397753,671.99767,519.66414)"
+             id="text116">Oceans</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g120">
+        <path
+           class="surface"
+           d="m 659.03385,462.80629 34.20885,71.30629 a 158.175,158.175 0 0 0 11.61788,-6.18078 l -40.01779,-68.2159 a 79.0875,79.0875 0 0 1 -5.80894,3.09039 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path118" />
+        <g
+           class="slicetext"
+           id="g119">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Cold, snow &amp; ice"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="matrix(0.25874176,0.48635121,-0.48635121,0.25874176,683.35039,506.98254)"
+             id="text118">Cold, snow &amp; ice</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g122">
+        <path
+           class="surface"
+           d="m 664.84279,459.7159 40.01779,68.2159 a 158.175,158.175 0 0 0 5.60608,-3.44745 l -42.82083,-66.49218 a 79.0875,79.0875 0 0 1 -2.80304,1.72373 z"
+           style="opacity:0.7;fill:#636efa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path120" />
+        <g
+           class="slicetext"
+           id="g121">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Atmosphere"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#ffffff;fill-opacity:1"
+             transform="matrix(0.18718754,0.30439513,-0.30439513,0.18718754,699.15703,515.55857)"
+             id="text120">Atmosphere</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g124">
+        <path
+           class="surface"
+           d="m 667.64583,457.99217 42.82083,66.49218 a 158.175,158.175 0 0 0 42.71036,-40.5447 l -64.17601,-46.21982 a 79.0875,79.0875 0 0 1 -21.35518,20.27234 z"
+           style="opacity:0.7;fill:#00cc96;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path122" />
+        <g
+           class="slicetext"
+           id="g123">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Cold, snow &amp; ice"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.52314846,0.55109206,-0.55109206,0.52314846,703.84621,479.89256)"
+             id="text122">Cold, snow &amp; ice</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g126">
+        <path
+           class="surface"
+           d="m 689.00101,437.71983 64.17601,46.21982 a 158.175,158.175 0 0 0 7.23983,-10.98917 l -67.79592,-40.72524 a 79.0875,79.0875 0 0 1 -3.61992,5.49459 z"
+           style="opacity:0.7;fill:#00cc96;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path124" />
+        <g
+           class="slicetext"
+           id="g125">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Storm"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.59583854,0.39254725,-0.39254725,0.59583854,743.54084,473.6992)"
+             id="text124">Storm</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g128">
+        <path
+           class="surface"
+           d="m 692.62093,432.22524 67.79592,40.72524 a 158.175,158.175 0 0 0 3.27085,-5.71092 l -69.43135,-37.86978 a 79.0875,79.0875 0 0 1 -1.63542,2.85546 z"
+           style="opacity:0.7;fill:#00cc96;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path126" />
+        <g
+           class="slicetext"
+           id="g127">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Compound"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.31647867,0.18125876,-0.18125876,0.31647867,750.56342,465.4763)"
+             id="text126">Compound</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g130">
+        <path
+           class="surface"
+           d="m 694.25635,429.36978 69.43135,37.86978 a 158.175,158.175 0 0 0 12.6498,-30.31608 l -75.75625,-22.71174 a 79.0875,79.0875 0 0 1 -6.3249,15.15804 z"
+           style="opacity:0.7;fill:#ef553b;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path128" />
+        <g
+           class="slicetext"
+           id="g129">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Rain &amp; flooding"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.7680305,0.32047126,-0.32047126,0.7680305,732.75334,440.74275)"
+             id="text128">Rain &amp; flooding</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g132">
+        <path
+           class="surface"
+           d="m 700.58125,414.21174 75.75625,22.71174 a 158.175,158.175 0 0 0 3.25146,-12.75168 l -77.38198,-16.3359 a 79.0875,79.0875 0 0 1 -1.62573,6.37584 z"
+           style="opacity:0.7;fill:#ef553b;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path130" />
+        <g
+           class="slicetext"
+           id="g131">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Cold, snow &amp; ice"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.53381446,0.1361136,-0.1361136,0.53381446,749.61704,425.97294)"
+             id="text130">Cold, snow &amp; ice</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g134">
+        <path
+           class="surface"
+           d="m 702.20698,407.8359 77.38198,16.3359 a 158.175,158.175 0 0 0 2.18023,-12.97782 l -78.4721,-9.84699 a 79.0875,79.0875 0 0 1 -1.09011,6.48891 z"
+           style="opacity:0.7;fill:#ef553b;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path132" />
+        <g
+           class="slicetext"
+           id="g133">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Drought"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.66432156,0.1116035,-0.1116035,0.66432156,762.87218,417.87906)"
+             id="text132">Drought</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g136">
+        <path
+           class="surface"
+           d="m 703.29709,401.34699 78.4721,9.84699 a 158.175,158.175 0 0 0 1.0939,-13.11414 l -79.01905,-3.28992 a 79.0875,79.0875 0 0 1 -0.54695,6.55707 z"
+           style="opacity:0.7;fill:#ab63fa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path134" />
+        <g
+           class="slicetext"
+           id="g135">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Drought"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.67129947,0.05599554,-0.05599554,0.67129947,764.58718,406.3126)"
+             id="text134">Drought</text>
+        </g>
+      </g>
+      <g
+         class="slice"
+         id="g138">
+        <path
+           class="surface"
+           d="m 703.84404,394.78992 79.01905,3.28992 A 158.175,158.175 0 0 0 783,391.5 h -79.0875 a 79.0875,79.0875 0 0 1 -0.0685,3.28992 z"
+           style="opacity:0.7;fill:#ab63fa;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+           id="path136" />
+        <g
+           class="slicetext"
+           id="g137">
+          <text
+             data-notex="1"
+             class="slicetext"
+             text-anchor="middle"
+             data-unformatted="Storm"
+             data-math="N"
+             x="0"
+             y="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-size:12px;font-family:'Open Sans', verdana, arial, sans-serif;white-space:pre;fill:#444444;fill-opacity:1"
+             transform="matrix(0.39060488,0.0081278,-0.0081278,0.39060488,775.38684,396.45654)"
+             id="text136">Storm</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     class="glimages"
+     id="g141"
+     transform="translate(-65.711876,-146.84666)" />
+  <text
+     xml:space="preserve"
+     style="font-weight:500;font-size:20.5221px;font-family:Geo;-inkscape-font-specification:'Geo Medium';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#010000;fill-opacity:1;stroke:#ffffff;stroke-width:0.0961974"
+     x="20.158957"
+     y="40.381828"
+     id="text141"><tspan
+       sodipodi:role="line"
+       id="tspan141"
+       x="20.158957"
+       y="40.381828"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.5221px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';fill:#010000;fill-opacity:1;stroke-width:0.0961974">Classifications for the effect of climate change on extreme weather  —</tspan><tspan
+       sodipodi:role="line"
+       x="20.158957"
+       y="66.381897"
+       id="tspan142"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.5221px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';fill:#010000;fill-opacity:1;stroke-width:0.0961974"><tspan
+   style="font-size:20.5221px;fill:#6f6fff;fill-opacity:1;stroke-width:0.0961974"
+   id="tspan143">more severe</tspan>, <tspan
+   style="font-size:20.5221px;fill:#00b400;fill-opacity:1;stroke-width:0.0961974"
+   id="tspan144">less severe</tspan>, <tspan
+   style="font-size:20.5221px;fill:#ff3535;fill-opacity:1;stroke-width:0.0961974"
+   id="tspan145">no human influence</tspan>, and <tspan
+   style="font-size:20.5221px;fill:#ab63fa;fill-opacity:1;stroke-width:0.0961974"
+   id="tspan146">insufficient data</tspan>.</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.3333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ab63fa;fill-opacity:1;stroke:#ffffff;stroke-width:0.1"
+     x="120.47111"
+     y="454.40479"
+     id="text147"><tspan
+       sodipodi:role="line"
+       id="tspan147"
+       x="120.47111"
+       y="454.40479"
+       style="fill:#000000">Event Focus</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.3333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ab63fa;fill-opacity:1;stroke:#ffffff;stroke-width:0.1"
+     x="504.79379"
+     y="454.40479"
+     id="text148"><tspan
+       sodipodi:role="line"
+       id="tspan148"
+       x="504.79379"
+       y="454.40479"
+       style="fill:#000000">Trend Focus</tspan></text>
+  <rect
+     style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:0.0953058"
+     id="rect148"
+     width="743.88263"
+     height="478.27292"
+     x="0.0476529"
+     y="0.0476529" />
+</svg>
