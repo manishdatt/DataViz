@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Manish Datt">
-<meta name="dcterms.date" content="2025-08-26">
-<meta name="description" content="Keys for Billboard hits over the years.">
+<meta name="dcterms.date" content="2025-10-07">
+<meta name="description" content="Frequency of wins by different teams.">
 
-<title>Billboard Hot 100 Number Ones – DViz.manishdatt.com</title>
+<title>EuroLeague Basketball – DViz.manishdatt.com</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -144,14 +144,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Billboard Hot 100 Number Ones</h1>
+      <h1 class="title">EuroLeague Basketball</h1>
                   <div>
         <div class="description">
-          Keys for Billboard hits over the years.
+          Frequency of wins by different teams.
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Swarmplot</div>
+                <div class="quarto-category">Custom marker</div>
                 <div class="quarto-category">PyDyTuesday</div>
                 <div class="quarto-category">TidyTuesday</div>
               </div>
@@ -171,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">August 26, 2025</p>
+        <p class="date">October 7, 2025</p>
       </div>
     </div>
     
@@ -190,19 +190,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="tidytuesday-dataset-of-2025-08-26" class="level1">
-<h1>TidyTuesday dataset of <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-08-26">2025-08-26</a></h1>
-<div id="0e74c6ce-90cf-4b4a-b747-f0b1f57e4d73" class="cell" data-execution_count="1">
+<section id="tidytuesday-dataset-of" class="level1">
+<h1>TidyTuesday dataset of <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-10-07">October 7, 2025</a></h1>
+<div id="c465b26c-d6f7-4634-8145-f7cc2f5e82e5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.image <span class="im">as</span> mpimg</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.offsetbox <span class="im">import</span> OffsetImage, AnnotationBbox</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> flagpy <span class="im">as</span> fp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="1e56149b-84aa-4dc9-9b28-ac63c71f5abe" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>billboard <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-08-26/billboard.csv'</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>topics <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-08-26/topics.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="9314f5ae-c2f4-4308-9311-e22630114046" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>euroleague_basketball <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-10-07/euroleague_basketball.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c5e6c21e-1cd1-4976-a16a-e5ffa4a53007" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>billboard</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="947a4032-ddb2-4ce4-9fa7-3667d1ae92be" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>euroleague_basketball</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
@@ -211,432 +213,427 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">song</th>
-<th data-quarto-table-cell-role="th">artist</th>
-<th data-quarto-table-cell-role="th">date</th>
-<th data-quarto-table-cell-role="th">weeks_at_number_one</th>
-<th data-quarto-table-cell-role="th">non_consecutive</th>
-<th data-quarto-table-cell-role="th">rating_1</th>
-<th data-quarto-table-cell-role="th">rating_2</th>
-<th data-quarto-table-cell-role="th">rating_3</th>
-<th data-quarto-table-cell-role="th">overall_rating</th>
-<th data-quarto-table-cell-role="th">divisiveness</th>
-<th data-quarto-table-cell-role="th">...</th>
-<th data-quarto-table-cell-role="th">featured_in_a_then_contemporary_play</th>
-<th data-quarto-table-cell-role="th">written_for_a_film</th>
-<th data-quarto-table-cell-role="th">featured_in_a_then_contemporary_film</th>
-<th data-quarto-table-cell-role="th">written_for_a_t_v_show</th>
-<th data-quarto-table-cell-role="th">featured_in_a_then_contemporary_t_v_show</th>
-<th data-quarto-table-cell-role="th">associated_with_dance</th>
-<th data-quarto-table-cell-role="th">topped_the_charts_by_multiple_artist</th>
-<th data-quarto-table-cell-role="th">double_a_side</th>
-<th data-quarto-table-cell-role="th">eurovision_entry</th>
-<th data-quarto-table-cell-role="th">u_s_artwork</th>
+<th data-quarto-table-cell-role="th">Team</th>
+<th data-quarto-table-cell-role="th">Home city</th>
+<th data-quarto-table-cell-role="th">Arena</th>
+<th data-quarto-table-cell-role="th">Capacity</th>
+<th data-quarto-table-cell-role="th">Last season</th>
+<th data-quarto-table-cell-role="th">Country</th>
+<th data-quarto-table-cell-role="th">FinalFour_Appearances</th>
+<th data-quarto-table-cell-role="th">Titles_Won</th>
+<th data-quarto-table-cell-role="th">Years_of_FinalFour_Appearances</th>
+<th data-quarto-table-cell-role="th">Years_of_Titles_Won</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>Poor Little Fool</td>
-<td>Ricky Nelson</td>
-<td>1958-08-04T00:00:00Z</td>
-<td>2</td>
-<td>0</td>
-<td>4</td>
+<td>Anadolu Efes</td>
+<td>Istanbul</td>
+<td>Basketball Development Center</td>
+<td>10,000</td>
+<td>6th</td>
+<td>Turkey</td>
 <td>5</td>
-<td>3</td>
-<td>4.000000</td>
-<td>1.333333</td>
-<td>...</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>Cannot Locate</td>
+<td>2</td>
+<td>2000, 2001, 2019, 2021, 2022</td>
+<td>2021, 2022</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>Nel Blu Dipinto Di Blu</td>
-<td>Domenico Modugno</td>
-<td>1958-08-18T00:00:00Z</td>
-<td>5</td>
-<td>1</td>
-<td>7</td>
-<td>7</td>
-<td>5</td>
-<td>6.333333</td>
-<td>1.333333</td>
-<td>...</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
+<td>Barcelona</td>
+<td>Barcelona</td>
+<td>Palau Blaugrana</td>
+<td>7,585</td>
+<td>5th</td>
+<td>Spain</td>
 <td>0</td>
 <td>0</td>
 <td>NaN</td>
-<td>1</td>
-<td>Cannot Locate</td>
+<td>NaN</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>Little Star</td>
-<td>The Elegants</td>
-<td>1958-08-25T00:00:00Z</td>
-<td>1</td>
-<td>0</td>
-<td>5</td>
-<td>6</td>
-<td>6</td>
-<td>5.666667</td>
-<td>0.666667</td>
-<td>...</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
+<td>Baskonia</td>
+<td>Vitoria-Gasteiz</td>
+<td>Buesa Arena</td>
+<td>15,431</td>
+<td>14th</td>
+<td>Spain</td>
 <td>0</td>
 <td>0</td>
 <td>NaN</td>
-<td>0</td>
-<td>Cannot Locate</td>
+<td>NaN</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>It's All in the Game</td>
-<td>Tommy Edwards</td>
-<td>1958-09-29T00:00:00Z</td>
-<td>6</td>
-<td>0</td>
-<td>3</td>
-<td>3</td>
-<td>7</td>
-<td>4.333333</td>
-<td>2.666667</td>
-<td>...</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
+<td>Bayern Munich</td>
+<td>Munich</td>
+<td>SAP Garden</td>
+<td>11,500</td>
+<td>9th</td>
+<td>Germany</td>
 <td>0</td>
 <td>0</td>
 <td>NaN</td>
-<td>0</td>
-<td>Cannot Locate</td>
+<td>NaN</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>It's Only Make Believe</td>
-<td>Conway Twitty</td>
-<td>1958-11-10T00:00:00Z</td>
+<td>Crvena zvezda Meridianbet</td>
+<td>Belgrade</td>
+<td>Belgrade Arena</td>
+<td>18,386</td>
+<td>10th</td>
+<td>Serbia</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Dubai Basketball</td>
+<td>Dubai</td>
+<td>Coca-Cola Arena</td>
+<td>17,000</td>
+<td>NaN</td>
+<td>United Arab Emirates</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Fenerbahce</td>
+<td>Istanbul</td>
+<td>Ülker Sports and Event Hall</td>
+<td>13,000</td>
+<td>1st</td>
+<td>Turkey</td>
+<td>7</td>
 <td>2</td>
-<td>1</td>
-<td>7</td>
-<td>8</td>
-<td>9</td>
-<td>8.000000</td>
-<td>1.333333</td>
-<td>...</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>Cannot Locate</td>
+<td>2015, 2016, 2017, 2018, 2019, 2024, 2025</td>
+<td>2017, 2025</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
+<td data-quarto-table-cell-role="th">7</td>
+<td>Hapoel IBI Tel Aviv</td>
+<td>Tel Aviv</td>
+<td>Arena 8888 Sofia \ Arena Botevgrad \ Menora ...</td>
+<td>12,373</td>
+<td>(EuroCup)</td>
+<td>Israel</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1172</td>
-<td>Please Please Please</td>
-<td>Sabrina Carpenter</td>
-<td>2024-06-29T00:00:00Z</td>
-<td>1</td>
-<td>0</td>
-<td>8</td>
-<td>7</td>
-<td>8</td>
-<td>7.666667</td>
-<td>0.666667</td>
-<td>...</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
+<td data-quarto-table-cell-role="th">8</td>
+<td>LDLC ASVEL</td>
+<td>Villeurbanne</td>
+<td>LDLC Arena, Astroballe</td>
+<td>12,523, 5,556</td>
+<td>15th</td>
+<td>France</td>
 <td>0</td>
 <td>0</td>
 <td>NaN</td>
-<td>0</td>
-<td>Artist Photograph</td>
+<td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1173</td>
-<td>A Bar Song (Tipsy)</td>
-<td>Shaboozey</td>
-<td>2024-07-13T00:00:00Z</td>
-<td>19</td>
-<td>1</td>
-<td>6</td>
+<td data-quarto-table-cell-role="th">9</td>
+<td>Maccabi Rapyd Tel Aviv</td>
+<td>Tel Aviv</td>
+<td>Menora Mivtachim Arena</td>
+<td>10,383</td>
+<td>16th</td>
+<td>Israel</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>Monaco</td>
+<td>Monaco</td>
+<td>Salle Gaston Médecin</td>
+<td>5,000</td>
+<td>2nd</td>
+<td>Monaco</td>
+<td>2</td>
+<td>0</td>
+<td>2023, 2025</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>Olimpia Milano</td>
+<td>Milan</td>
+<td>Unipol Forum</td>
+<td>12,700</td>
+<td>11th</td>
+<td>Italy</td>
 <td>4</td>
-<td>9</td>
-<td>6.333333</td>
-<td>3.333333</td>
-<td>...</td>
+<td>0</td>
+<td>1992, 2021</td>
 <td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>Artist Photograph;Photograph Related to Song T...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1174</td>
-<td>Love Somebody</td>
-<td>Morgan Wallen</td>
-<td>2024-11-02T00:00:00Z</td>
-<td>1</td>
-<td>0</td>
+<td data-quarto-table-cell-role="th">12</td>
+<td>Olympiacos</td>
+<td>Piraeus</td>
+<td>Peace and Friendship Stadium</td>
+<td>12,300</td>
+<td>3rd</td>
+<td>Greece</td>
+<td>14</td>
 <td>3</td>
-<td>5</td>
-<td>5</td>
-<td>4.333333</td>
-<td>1.333333</td>
-<td>...</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>Photograph Not Related to Song</td>
+<td>1994, 1995, 1997, 1999, 2009, 2010, 2012, 2013...</td>
+<td>1997, 2012, 2013</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1175</td>
-<td>squabble up</td>
-<td>Kendrick Lamar</td>
-<td>2024-12-07T00:00:00Z</td>
+<td data-quarto-table-cell-role="th">13</td>
+<td>Panathinaikos</td>
+<td>Athens</td>
+<td>Telekom Center Athens</td>
+<td>18,300</td>
+<td>4th</td>
+<td>Greece</td>
+<td>13</td>
+<td>7</td>
+<td>1994, 1995, 1996, 2000, 2001, 2002, 2005, 2007...</td>
+<td>1996, 2000, 2002, 2007, 2009, 2011, 2024</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>Paris Basketball</td>
+<td>Paris</td>
+<td>Adidas Arena, Accor Arena</td>
+<td>8,000, 15,705</td>
+<td>8th</td>
+<td>France</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">15</td>
+<td>Partizan</td>
+<td>Belgrade</td>
+<td>Belgrade Arena</td>
+<td>18,386</td>
+<td>12th</td>
+<td>Serbia</td>
+<td>3</td>
 <td>1</td>
+<td>1988, 1992, 1998, 2010</td>
+<td>1992</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">16</td>
+<td>Real Madrid</td>
+<td>Madrid</td>
+<td>Movistar Arena</td>
+<td>15,000</td>
+<td>7th</td>
+<td>Spain</td>
+<td>12</td>
+<td>6</td>
+<td>1995, 1996, 2011, 2013, 2014, 2015, 2017, 2018...</td>
+<td>1995, 2015, 2018, 2023</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">17</td>
+<td>Valencia Basket</td>
+<td>Valencia</td>
+<td>Roig Arena</td>
+<td>15,600</td>
+<td>(EuroCup)</td>
+<td>Spain</td>
 <td>0</td>
-<td>9</td>
-<td>10</td>
-<td>9</td>
-<td>9.333333</td>
-<td>0.666667</td>
-<td>...</td>
+<td>0</td>
 <td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">1176</td>
-<td>Die with a Smile</td>
-<td>Bruno Mars &amp; Lady Gaga</td>
-<td>2025-01-11T00:00:00Z</td>
+<td data-quarto-table-cell-role="th">18</td>
+<td>Virtus Olidata Bologna</td>
+<td>Bologna</td>
+<td>Virtus Arena, PalaDozza</td>
+<td>9,980, 5,570</td>
+<td>17th</td>
+<td>Italy</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">19</td>
+<td>Zalgiris</td>
+<td>Kaunas</td>
+<td>Žalgirio Arena</td>
+<td>15,415</td>
+<td>13th</td>
+<td>Lithuania</td>
 <td>2</td>
-<td>0</td>
-<td>8</td>
-<td>7</td>
-<td>4</td>
-<td>6.333333</td>
-<td>2.666667</td>
-<td>...</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>0</td>
-<td>NaN</td>
-<td>0</td>
-<td>Artist Photograph;Text</td>
+<td>1</td>
+<td>1999, 2018</td>
+<td>1999</td>
 </tr>
 </tbody>
 </table>
 
-<p>1177 rows × 105 columns</p>
 </div>
 </div>
 </div>
-<div id="c6bd1bfd-eb26-4de6-992b-0cc42372f2c8" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>billboard.columns.values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="14532563-26f3-41b1-b92c-9029d39aa7da" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>countries <span class="op">=</span> euroleague_basketball[<span class="st">'Country'</span>].unique()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>countries</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>array(['song', 'artist', 'date', 'weeks_at_number_one', 'non_consecutive',
-       'rating_1', 'rating_2', 'rating_3', 'overall_rating',
-       'divisiveness', 'label', 'parent_label', 'cdr_genre', 'cdr_style',
-       'discogs_genre', 'discogs_style', 'artist_structure',
-       'featured_artists', 'multiple_lead_vocalists',
-       'group_named_after_non_lead_singer', 'talent_contestant',
-       'posthumous', 'artist_place_of_origin', 'front_person_age',
-       'artist_male', 'artist_white', 'artist_black', 'songwriters',
-       'songwriters_w_o_interpolation_sample_credits', 'songwriter_male',
-       'songwriter_white', 'artist_is_a_songwriter',
-       'artist_is_only_songwriter', 'producers', 'producer_male',
-       'producer_white', 'artist_is_a_producer',
-       'artist_is_only_producer', 'songwriter_is_a_producer',
-       'time_signature', 'keys', 'simplified_key', 'bpm', 'energy',
-       'danceability', 'happiness', 'loudness_d_b', 'acousticness',
-       'vocally_based', 'bass_based', 'guitar_based',
-       'piano_keyboard_based', 'orchestral_strings', 'horns_winds',
-       'accordion', 'banjo', 'bongos', 'clarinet', 'cowbell',
-       'falsetto_vocal', 'flute_piccolo', 'handclaps_snaps', 'harmonica',
-       'human_whistling', 'kazoo', 'mandolin', 'pedal_lap_steel',
-       'ocarina', 'saxophone', 'sitar', 'trumpet', 'ukulele', 'violin',
-       'sound_effects', 'song_structure', 'rap_verse_in_a_non_rap_song',
-       'length_sec', 'instrumental', 'instrumental_length_sec',
-       'intro_length_sec', 'vocal_introduction',
-       'free_time_vocal_introduction', 'fade_out', 'live', 'cover',
-       'sample', 'interpolation', 'inspired_by_a_different_song',
-       'lyrics', 'lyrical_topic', 'lyrical_narrative', 'spoken_word',
-       'explicit', 'foreign_language', 'written_for_a_play',
-       'featured_in_a_then_contemporary_play', 'written_for_a_film',
-       'featured_in_a_then_contemporary_film', 'written_for_a_t_v_show',
-       'featured_in_a_then_contemporary_t_v_show',
-       'associated_with_dance', 'topped_the_charts_by_multiple_artist',
-       'double_a_side', 'eurovision_entry', 'u_s_artwork'], dtype=object)</code></pre>
+<pre><code>array(['Turkey', 'Spain', 'Germany', 'Serbia', 'United Arab Emirates',
+       'Israel', 'France', 'Monaco', 'Italy', 'Greece', 'Lithuania'],
+      dtype=object)</code></pre>
 </div>
 </div>
-<div id="f18236e1-42dd-4f06-8c2f-da044e9cab3e" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>billboard[<span class="st">'date'</span>] <span class="op">=</span> pd.to_datetime(billboard[<span class="st">'date'</span>])</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># add a new  col date2 having three categories Before 75, 75-2000, After 2000</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>billboard[<span class="st">'date2'</span>] <span class="op">=</span> pd.cut(billboard[<span class="st">'date'</span>].dt.year, bins<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1975</span>, <span class="dv">2000</span>, <span class="dv">2025</span>], labels<span class="op">=</span>[<span class="st">'Before 1975'</span>, <span class="st">'1975-2000'</span>, <span class="st">'After 2000'</span>])</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>billboard[<span class="st">'date2'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>date2
-1975-2000      484
-Before 1975    383
-After 2000     310
-Name: count, dtype: int64</code></pre>
+<div id="1b41aeb7-164c-475e-8534-028e71030315" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># save flag for each country</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> country <span class="kw">in</span> countries:</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> country<span class="op">==</span><span class="st">'United Arab Emirates'</span>:</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    img <span class="op">=</span> fp.get_flag_img(country)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    img.save(<span class="ss">f'</span><span class="sc">{</span>country<span class="sc">}</span><span class="ss">_flag.png'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div id="35f1c883-90ee-4a2b-a09f-ff14f9284e7a" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>billboard[<span class="st">'simplified_key_mod'</span>] <span class="op">=</span> billboard[<span class="st">'simplified_key'</span>].replace(<span class="st">'Multiple Keys'</span>, <span class="st">'multi'</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sk_values <span class="op">=</span> billboard[<span class="st">'simplified_key_mod'</span>].value_counts()</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>sk_values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="4b3290f7-6a26-471d-add0-7b52175edae8" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_grp_team <span class="op">=</span> (</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>            euroleague_basketball.groupby([<span class="st">'Country'</span>,<span class="st">'Team'</span>])</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>            .agg({<span class="st">'Titles_Won'</span>: <span class="st">'sum'</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'Years_of_Titles_Won'</span>: <span class="kw">lambda</span> x: <span class="st">', '</span>.join(x.dropna()),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                  })</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>            .sort_values(by<span class="op">=</span><span class="st">'Titles_Won'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>            .reset_index()</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>df_grp_team <span class="op">=</span> df_grp_team[df_grp_team[<span class="st">'Titles_Won'</span>] <span class="op">&gt;</span> <span class="dv">0</span>]</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>df_grp_team</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>simplified_key_mod
-C        120
-multi     96
-G         83
-F         76
-D         70
-E         69
-A         67
-Db        57
-Ab        49
-Bb        48
-Eb        42
-Am        40
-Fm        34
-Cm        32
-Gm        31
-Dbm       29
-Dm        29
-Gb        29
-B         29
-Bbm       28
-Em        27
-Ebm       26
-Bm        25
-Gbm       21
-Abm       20
-Name: count, dtype: int64</code></pre>
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Country</th>
+<th data-quarto-table-cell-role="th">Team</th>
+<th data-quarto-table-cell-role="th">Titles_Won</th>
+<th data-quarto-table-cell-role="th">Years_of_Titles_Won</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Greece</td>
+<td>Panathinaikos</td>
+<td>7</td>
+<td>1996, 2000, 2002, 2007, 2009, 2011, 2024</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Spain</td>
+<td>Real Madrid</td>
+<td>6</td>
+<td>1995, 2015, 2018, 2023</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Greece</td>
+<td>Olympiacos</td>
+<td>3</td>
+<td>1997, 2012, 2013</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Turkey</td>
+<td>Fenerbahce</td>
+<td>2</td>
+<td>2017, 2025</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Turkey</td>
+<td>Anadolu Efes</td>
+<td>2</td>
+<td>2021, 2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Serbia</td>
+<td>Partizan</td>
+<td>1</td>
+<td>1992</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>Lithuania</td>
+<td>Zalgiris</td>
+<td>1</td>
+<td>1999</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
-<div id="1016c208-61e6-4742-81eb-437bee59796c" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>sns.swarmplot(data<span class="op">=</span>billboard, x<span class="op">=</span><span class="st">'date2'</span>, y<span class="op">=</span><span class="st">'simplified_key_mod'</span>, hue<span class="op">=</span><span class="st">'weeks_at_number_one'</span>, <span class="op">\</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>ax<span class="op">=</span>ax, alpha<span class="op">=</span><span class="fl">0.75</span>)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">'lower center'</span>, ncol<span class="op">=</span><span class="dv">6</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.2</span>), <span class="op">\</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>frameon<span class="op">=</span><span class="va">False</span>, title<span class="op">=</span><span class="st">""</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="op">-</span><span class="fl">0.55</span>,<span class="fl">29.4</span>, <span class="st">"Weeks at Number One →"</span>)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>sns.despine(bottom<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">'x'</span>, which<span class="op">=</span><span class="st">'both'</span>, length<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">''</span>)</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Key (simplified)'</span>)</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Changing key preference over the years in Billboard hits."</span>, fontfamily<span class="op">=</span><span class="st">'serif'</span>, <span class="op">\</span></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>         fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'billboard_hits.png'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="plotting" class="level2">
+<h2 class="anchored" data-anchor-id="plotting">Plotting</h2>
+<div id="d21ace37-1f61-48b5-8b78-f2462e037b2b" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span> <span class="st">'Segoe UI Emoji'</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="ca1e04ff-785b-49c7-aace-245b5552ffd4" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>items <span class="op">=</span> df_grp_team[<span class="st">'Years_of_Titles_Won'</span>].to_list()</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> comma_newline(s):</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    parts <span class="op">=</span> [p.strip() <span class="cf">for</span> p <span class="kw">in</span> s.split(<span class="st">','</span>)]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    separators <span class="op">=</span> [<span class="st">','</span> <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">'</span><span class="ch">\n</span><span class="st">'</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(parts) <span class="op">-</span> <span class="dv">1</span>)]</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">''</span>.join(p <span class="op">+</span> sep <span class="cf">for</span> p, sep <span class="kw">in</span> <span class="bu">zip</span>(parts, separators)) <span class="op">+</span> parts[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#print(items)</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>year_won <span class="op">=</span> [comma_newline(s) <span class="cf">for</span> s <span class="kw">in</span> items]</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#print(year_won)</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">3</span>))<span class="co">#, subplot_kw=dict(polar=True))</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>plt.scatter(df_grp_team[<span class="st">'Team'</span>],[<span class="dv">1</span>]<span class="op">*</span><span class="bu">len</span>(df_grp_team[<span class="st">'Titles_Won'</span>]), s<span class="op">=</span>df_grp_team[<span class="st">'Titles_Won'</span>]<span class="op">*</span><span class="dv">1500</span>, <span class="op">\</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">'orange'</span>, alpha<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ind, (x, y, z) <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">zip</span>(df_grp_team[<span class="st">'Team'</span>],[<span class="dv">1</span>]<span class="op">*</span><span class="bu">len</span>(df_grp_team[<span class="st">'Titles_Won'</span>]), year_won)):</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    plt.text(x,y,z, fontsize<span class="op">=</span><span class="dv">9</span>, ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'top'</span>, color<span class="op">=</span><span class="st">'black'</span>, family<span class="op">=</span><span class="st">'monospace'</span>)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    plt.text(x, y,<span class="st">'</span><span class="ch">\U0001F3C0</span><span class="st">'</span>, fontsize<span class="op">=</span>(df_grp_team[<span class="st">'Titles_Won'</span>][ind]<span class="op">*</span><span class="dv">10</span>)<span class="op">+</span><span class="dv">30</span>, ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'center'</span>,<span class="op">\</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">'orange'</span>,zorder<span class="op">=</span><span class="dv">1</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    plt.text(x, y<span class="op">-</span><span class="fl">0.18</span>,x, fontsize<span class="op">=</span><span class="dv">12</span>, ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'center'</span>, color<span class="op">=</span><span class="st">'#333333'</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    img <span class="op">=</span> mpimg.imread(<span class="ss">f'</span><span class="sc">{</span>df_grp_team[<span class="st">"Country"</span>][ind]<span class="sc">}</span><span class="ss">_flag.png'</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    imagebox <span class="op">=</span> OffsetImage(img, zoom<span class="op">=</span><span class="fl">0.3</span>)  </span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co">#    ab = AnnotationBbox(imagebox, (x, y-0.26), frameon=True, bboxprops=dict(edgecolor='lightgray'), zorder=2)  # Higher zorder</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    ab <span class="op">=</span> AnnotationBbox(imagebox, (x, y<span class="op">-</span><span class="fl">0.26</span>), frameon<span class="op">=</span><span class="va">False</span>, zorder<span class="op">=</span><span class="dv">2</span>)  <span class="co"># Higher zorder</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    ax.add_artist(ab)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="fl">0.75</span>,<span class="fl">6.5</span>)</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="fl">0.70</span>,<span class="fl">1.2</span>)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"EuroLeague Basketball Champions"</span>, fontsize<span class="op">=</span><span class="dv">20</span>, family<span class="op">=</span><span class="st">'Serif'</span>, color<span class="op">=</span><span class="st">'#333333'</span>)</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>fig.patch.set_facecolor(<span class="st">'#FFFDD0'</span>)</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"euro_bb.png"</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">"tight"</span>)</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Billboard_Hits_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="Euroleague_basketball_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="fab2220d-f9f1-4ccd-a9d0-a39024b2673c" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(billboard[[<span class="st">'bpm'</span>, <span class="st">'energy'</span>,<span class="st">'danceability'</span>, <span class="st">'happiness'</span>,<span class="st">'weeks_at_number_one'</span>]], hue<span class="op">=</span><span class="st">'weeks_at_number_one'</span>,<span class="op">\</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>corner<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Billboard_Hits_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="update" class="level2">
-<h2 class="anchored" data-anchor-id="update">Update</h2>
-<p>A revised visualization for this data was submitted to Plotnine contest 2025 (<a href="https://github.com/manishdatt/PN2025">Repo</a>).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://raw.githubusercontent.com/manishdatt/PN2025/refs/heads/main/billboard_plot.png" class="img-fluid figure-img"></p>
-<figcaption>Plot</figcaption>
-</figure>
-</div>
+<p>In the data, Real Madrid has six wins but only four years are given.</p>
 
 
 </section>
