@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Manish Datt">
+<meta name="dcterms.date" content="2025-10-14">
+<meta name="description" content="Food insecurity in the world.">
+
+<title>FAO’s Suite of Food Security Indicators – DViz.manishdatt.com</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-e83117e711fad372bcb8c8022997a9a8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">DViz.manishdatt.com</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://manishdatt.com/"> <i class="bi bi-house-door" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://in.linkedin.com/in/manishdatt"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/dr_manishdatt"> <i class="bi bi-twitter-x" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://bsky.app/profile/manishdatt.com"> 
+<span class="menu-text"><i class="fa-brands fa-bluesky fa-xl" aria-label="bluesky"></i></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">FAO’s Suite of Food Security Indicators</h1>
+                  <div>
+        <div class="description">
+          Food insecurity in the world.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Stripplot</div>
+                <div class="quarto-category">PyDyTuesday</div>
+                <div class="quarto-category">TidyTuesday</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Manish Datt </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 14, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="tidytuesday-dataset-of" class="level1">
+<h1>TidyTuesday dataset of <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-10-14">October 14, 2025</a></h1>
+<div id="c465b26c-d6f7-4634-8145-f7cc2f5e82e5" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> textwrap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="c274be52-5c57-4cb2-85b0-13c19667e9b4" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>food_security <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-10-14/food_security.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="9d221ef2-126d-4ea9-9519-dd0a0000dbe9" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>food_security</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Year_Start</th>
+<th data-quarto-table-cell-role="th">Year_End</th>
+<th data-quarto-table-cell-role="th">Area</th>
+<th data-quarto-table-cell-role="th">Item</th>
+<th data-quarto-table-cell-role="th">Unit</th>
+<th data-quarto-table-cell-role="th">Value</th>
+<th data-quarto-table-cell-role="th">CI_Lower</th>
+<th data-quarto-table-cell-role="th">CI_Upper</th>
+<th data-quarto-table-cell-role="th">Flag</th>
+<th data-quarto-table-cell-role="th">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2005</td>
+<td>2007</td>
+<td>Afghanistan</td>
+<td>Average dietary energy supply adequacy (percen...</td>
+<td>%</td>
+<td>97.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2006</td>
+<td>2008</td>
+<td>Afghanistan</td>
+<td>Average dietary energy supply adequacy (percen...</td>
+<td>%</td>
+<td>99.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2007</td>
+<td>2009</td>
+<td>Afghanistan</td>
+<td>Average dietary energy supply adequacy (percen...</td>
+<td>%</td>
+<td>102.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2008</td>
+<td>2010</td>
+<td>Afghanistan</td>
+<td>Average dietary energy supply adequacy (percen...</td>
+<td>%</td>
+<td>104.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2009</td>
+<td>2011</td>
+<td>Afghanistan</td>
+<td>Average dietary energy supply adequacy (percen...</td>
+<td>%</td>
+<td>105.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">171227</td>
+<td>2016</td>
+<td>2018</td>
+<td>Upper-middle-income economies</td>
+<td>Average fat supply (g/cap/day) (3-year average)</td>
+<td>g/cap/d</td>
+<td>89.1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">171228</td>
+<td>2017</td>
+<td>2019</td>
+<td>Upper-middle-income economies</td>
+<td>Average fat supply (g/cap/day) (3-year average)</td>
+<td>g/cap/d</td>
+<td>90.8</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">171229</td>
+<td>2018</td>
+<td>2020</td>
+<td>Upper-middle-income economies</td>
+<td>Average fat supply (g/cap/day) (3-year average)</td>
+<td>g/cap/d</td>
+<td>92.5</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">171230</td>
+<td>2019</td>
+<td>2021</td>
+<td>Upper-middle-income economies</td>
+<td>Average fat supply (g/cap/day) (3-year average)</td>
+<td>g/cap/d</td>
+<td>95.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">171231</td>
+<td>2020</td>
+<td>2022</td>
+<td>Upper-middle-income economies</td>
+<td>Average fat supply (g/cap/day) (3-year average)</td>
+<td>g/cap/d</td>
+<td>96.5</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+<p>171232 rows × 10 columns</p>
+</div>
+</div>
+</div>
+<div id="6888dceb-1916-476e-bf23-b4d9f2c402af" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>food_security <span class="op">=</span> food_security.assign(Year_Start <span class="op">=</span> pd.to_datetime(food_security[<span class="st">'Year_Start'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%Y'</span>),</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                                     Year_End <span class="op">=</span> pd.to_datetime(food_security[<span class="st">'Year_End'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'%Y'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="09d4f7c9-ffab-452e-9f2c-7d54578c1a92" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>food_security_nona <span class="op">=</span> food_security[food_security[<span class="st">'Value'</span>].notna()]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>food_security_nona_mod <span class="op">=</span> food_security_nona[(food_security_nona[<span class="st">'Item'</span>] <span class="op">==</span> <span class="st">'Number of children under 5 years of age who are overweight (modeled estimates) (million)'</span>) <span class="op">\</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">|</span> (food_security_nona[<span class="st">'Item'</span>]<span class="op">==</span><span class="st">'Number of newborns with low birthweight (million)'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="01d4bccb-ce5b-4002-bf73-438161eafe00" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>food_security_nona_mod2 <span class="op">=</span> food_security_nona_mod[food_security_nona_mod[<span class="st">'Value'</span>]<span class="op">&gt;</span><span class="dv">5</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>food_security_nona_mod2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Year_Start</th>
+<th data-quarto-table-cell-role="th">Year_End</th>
+<th data-quarto-table-cell-role="th">Area</th>
+<th data-quarto-table-cell-role="th">Item</th>
+<th data-quarto-table-cell-role="th">Unit</th>
+<th data-quarto-table-cell-role="th">Value</th>
+<th data-quarto-table-cell-role="th">CI_Lower</th>
+<th data-quarto-table-cell-role="th">CI_Upper</th>
+<th data-quarto-table-cell-role="th">Flag</th>
+<th data-quarto-table-cell-role="th">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24188</td>
+<td>2005-01-01</td>
+<td>2005-01-01</td>
+<td>China</td>
+<td>Number of children under 5 years of age who ar...</td>
+<td>million No</td>
+<td>5.2</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">24189</td>
+<td>2006-01-01</td>
+<td>2006-01-01</td>
+<td>China</td>
+<td>Number of children under 5 years of age who ar...</td>
+<td>million No</td>
+<td>5.2</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24190</td>
+<td>2007-01-01</td>
+<td>2007-01-01</td>
+<td>China</td>
+<td>Number of children under 5 years of age who ar...</td>
+<td>million No</td>
+<td>5.3</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">24191</td>
+<td>2008-01-01</td>
+<td>2008-01-01</td>
+<td>China</td>
+<td>Number of children under 5 years of age who ar...</td>
+<td>million No</td>
+<td>5.4</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24192</td>
+<td>2009-01-01</td>
+<td>2009-01-01</td>
+<td>China</td>
+<td>Number of children under 5 years of age who ar...</td>
+<td>million No</td>
+<td>5.5</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">171123</td>
+<td>2020-01-01</td>
+<td>2020-01-01</td>
+<td>Upper-middle-income economies</td>
+<td>Number of children under 5 years of age who ar...</td>
+<td>million No</td>
+<td>15.6</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>Based on FY 2025 classification</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">171124</td>
+<td>2021-01-01</td>
+<td>2021-01-01</td>
+<td>Upper-middle-income economies</td>
+<td>Number of children under 5 years of age who ar...</td>
+<td>million No</td>
+<td>15.1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>Based on FY 2025 classification</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">171125</td>
+<td>2022-01-01</td>
+<td>2022-01-01</td>
+<td>Upper-middle-income economies</td>
+<td>Number of children under 5 years of age who ar...</td>
+<td>million No</td>
+<td>14.4</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>Based on FY 2025 classification</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">171126</td>
+<td>2023-01-01</td>
+<td>2023-01-01</td>
+<td>Upper-middle-income economies</td>
+<td>Number of children under 5 years of age who ar...</td>
+<td>million No</td>
+<td>13.7</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>Based on FY 2025 classification</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">171127</td>
+<td>2024-01-01</td>
+<td>2024-01-01</td>
+<td>Upper-middle-income economies</td>
+<td>Number of children under 5 years of age who ar...</td>
+<td>million No</td>
+<td>13.3</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>Based on FY 2025 classification</td>
+</tr>
+</tbody>
+</table>
+
+<p>374 rows × 10 columns</p>
+</div>
+</div>
+</div>
+<div id="96fe9640-83e6-41e8-8ffc-2f8b50842024" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">5</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>food_security_nona_mod2, x<span class="op">=</span><span class="st">'Year_End'</span>, y<span class="op">=</span><span class="st">'Value'</span>, hue<span class="op">=</span><span class="st">'Item'</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="World_food_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="e30c7f4b-f6b1-4a16-8a2c-740e699deadf" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>items_mi <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> food_security[<span class="st">'Item'</span>].unique() <span class="cf">if</span> <span class="st">'million'</span> <span class="kw">in</span> x]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>items_mi <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> items_mi <span class="cf">if</span> <span class="st">'average'</span> <span class="kw">not</span> <span class="kw">in</span> x]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>items_mi <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> items_mi <span class="cf">if</span> x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(items_mi))</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>items_mi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>13</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>['Number of children under 5 years affected by wasting (million)',
+ 'Number of children under 5 years of age who are stunted (modeled estimates) (million)',
+ 'Number of children under 5 years of age who are overweight (modeled estimates) (million)',
+ 'Number of obese adults (18 years and older) (million)',
+ 'Number of women of reproductive age (15-49 years) affected by anemia (million)',
+ 'Number of newborns with low birthweight (million)',
+ 'Number of people undernourished (million) (annual value)',
+ 'Number of severely food insecure people (million) (annual value)',
+ 'Number of severely food insecure male adults (million) (annual value)',
+ 'Number of severely food insecure female adults (million) (annual value)',
+ 'Number of moderately or severely food insecure people (million) (annual value)',
+ 'Number of moderately or severely food insecure male adults (million) (annual value)',
+ 'Number of moderately or severely food insecure female adults (million) (annual value)']</code></pre>
+</div>
+</div>
+<div id="5c12b8fa-7ec6-41bf-81be-4a9faa4570d4" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df_world <span class="op">=</span> food_security_nona[food_security_nona[<span class="st">'Area'</span>]<span class="op">==</span><span class="st">'World'</span>][food_security_nona[<span class="st">'Item'</span>].isin(items_mi)]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df_world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Year_Start</th>
+<th data-quarto-table-cell-role="th">Year_End</th>
+<th data-quarto-table-cell-role="th">Area</th>
+<th data-quarto-table-cell-role="th">Item</th>
+<th data-quarto-table-cell-role="th">Unit</th>
+<th data-quarto-table-cell-role="th">Value</th>
+<th data-quarto-table-cell-role="th">CI_Lower</th>
+<th data-quarto-table-cell-role="th">CI_Upper</th>
+<th data-quarto-table-cell-role="th">Flag</th>
+<th data-quarto-table-cell-role="th">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">132089</td>
+<td>2005-01-01</td>
+<td>2005-01-01</td>
+<td>World</td>
+<td>Number of people undernourished (million) (ann...</td>
+<td>million No</td>
+<td>788.8</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">132090</td>
+<td>2006-01-01</td>
+<td>2006-01-01</td>
+<td>World</td>
+<td>Number of people undernourished (million) (ann...</td>
+<td>million No</td>
+<td>733.8</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">132091</td>
+<td>2007-01-01</td>
+<td>2007-01-01</td>
+<td>World</td>
+<td>Number of people undernourished (million) (ann...</td>
+<td>million No</td>
+<td>672.9</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">132092</td>
+<td>2008-01-01</td>
+<td>2008-01-01</td>
+<td>World</td>
+<td>Number of people undernourished (million) (ann...</td>
+<td>million No</td>
+<td>639.7</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">132093</td>
+<td>2009-01-01</td>
+<td>2009-01-01</td>
+<td>World</td>
+<td>Number of people undernourished (million) (ann...</td>
+<td>million No</td>
+<td>630.1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">132781</td>
+<td>2016-01-01</td>
+<td>2016-01-01</td>
+<td>World</td>
+<td>Number of newborns with low birthweight (million)</td>
+<td>million No</td>
+<td>20.9</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">132782</td>
+<td>2017-01-01</td>
+<td>2017-01-01</td>
+<td>World</td>
+<td>Number of newborns with low birthweight (million)</td>
+<td>million No</td>
+<td>20.6</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">132783</td>
+<td>2018-01-01</td>
+<td>2018-01-01</td>
+<td>World</td>
+<td>Number of newborns with low birthweight (million)</td>
+<td>million No</td>
+<td>20.4</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">132784</td>
+<td>2019-01-01</td>
+<td>2019-01-01</td>
+<td>World</td>
+<td>Number of newborns with low birthweight (million)</td>
+<td>million No</td>
+<td>20.1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">132785</td>
+<td>2020-01-01</td>
+<td>2020-01-01</td>
+<td>World</td>
+<td>Number of newborns with low birthweight (million)</td>
+<td>million No</td>
+<td>19.8</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+<p>199 rows × 10 columns</p>
+</div>
+</div>
+</div>
+<div id="1bbc0174-487e-48bf-8f1a-6b0d48dd46ae" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df_world[<span class="st">'Item_mod'</span>] <span class="op">=</span> df_world[<span class="st">'Item'</span>].<span class="bu">str</span>.split(<span class="st">'</span><span class="er">\</span><span class="st">(m'</span>).<span class="bu">str</span>[<span class="dv">0</span>].<span class="bu">str</span>.split(<span class="st">'Number of '</span>).<span class="bu">str</span>[<span class="dv">1</span>].<span class="bu">str</span>.capitalize()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df_world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Year_Start</th>
+<th data-quarto-table-cell-role="th">Year_End</th>
+<th data-quarto-table-cell-role="th">Area</th>
+<th data-quarto-table-cell-role="th">Item</th>
+<th data-quarto-table-cell-role="th">Unit</th>
+<th data-quarto-table-cell-role="th">Value</th>
+<th data-quarto-table-cell-role="th">CI_Lower</th>
+<th data-quarto-table-cell-role="th">CI_Upper</th>
+<th data-quarto-table-cell-role="th">Flag</th>
+<th data-quarto-table-cell-role="th">Note</th>
+<th data-quarto-table-cell-role="th">Item_mod</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">132089</td>
+<td>2005-01-01</td>
+<td>2005-01-01</td>
+<td>World</td>
+<td>Number of people undernourished (million) (ann...</td>
+<td>million No</td>
+<td>788.8</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+<td>People undernourished</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">132090</td>
+<td>2006-01-01</td>
+<td>2006-01-01</td>
+<td>World</td>
+<td>Number of people undernourished (million) (ann...</td>
+<td>million No</td>
+<td>733.8</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+<td>People undernourished</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">132091</td>
+<td>2007-01-01</td>
+<td>2007-01-01</td>
+<td>World</td>
+<td>Number of people undernourished (million) (ann...</td>
+<td>million No</td>
+<td>672.9</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+<td>People undernourished</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">132092</td>
+<td>2008-01-01</td>
+<td>2008-01-01</td>
+<td>World</td>
+<td>Number of people undernourished (million) (ann...</td>
+<td>million No</td>
+<td>639.7</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+<td>People undernourished</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">132093</td>
+<td>2009-01-01</td>
+<td>2009-01-01</td>
+<td>World</td>
+<td>Number of people undernourished (million) (ann...</td>
+<td>million No</td>
+<td>630.1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Estimated value</td>
+<td>NaN</td>
+<td>People undernourished</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">132781</td>
+<td>2016-01-01</td>
+<td>2016-01-01</td>
+<td>World</td>
+<td>Number of newborns with low birthweight (million)</td>
+<td>million No</td>
+<td>20.9</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+<td>Newborns with low birthweight</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">132782</td>
+<td>2017-01-01</td>
+<td>2017-01-01</td>
+<td>World</td>
+<td>Number of newborns with low birthweight (million)</td>
+<td>million No</td>
+<td>20.6</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+<td>Newborns with low birthweight</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">132783</td>
+<td>2018-01-01</td>
+<td>2018-01-01</td>
+<td>World</td>
+<td>Number of newborns with low birthweight (million)</td>
+<td>million No</td>
+<td>20.4</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+<td>Newborns with low birthweight</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">132784</td>
+<td>2019-01-01</td>
+<td>2019-01-01</td>
+<td>World</td>
+<td>Number of newborns with low birthweight (million)</td>
+<td>million No</td>
+<td>20.1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+<td>Newborns with low birthweight</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">132785</td>
+<td>2020-01-01</td>
+<td>2020-01-01</td>
+<td>World</td>
+<td>Number of newborns with low birthweight (million)</td>
+<td>million No</td>
+<td>19.8</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Figure from external organization</td>
+<td>NaN</td>
+<td>Newborns with low birthweight</td>
+</tr>
+</tbody>
+</table>
+
+<p>199 rows × 11 columns</p>
+</div>
+</div>
+</div>
+<div id="ee0c071f-2088-41c2-9fd7-f92e503f8515" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">8</span>))</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sns.stripplot(data<span class="op">=</span>df_world, x<span class="op">=</span><span class="st">'Value'</span>, y<span class="op">=</span><span class="st">'Item_mod'</span>,hue<span class="op">=</span><span class="st">'Year_End'</span>, size<span class="op">=</span><span class="dv">15</span>,<span class="op">\</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a> alpha<span class="op">=</span><span class="fl">0.6</span>, legend<span class="op">=</span><span class="va">False</span>, palette<span class="op">=</span><span class="st">'Blues'</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>ax.yaxis.tick_right()</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">'y'</span>, which<span class="op">=</span><span class="st">'major'</span>, pad<span class="op">=-</span><span class="dv">320</span>) </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">'y'</span>, length<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Millions"</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">""</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>title<span class="op">=</span><span class="st">"Number of people affected by food insecurity at the world level.</span><span class="ch">\n</span><span class="st">Values are shown for 2005 to 2024 with increasing intensity."</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">#title_wrapped = textwrap.fill(title, width=65)</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>plt.title(title, family<span class="op">=</span><span class="st">'Serif'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, ha<span class="op">=</span><span class="st">'left'</span>, x<span class="op">=</span><span class="fl">0.05</span>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>sns.despine(left<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> ax.get_yticklabels()</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>wrapped_labels <span class="op">=</span> []</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label <span class="kw">in</span> labels:</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    original_text <span class="op">=</span> label.get_text()</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    wrapped_text <span class="op">=</span> textwrap.fill(original_text, width<span class="op">=</span><span class="dv">25</span>) <span class="co"># Adjust width as needed</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    wrapped_labels.append(wrapped_text)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>ax.set_yticklabels(wrapped_labels, color<span class="op">=</span><span class="st">'#333333'</span>)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels([<span class="bu">int</span>(x) <span class="cf">for</span> x <span class="kw">in</span> ax.get_xticks()], family<span class="op">=</span><span class="st">'monospace'</span>)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'world_food.png'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="World_food_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="120fdbc9-6b03-43b3-a25d-a92212e1f6dc" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df_world.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Year_Start</th>
+<th data-quarto-table-cell-role="th">Year_End</th>
+<th data-quarto-table-cell-role="th">Value</th>
+<th data-quarto-table-cell-role="th">CI_Lower</th>
+<th data-quarto-table-cell-role="th">CI_Upper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>199</td>
+<td>199</td>
+<td>199.000000</td>
+<td>66.000000</td>
+<td>66.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>2015-09-11 09:46:07.839195904</td>
+<td>2015-09-11 09:46:07.839195904</td>
+<td>451.684925</td>
+<td>738.501515</td>
+<td>783.675758</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">min</td>
+<td>2005-01-01 00:00:00</td>
+<td>2005-01-01 00:00:00</td>
+<td>19.800000</td>
+<td>160.100000</td>
+<td>185.700000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>2012-01-01 00:00:00</td>
+<td>2012-01-01 00:00:00</td>
+<td>51.350000</td>
+<td>273.875000</td>
+<td>295.175000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>2016-01-01 00:00:00</td>
+<td>2016-01-01 00:00:00</td>
+<td>457.700000</td>
+<td>599.650000</td>
+<td>650.300000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>2020-01-01 00:00:00</td>
+<td>2020-01-01 00:00:00</td>
+<td>639.750000</td>
+<td>806.125000</td>
+<td>847.150000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">max</td>
+<td>2024-01-01 00:00:00</td>
+<td>2024-01-01 00:00:00</td>
+<td>2296.600000</td>
+<td>2260.900000</td>
+<td>2332.400000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">std</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>468.873860</td>
+<td>598.928099</td>
+<td>620.089332</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script type="text/javascript">
+
+  if (window.location.pathname !== "/" && !window.location.pathname.endsWith("/index.html")) {
+
+    const giscusDiv = document.createElement("div");
+
+    giscusDiv.className = "giscus";
+
+    giscusDiv.setAttribute("data-repo", "manishdatt/TidyTuesday");
+
+    giscusDiv.setAttribute("data-repo-id", "R_kgDOJk8zFw");
+
+    giscusDiv.setAttribute("data-category", "General");
+
+    giscusDiv.setAttribute("data-category-id", "DIC_kwDOJk8zF84CqV9r");
+
+    giscusDiv.setAttribute("data-mapping", "pathname");
+
+    giscusDiv.setAttribute("data-strict", "0");
+
+    giscusDiv.setAttribute("data-reactions-enabled", "1");
+
+    giscusDiv.setAttribute("data-emit-metadata", "1");
+
+    giscusDiv.setAttribute("data-input-position", "bottom");
+
+    giscusDiv.setAttribute("data-theme", "light");
+
+    giscusDiv.setAttribute("data-lang", "en");
+
+
+
+    // Find the main content container
+
+    const container = document.querySelector('.page-body') || document.querySelector('main') || document.querySelector('.content');
+
+
+
+    // Append to container if found, else fallback to body
+
+    (container || document.body).appendChild(giscusDiv);
+
+
+
+    const giscusScript = document.createElement("script");
+
+    giscusScript.src = "https://giscus.app/client.js";
+
+    giscusScript.async = true;
+
+    giscusScript.setAttribute("data-repo", "manishdatt/TidyTuesday");
+
+    giscusScript.setAttribute("data-repo-id", "R_kgDOJk8zFw");
+
+    giscusScript.setAttribute("data-category", "General");
+
+    giscusScript.setAttribute("data-category-id", "DIC_kwDOJk8zF84CqV9r");
+
+    giscusScript.setAttribute("data-mapping", "pathname");
+
+    giscusScript.setAttribute("data-strict", "0");
+
+    giscusScript.setAttribute("data-reactions-enabled", "1");
+
+    giscusScript.setAttribute("data-emit-metadata", "1");
+
+    giscusScript.setAttribute("data-input-position", "bottom");
+
+    giscusScript.setAttribute("data-theme", "light");
+
+    giscusScript.setAttribute("data-lang", "en");
+
+    giscusScript.crossOrigin = "anonymous";
+
+
+
+    (container || document.body).appendChild(giscusScript);
+
+  }
+
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="light">
+<script>
+  function loadGiscus() {
+    // Function to get the theme based on body class
+    const getTheme = () => {
+      let baseTheme = document.getElementById('giscus-base-theme').value;
+      let altTheme = document.getElementById('giscus-alt-theme').value;
+      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
+    };
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.dataset.repo = "manishdatt/DataViz";
+    script.dataset.repoId = "R_kgDOOnqHPw";
+    script.dataset.category = "General";
+    script.dataset.categoryId = "DIC_kwDOOnqHP84Cp_uM";
+    script.dataset.mapping = "pathname";
+    script.dataset.reactionsEnabled = "1";
+    script.dataset.emitMetadata = "0";
+    script.dataset.inputPosition = "top";
+    script.dataset.theme = getTheme();
+    script.dataset.lang = "en";
+    script.crossOrigin = "anonymous";
+    // Append the script to the desired div instead of at the end of the body
+    document.getElementById("quarto-content").appendChild(script);
+  }
+  loadGiscus();
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
