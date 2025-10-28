@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Manish Datt">
+<meta name="dcterms.date" content="2025-10-28">
+<meta name="description" content="Distribution of prizes across the highest degree and gender.">
+
+<title>British Literary Prizes – DViz.manishdatt.com</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-e83117e711fad372bcb8c8022997a9a8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">DViz.manishdatt.com</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://manishdatt.com/"> <i class="bi bi-house-door" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://in.linkedin.com/in/manishdatt"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/dr_manishdatt"> <i class="bi bi-twitter-x" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://bsky.app/profile/manishdatt.com"> 
+<span class="menu-text"><i class="fa-brands fa-bluesky fa-xl" aria-label="bluesky"></i></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">British Literary Prizes</h1>
+                  <div>
+        <div class="description">
+          Distribution of prizes across the highest degree and gender.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Heatmap</div>
+                <div class="quarto-category">TidyTuesday</div>
+                <div class="quarto-category">PyDyTuesday</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Manish Datt </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 28, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="tidytuesday-dataset-of" class="level1">
+<h1>TidyTuesday dataset of <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-10-28">October 28, 2025</a></h1>
+<div id="c6ebc29b" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> marimo <span class="im">as</span> mo</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="13bcf873" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>prizes <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-10-28/prizes.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="851bdf72" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>prizes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">prize_id</th>
+<th data-quarto-table-cell-role="th">prize_alias</th>
+<th data-quarto-table-cell-role="th">prize_name</th>
+<th data-quarto-table-cell-role="th">prize_institution</th>
+<th data-quarto-table-cell-role="th">prize_year</th>
+<th data-quarto-table-cell-role="th">prize_genre</th>
+<th data-quarto-table-cell-role="th">person_id</th>
+<th data-quarto-table-cell-role="th">person_role</th>
+<th data-quarto-table-cell-role="th">last_name</th>
+<th data-quarto-table-cell-role="th">first_name</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">uk_residence</th>
+<th data-quarto-table-cell-role="th">ethnicity_macro</th>
+<th data-quarto-table-cell-role="th">ethnicity</th>
+<th data-quarto-table-cell-role="th">highest_degree</th>
+<th data-quarto-table-cell-role="th">degree_institution</th>
+<th data-quarto-table-cell-role="th">degree_field_category</th>
+<th data-quarto-table-cell-role="th">degree_field</th>
+<th data-quarto-table-cell-role="th">viaf</th>
+<th data-quarto-table-cell-role="th">book_id</th>
+<th data-quarto-table-cell-role="th">book_title</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>8</td>
+<td>Booker Prize</td>
+<td>Booker Prize</td>
+<td>Booker Foundation</td>
+<td>1991</td>
+<td>fiction</td>
+<td>294</td>
+<td>shortlisted</td>
+<td>Amis</td>
+<td>Martin</td>
+<td>...</td>
+<td>True</td>
+<td>White British</td>
+<td>English</td>
+<td>Bachelors</td>
+<td>University of Oxford</td>
+<td>Language and Literature</td>
+<td>English Literature</td>
+<td>36913662</td>
+<td>5</td>
+<td>Time's Arrow</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>James Tait Black Prize for Fiction</td>
+<td>James Tait Black Prize for Fiction</td>
+<td>The University of Edinburgh</td>
+<td>1991</td>
+<td>fiction</td>
+<td>33</td>
+<td>winner</td>
+<td>Boyd</td>
+<td>William</td>
+<td>...</td>
+<td>True</td>
+<td>White British</td>
+<td>British</td>
+<td>unknown</td>
+<td>University of Oxford</td>
+<td>Language and Literature</td>
+<td>English Literature</td>
+<td>111500719</td>
+<td>36</td>
+<td>Brazzaville Beach</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>Costa First Novel Award</td>
+<td>Whitbread First Novel</td>
+<td>Whitbread</td>
+<td>1991</td>
+<td>fiction</td>
+<td>167</td>
+<td>winner</td>
+<td>Burn</td>
+<td>Gordon</td>
+<td>...</td>
+<td>True</td>
+<td>White British</td>
+<td>English</td>
+<td>none</td>
+<td>none</td>
+<td>none</td>
+<td>none</td>
+<td>51988764</td>
+<td>42</td>
+<td>Alma Cogan</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>8</td>
+<td>Booker Prize</td>
+<td>Booker Prize</td>
+<td>Booker Foundation</td>
+<td>1991</td>
+<td>fiction</td>
+<td>286</td>
+<td>shortlisted</td>
+<td>Doyle</td>
+<td>Roddy</td>
+<td>...</td>
+<td>False</td>
+<td>Irish</td>
+<td>Irish</td>
+<td>Bachelors</td>
+<td>University College Dublin</td>
+<td>Multiple</td>
+<td>English and Geography</td>
+<td>17301306</td>
+<td>77</td>
+<td>The Van</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>4</td>
+<td>Costa Novel Award</td>
+<td>Whitbread Novel</td>
+<td>Whitbread</td>
+<td>1991</td>
+<td>fiction</td>
+<td>168</td>
+<td>winner</td>
+<td>Gardam</td>
+<td>Jane</td>
+<td>...</td>
+<td>True</td>
+<td>White British</td>
+<td>English</td>
+<td>Bachelors</td>
+<td>University of London</td>
+<td>Language and Literature</td>
+<td>English Literature</td>
+<td>70213168</td>
+<td>114</td>
+<td>The Queen of the Tambourine</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">947</td>
+<td>10</td>
+<td>Women's Prize for Fiction</td>
+<td>Women's Prize for Fiction</td>
+<td>Women's Prize Trust</td>
+<td>2022</td>
+<td>fiction</td>
+<td>192</td>
+<td>shortlisted</td>
+<td>Shafak</td>
+<td>Elif</td>
+<td>...</td>
+<td>True</td>
+<td>Non-UK White</td>
+<td>Turkish British</td>
+<td>Doctorate</td>
+<td>Middle East Technical University</td>
+<td>Politics and Economics</td>
+<td>Political Science</td>
+<td>64320935</td>
+<td>367</td>
+<td>The Island of Missing Trees</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">948</td>
+<td>11</td>
+<td>Gold Dagger</td>
+<td>Gold Dagger</td>
+<td>The Crime Writers' Association</td>
+<td>2022</td>
+<td>crime</td>
+<td>410</td>
+<td>shortlisted</td>
+<td>Shaw</td>
+<td>William</td>
+<td>...</td>
+<td>True</td>
+<td>White British</td>
+<td>English</td>
+<td>unknown</td>
+<td>unknown</td>
+<td>unknown</td>
+<td>unknown</td>
+<td>NaN</td>
+<td>521</td>
+<td>The Trawlerman</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">949</td>
+<td>10</td>
+<td>Women's Prize for Fiction</td>
+<td>Women's Prize for Fiction</td>
+<td>Women's Prize Trust</td>
+<td>2022</td>
+<td>fiction</td>
+<td>182</td>
+<td>shortlisted</td>
+<td>Shipstead</td>
+<td>Maggie</td>
+<td>...</td>
+<td>False</td>
+<td>Non-UK White</td>
+<td>White American</td>
+<td>Masters</td>
+<td>University of Iowa</td>
+<td>Writing</td>
+<td>Creative Writing</td>
+<td>231972795</td>
+<td>296</td>
+<td>Great Circle</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">950</td>
+<td>8</td>
+<td>Booker Prize</td>
+<td>Booker Prize</td>
+<td>Booker Foundation</td>
+<td>2022</td>
+<td>fiction</td>
+<td>176</td>
+<td>shortlisted</td>
+<td>Strout</td>
+<td>Elizabeth</td>
+<td>...</td>
+<td>False</td>
+<td>Non-UK White</td>
+<td>White American</td>
+<td>Masters</td>
+<td>Royal College of Art</td>
+<td>unknown</td>
+<td>unknown</td>
+<td>66631918</td>
+<td>316</td>
+<td>Oh William!</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">951</td>
+<td>12</td>
+<td>BSFA Award for Best Novel</td>
+<td>BSFA Award for Best Novel</td>
+<td>British Science Fiction Association</td>
+<td>2022</td>
+<td>sff</td>
+<td>491</td>
+<td>winner</td>
+<td>Tchaikovsky</td>
+<td>Adrian</td>
+<td>...</td>
+<td>True</td>
+<td>White British</td>
+<td>British</td>
+<td>Bachelors</td>
+<td>University of Reading</td>
+<td>Maths and Sciences</td>
+<td>Zoology and Psychology</td>
+<td>102929550</td>
+<td>627</td>
+<td>City of Last Chances</td>
+</tr>
+</tbody>
+</table>
+
+<p>952 rows × 23 columns</p>
+</div>
+</div>
+</div>
+<div id="cb007a6d" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>prizes[<span class="st">'prize_genre'</span>]<span class="op">=</span>prizes[<span class="st">'prize_genre'</span>].<span class="bu">str</span>.capitalize()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="0e6759e3" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>prizes.groupby([<span class="st">'prize_genre'</span>,<span class="st">'highest_degree'</span>]).count()[<span class="st">'prize_name'</span>].sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>prize_genre         highest_degree          
+Fiction             Bachelors                   147
+                    Masters                     144
+                    unknown                      75
+Non-fiction         Doctorate                    59
+Fiction             Doctorate                    52
+Crime               unknown                      46
+Poetry              Bachelors                    43
+Non-fiction         unknown                      33
+                    Bachelors                    30
+Crime               Bachelors                    30
+Poetry              unknown                      25
+Fiction             none                         24
+Poetry              Masters                      23
+                    Doctorate                    19
+No/any/multi genre  Bachelors                    17
+Non-fiction         Masters                      15
+Children's          unknown                      14
+Crime               Masters                      12
+Sff                 unknown                      12
+Biography           unknown                      11
+Crime               none                         10
+Children's          Bachelors                    10
+Poetry              none                          9
+Biography           Bachelors                     9
+Crime               Doctorate                     9
+Sff                 Masters                       7
+No/any/multi genre  unknown                       7
+Biography           Doctorate                     7
+Sff                 Bachelors                     6
+                    Doctorate                     5
+Drama               unknown                       4
+                    Bachelors                     4
+No/any/multi genre  Doctorate                     4
+Non-fiction         none                          3
+Children's          Masters                       3
+Sff                 none                          3
+Fiction             Postgraduate                  3
+Children's          Doctorate                     2
+Biography           Masters                       2
+No/any/multi genre  Masters                       2
+Fiction             Juris Doctor                  2
+Biography           Diploma                       1
+Children's          Postgraduate                  1
+Biography           Postgraduate                  1
+Poetry              MD                            1
+                    Postgraduate                  1
+Biography           Juris Doctor                  1
+Non-fiction         Juris Doctor                  1
+Children's          none                          1
+No/any/multi genre  none                          1
+Fiction             Certificate of Education      1
+Name: prize_name, dtype: int64</code></pre>
+</div>
+</div>
+<div id="a52230b2" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>prizes.groupby([<span class="st">'degree_field_category'</span>]).count()[<span class="st">'prize_name'</span>].sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>degree_field_category
+Language and Literature         272
+unknown                         265
+Writing                         114
+History and Cultural Studies     72
+none                             51
+Arts                             40
+Maths and Sciences               34
+Multiple                         30
+Politics and Economics           27
+Philosophy and Theology          24
+Law                              17
+Medicine and Social Work          5
+Education                         1
+Name: prize_name, dtype: int64</code></pre>
+</div>
+</div>
+<div id="04ae4895" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> prizes[(<span class="op">~</span>prizes[<span class="st">"degree_field_category"</span>].isin([<span class="st">'unknown'</span>,<span class="st">'none'</span>])) <span class="op">&amp;</span> (prizes[<span class="st">"highest_degree"</span>].isin([<span class="st">'Bachelors'</span>,<span class="st">'Masters'</span>, <span class="st">'Doctorate'</span>]))]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">prize_id</th>
+<th data-quarto-table-cell-role="th">prize_alias</th>
+<th data-quarto-table-cell-role="th">prize_name</th>
+<th data-quarto-table-cell-role="th">prize_institution</th>
+<th data-quarto-table-cell-role="th">prize_year</th>
+<th data-quarto-table-cell-role="th">prize_genre</th>
+<th data-quarto-table-cell-role="th">person_id</th>
+<th data-quarto-table-cell-role="th">person_role</th>
+<th data-quarto-table-cell-role="th">last_name</th>
+<th data-quarto-table-cell-role="th">first_name</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">uk_residence</th>
+<th data-quarto-table-cell-role="th">ethnicity_macro</th>
+<th data-quarto-table-cell-role="th">ethnicity</th>
+<th data-quarto-table-cell-role="th">highest_degree</th>
+<th data-quarto-table-cell-role="th">degree_institution</th>
+<th data-quarto-table-cell-role="th">degree_field_category</th>
+<th data-quarto-table-cell-role="th">degree_field</th>
+<th data-quarto-table-cell-role="th">viaf</th>
+<th data-quarto-table-cell-role="th">book_id</th>
+<th data-quarto-table-cell-role="th">book_title</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>8</td>
+<td>Booker Prize</td>
+<td>Booker Prize</td>
+<td>Booker Foundation</td>
+<td>1991</td>
+<td>Fiction</td>
+<td>294</td>
+<td>shortlisted</td>
+<td>Amis</td>
+<td>Martin</td>
+<td>...</td>
+<td>True</td>
+<td>White British</td>
+<td>English</td>
+<td>Bachelors</td>
+<td>University of Oxford</td>
+<td>Language and Literature</td>
+<td>English Literature</td>
+<td>36913662</td>
+<td>5</td>
+<td>Time's Arrow</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>8</td>
+<td>Booker Prize</td>
+<td>Booker Prize</td>
+<td>Booker Foundation</td>
+<td>1991</td>
+<td>Fiction</td>
+<td>286</td>
+<td>shortlisted</td>
+<td>Doyle</td>
+<td>Roddy</td>
+<td>...</td>
+<td>False</td>
+<td>Irish</td>
+<td>Irish</td>
+<td>Bachelors</td>
+<td>University College Dublin</td>
+<td>Multiple</td>
+<td>English and Geography</td>
+<td>17301306</td>
+<td>77</td>
+<td>The Van</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>4</td>
+<td>Costa Novel Award</td>
+<td>Whitbread Novel</td>
+<td>Whitbread</td>
+<td>1991</td>
+<td>Fiction</td>
+<td>168</td>
+<td>winner</td>
+<td>Gardam</td>
+<td>Jane</td>
+<td>...</td>
+<td>True</td>
+<td>White British</td>
+<td>English</td>
+<td>Bachelors</td>
+<td>University of London</td>
+<td>Language and Literature</td>
+<td>English Literature</td>
+<td>70213168</td>
+<td>114</td>
+<td>The Queen of the Tambourine</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6</td>
+<td>6</td>
+<td>Costa Poetry Award</td>
+<td>Whitbread Poetry</td>
+<td>Whitbread</td>
+<td>1991</td>
+<td>Poetry</td>
+<td>169</td>
+<td>winner</td>
+<td>Longley</td>
+<td>Michael</td>
+<td>...</td>
+<td>True</td>
+<td>White British</td>
+<td>Northern Irish</td>
+<td>Bachelors</td>
+<td>Trinity College, Dublin</td>
+<td>Language and Literature</td>
+<td>Classics</td>
+<td>39398205</td>
+<td>182</td>
+<td>Gorse Fires</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8</td>
+<td>Booker Prize</td>
+<td>Booker Prize</td>
+<td>Booker Foundation</td>
+<td>1991</td>
+<td>Fiction</td>
+<td>260</td>
+<td>shortlisted</td>
+<td>Mistry</td>
+<td>Rohinton</td>
+<td>...</td>
+<td>False</td>
+<td>Asian</td>
+<td>Indian Canadian</td>
+<td>Bachelors</td>
+<td>Bombay University/University of Toronto</td>
+<td>Multiple</td>
+<td>Mathematics and Economics/English and Philosophy</td>
+<td>29581388</td>
+<td>225</td>
+<td>Such a Long Journey</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">944</td>
+<td>10</td>
+<td>Women's Prize for Fiction</td>
+<td>Women's Prize for Fiction</td>
+<td>Women's Prize Trust</td>
+<td>2022</td>
+<td>Fiction</td>
+<td>221</td>
+<td>winner</td>
+<td>Ozeki</td>
+<td>Ruth</td>
+<td>...</td>
+<td>False</td>
+<td>Asian</td>
+<td>Japanese American</td>
+<td>Bachelors</td>
+<td>Smith College</td>
+<td>Language and Literature</td>
+<td>English Literature and Asian Studies</td>
+<td>79458623</td>
+<td>371</td>
+<td>The Book of Form &amp; Emptiness</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">946</td>
+<td>16</td>
+<td>Baillie Gifford Prize for Non-Fiction</td>
+<td>Baillie Gifford Prize for Non-Fiction</td>
+<td>Samuel Johnson Prize for Non-Fiction Limited</td>
+<td>2022</td>
+<td>Non-fiction</td>
+<td>58</td>
+<td>winner</td>
+<td>Rundell</td>
+<td>Katherine</td>
+<td>...</td>
+<td>True</td>
+<td>White British</td>
+<td>English</td>
+<td>Doctorate</td>
+<td>University of Oxford</td>
+<td>Language and Literature</td>
+<td>English Literature</td>
+<td>163169611</td>
+<td>759</td>
+<td>Super-Infinite: The Transformations of John Donne</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">947</td>
+<td>10</td>
+<td>Women's Prize for Fiction</td>
+<td>Women's Prize for Fiction</td>
+<td>Women's Prize Trust</td>
+<td>2022</td>
+<td>Fiction</td>
+<td>192</td>
+<td>shortlisted</td>
+<td>Shafak</td>
+<td>Elif</td>
+<td>...</td>
+<td>True</td>
+<td>Non-UK White</td>
+<td>Turkish British</td>
+<td>Doctorate</td>
+<td>Middle East Technical University</td>
+<td>Politics and Economics</td>
+<td>Political Science</td>
+<td>64320935</td>
+<td>367</td>
+<td>The Island of Missing Trees</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">949</td>
+<td>10</td>
+<td>Women's Prize for Fiction</td>
+<td>Women's Prize for Fiction</td>
+<td>Women's Prize Trust</td>
+<td>2022</td>
+<td>Fiction</td>
+<td>182</td>
+<td>shortlisted</td>
+<td>Shipstead</td>
+<td>Maggie</td>
+<td>...</td>
+<td>False</td>
+<td>Non-UK White</td>
+<td>White American</td>
+<td>Masters</td>
+<td>University of Iowa</td>
+<td>Writing</td>
+<td>Creative Writing</td>
+<td>231972795</td>
+<td>296</td>
+<td>Great Circle</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">951</td>
+<td>12</td>
+<td>BSFA Award for Best Novel</td>
+<td>BSFA Award for Best Novel</td>
+<td>British Science Fiction Association</td>
+<td>2022</td>
+<td>Sff</td>
+<td>491</td>
+<td>winner</td>
+<td>Tchaikovsky</td>
+<td>Adrian</td>
+<td>...</td>
+<td>True</td>
+<td>White British</td>
+<td>British</td>
+<td>Bachelors</td>
+<td>University of Reading</td>
+<td>Maths and Sciences</td>
+<td>Zoology and Psychology</td>
+<td>102929550</td>
+<td>627</td>
+<td>City of Last Chances</td>
+</tr>
+</tbody>
+</table>
+
+<p>580 rows × 23 columns</p>
+</div>
+</div>
+</div>
+<div id="41fb9df7" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fix,ax = plt.subplots(figsize=(10,5))</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sns.catplot(data<span class="op">=</span>df, <span class="op">\</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="st">'prize_year'</span>, y<span class="op">=</span><span class="st">'prize_genre'</span>, hue<span class="op">=</span><span class="st">'gender'</span>, dodge<span class="op">=</span><span class="va">True</span>, kind<span class="op">=</span><span class="st">'strip'</span>, <span class="op">\</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>            col<span class="op">=</span><span class="st">'highest_degree'</span>, col_wrap<span class="op">=</span><span class="dv">2</span>, aspect<span class="op">=</span><span class="dv">2</span>, legend<span class="op">=</span><span class="va">False</span>, jitter<span class="op">=</span><span class="va">True</span>, size<span class="op">=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="British_lit_prizes_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="7680ab4f" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>pivot_table <span class="op">=</span> df.pivot_table(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    index<span class="op">=</span><span class="st">'prize_genre'</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span><span class="st">'highest_degree'</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    values<span class="op">=</span><span class="st">'prize_name'</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    aggfunc<span class="op">=</span><span class="st">'count'</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    fill_value<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="aa4e1b85" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>sns.heatmap(pivot_table, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">'d'</span>, cmap<span class="op">=</span><span class="st">'YlGnBu'</span>, linewidths<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.title('Tile Plot of Prizes by Degree Field and Degree Level')</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.xlabel('Highest Degree')</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.ylabel('Degree Field Category')</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="British_lit_prizes_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="a66d1836" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>prizes[<span class="st">'degree'</span>] <span class="op">=</span> prizes[<span class="st">'highest_degree'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x <span class="cf">if</span> x <span class="kw">in</span> [<span class="st">'Bachelors'</span>, <span class="st">'Masters'</span>, <span class="st">'Doctorate'</span>] <span class="cf">else</span> <span class="st">'Others'</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>prizes[<span class="st">'gender_new'</span>] <span class="op">=</span> prizes[<span class="st">'gender'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x <span class="cf">if</span> x <span class="kw">in</span> [<span class="st">'man'</span>, <span class="st">'woman'</span>] <span class="cf">else</span> <span class="st">'NB'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="0d6f6fac" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df1<span class="op">=</span> (prizes.groupby([<span class="st">'prize_genre'</span>, <span class="st">'degree'</span>, <span class="st">'gender_new'</span>]).count()[<span class="st">'prize_id'</span>].reset_index())</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df1[<span class="st">'degree_gender'</span>] <span class="op">=</span> df1[<span class="st">'degree'</span>]<span class="op">+</span><span class="st">'_'</span><span class="op">+</span>df1[<span class="st">'gender_new'</span>]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>df1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">prize_genre</th>
+<th data-quarto-table-cell-role="th">degree</th>
+<th data-quarto-table-cell-role="th">gender_new</th>
+<th data-quarto-table-cell-role="th">prize_id</th>
+<th data-quarto-table-cell-role="th">degree_gender</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Biography</td>
+<td>Bachelors</td>
+<td>man</td>
+<td>3</td>
+<td>Bachelors_man</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Biography</td>
+<td>Bachelors</td>
+<td>woman</td>
+<td>6</td>
+<td>Bachelors_woman</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Biography</td>
+<td>Doctorate</td>
+<td>man</td>
+<td>5</td>
+<td>Doctorate_man</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Biography</td>
+<td>Doctorate</td>
+<td>woman</td>
+<td>2</td>
+<td>Doctorate_woman</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Biography</td>
+<td>Masters</td>
+<td>man</td>
+<td>1</td>
+<td>Masters_man</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">67</td>
+<td>Sff</td>
+<td>Doctorate</td>
+<td>woman</td>
+<td>1</td>
+<td>Doctorate_woman</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">68</td>
+<td>Sff</td>
+<td>Masters</td>
+<td>man</td>
+<td>5</td>
+<td>Masters_man</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">69</td>
+<td>Sff</td>
+<td>Masters</td>
+<td>woman</td>
+<td>2</td>
+<td>Masters_woman</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">70</td>
+<td>Sff</td>
+<td>Others</td>
+<td>man</td>
+<td>12</td>
+<td>Others_man</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">71</td>
+<td>Sff</td>
+<td>Others</td>
+<td>woman</td>
+<td>3</td>
+<td>Others_woman</td>
+</tr>
+</tbody>
+</table>
+
+<p>72 rows × 5 columns</p>
+</div>
+</div>
+</div>
+<div id="8b37a339" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>reshaped <span class="op">=</span> df1.pivot_table(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    index<span class="op">=</span><span class="st">'prize_genre'</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span><span class="st">'degree_gender'</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    values<span class="op">=</span><span class="st">'prize_id'</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    aggfunc<span class="op">=</span><span class="st">'sum'</span>,  <span class="co"># or 'count' if you want number of entries</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    fill_value<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>).reset_index()</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>reshaped <span class="op">=</span> reshaped.set_index(<span class="st">'prize_genre'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="8bcfc24c" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ind <span class="op">=</span> prizes.groupby([<span class="st">'prize_genre'</span>]).count()[<span class="st">'prize_name'</span>].sort_values(ascending<span class="op">=</span><span class="va">False</span>).index</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>reshaped.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>Index(['Bachelors_NB', 'Bachelors_man', 'Bachelors_woman', 'Doctorate_NB',
+       'Doctorate_man', 'Doctorate_woman', 'Masters_NB', 'Masters_man',
+       'Masters_woman', 'Others_NB', 'Others_man', 'Others_woman'],
+      dtype='object', name='degree_gender')</code></pre>
+</div>
+</div>
+<div id="09f1b47e" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>reshaped1 <span class="op">=</span> reshaped[[<span class="st">'Bachelors_man'</span>, <span class="st">'Bachelors_woman'</span>, <span class="st">'Masters_man'</span>, <span class="st">'Masters_woman'</span>,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>       <span class="st">'Doctorate_man'</span>, <span class="st">'Doctorate_woman'</span>, <span class="st">'Others_man'</span>, <span class="st">'Others_woman'</span>]]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>reshaped1 <span class="op">=</span> reshaped1.reindex(ind)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>reshaped1.index <span class="op">=</span> reshaped1.index.<span class="bu">str</span>.replace(<span class="st">'Sff'</span>, <span class="st">'Sci-Fi and Fantasy'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="a17ec565" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>bg_color <span class="op">=</span> <span class="st">'#DBD4FF'</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>fg_color <span class="op">=</span> <span class="st">'#723480'</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>fg_color2 <span class="op">=</span> <span class="st">'#FFFFE3'</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>lw<span class="op">=</span><span class="dv">5</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> sns.color_palette(<span class="st">"Wistia"</span>, as_cmap<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>cmap.set_under(<span class="st">'#FFFFE3'</span>)  </span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>fig1,ax1 <span class="op">=</span> plt.subplots()</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>sns.heatmap(reshaped1, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">'d'</span>, cmap<span class="op">=</span>cmap, cbar<span class="op">=</span><span class="va">False</span>, <span class="op">\</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>            linewidths<span class="op">=</span>lw, ax<span class="op">=</span>ax1,vmin<span class="op">=</span><span class="fl">0.1</span>, annot_kws<span class="op">=</span>{<span class="st">"fontfamily"</span>: <span class="st">"monospace"</span>}, <span class="op">\</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>            cbar_kws<span class="op">=</span>{<span class="st">'shrink'</span>: <span class="fl">0.6</span>, <span class="st">'aspect'</span>: <span class="dv">30</span>, <span class="st">'pad'</span>: <span class="fl">0.02</span>})</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>fig1.set_facecolor(bg_color)</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>ax1.set_facecolor(bg_color)</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>ax1.patch.set_facecolor(bg_color)</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>ax_top <span class="op">=</span> ax1.twiny()</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Match the position and scale of the bottom axis</span></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>ax_top.set_xlim(ax1.get_xlim())</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>ax_top.set_xticks(ax1.get_xticks())</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>ax_top.set_xticklabels([<span class="st">'M'</span>, <span class="st">'W'</span>]<span class="op">*</span><span class="dv">4</span>, fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(reshaped1.columns)<span class="op">+</span><span class="dv">1</span>):  </span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>):</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>        ax1.vlines(i, <span class="op">*</span>ax1.get_ylim(), colors<span class="op">=</span>bg_color, linewidth<span class="op">=</span>lw)</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>        ax1.vlines(i, <span class="op">*</span>ax1.get_ylim(), colors<span class="op">=</span>fg_color2, linewidth<span class="op">=</span>lw)</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(reshaped1.index)<span class="op">+</span><span class="dv">1</span>):  </span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>    ax1.hlines(i, <span class="op">*</span>ax1.get_xlim(), colors<span class="op">=</span>bg_color, linewidth<span class="op">=</span>lw)</span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>xticklabels <span class="op">=</span> ax1.get_xticklabels()</span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>new_labels <span class="op">=</span> [label._text.split(<span class="st">'_'</span>)[<span class="dv">0</span>] <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">''</span> <span class="cf">for</span> i, label <span class="kw">in</span> <span class="bu">enumerate</span>(xticklabels)]</span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the new labels</span></span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>ax1.set_xticklabels(new_labels, rotation<span class="op">=</span><span class="dv">0</span>, ha<span class="op">=</span><span class="st">'left'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>ax1.tick_params(axis<span class="op">=</span><span class="st">'both'</span>, which<span class="op">=</span><span class="st">'both'</span>, length<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>ax_top.tick_params(axis<span class="op">=</span><span class="st">'both'</span>, which<span class="op">=</span><span class="st">'both'</span>, length<span class="op">=</span><span class="dv">0</span>, pad<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">''</span>)</span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">''</span>)</span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a><span class="co">#colorbar = ax1.collections[0].colorbar</span></span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a><span class="co">#colorbar.ax.tick_params(labelsize=10)</span></span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label <span class="kw">in</span> ax1.get_xticklabels()<span class="op">+</span>ax_top.get_xticklabels():</span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a>    label.set_fontfamily(<span class="st">'monospace'</span>)</span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a>    label.set_color(fg_color)</span>
+<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label <span class="kw">in</span> ax1.get_yticklabels():</span>
+<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a>    label.set_fontfamily(<span class="st">'monospace'</span>)</span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a>    label.set_color(fg_color)</span>
+<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a>sns.despine(left<span class="op">=</span><span class="va">True</span>,bottom<span class="op">=</span><span class="va">True</span>)    </span>
+<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.tight_layout()</span></span>
+<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Genre-wise distribution of the British literary prizes </span><span class="ch">\n</span><span class="st">based on the highest degree and gender of the authors."</span>, fontfamily<span class="op">=</span><span class="st">'Serif'</span>, fontsize<span class="op">=</span><span class="dv">16</span>, color<span class="op">=</span>fg_color, loc<span class="op">=</span><span class="st">'left'</span>, x<span class="op">=-</span><span class="fl">0.3</span>, y<span class="op">=</span><span class="fl">1.07</span>)</span>
+<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'British_prize.png'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="British_lit_prizes_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script type="text/javascript">
+
+  if (window.location.pathname !== "/" && !window.location.pathname.endsWith("/index.html")) {
+
+    const giscusDiv = document.createElement("div");
+
+    giscusDiv.className = "giscus";
+
+    giscusDiv.setAttribute("data-repo", "manishdatt/TidyTuesday");
+
+    giscusDiv.setAttribute("data-repo-id", "R_kgDOJk8zFw");
+
+    giscusDiv.setAttribute("data-category", "General");
+
+    giscusDiv.setAttribute("data-category-id", "DIC_kwDOJk8zF84CqV9r");
+
+    giscusDiv.setAttribute("data-mapping", "pathname");
+
+    giscusDiv.setAttribute("data-strict", "0");
+
+    giscusDiv.setAttribute("data-reactions-enabled", "1");
+
+    giscusDiv.setAttribute("data-emit-metadata", "1");
+
+    giscusDiv.setAttribute("data-input-position", "bottom");
+
+    giscusDiv.setAttribute("data-theme", "light");
+
+    giscusDiv.setAttribute("data-lang", "en");
+
+
+
+    // Find the main content container
+
+    const container = document.querySelector('.page-body') || document.querySelector('main') || document.querySelector('.content');
+
+
+
+    // Append to container if found, else fallback to body
+
+    (container || document.body).appendChild(giscusDiv);
+
+
+
+    const giscusScript = document.createElement("script");
+
+    giscusScript.src = "https://giscus.app/client.js";
+
+    giscusScript.async = true;
+
+    giscusScript.setAttribute("data-repo", "manishdatt/TidyTuesday");
+
+    giscusScript.setAttribute("data-repo-id", "R_kgDOJk8zFw");
+
+    giscusScript.setAttribute("data-category", "General");
+
+    giscusScript.setAttribute("data-category-id", "DIC_kwDOJk8zF84CqV9r");
+
+    giscusScript.setAttribute("data-mapping", "pathname");
+
+    giscusScript.setAttribute("data-strict", "0");
+
+    giscusScript.setAttribute("data-reactions-enabled", "1");
+
+    giscusScript.setAttribute("data-emit-metadata", "1");
+
+    giscusScript.setAttribute("data-input-position", "bottom");
+
+    giscusScript.setAttribute("data-theme", "light");
+
+    giscusScript.setAttribute("data-lang", "en");
+
+    giscusScript.crossOrigin = "anonymous";
+
+
+
+    (container || document.body).appendChild(giscusScript);
+
+  }
+
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="light">
+<script>
+  function loadGiscus() {
+    // Function to get the theme based on body class
+    const getTheme = () => {
+      let baseTheme = document.getElementById('giscus-base-theme').value;
+      let altTheme = document.getElementById('giscus-alt-theme').value;
+      return document.body.classList.contains('quarto-dark') ? altTheme : baseTheme;
+    };
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.dataset.repo = "manishdatt/DataViz";
+    script.dataset.repoId = "R_kgDOOnqHPw";
+    script.dataset.category = "General";
+    script.dataset.categoryId = "DIC_kwDOOnqHP84Cp_uM";
+    script.dataset.mapping = "pathname";
+    script.dataset.reactionsEnabled = "1";
+    script.dataset.emitMetadata = "0";
+    script.dataset.inputPosition = "top";
+    script.dataset.theme = getTheme();
+    script.dataset.lang = "en";
+    script.crossOrigin = "anonymous";
+    // Append the script to the desired div instead of at the end of the body
+    document.getElementById("quarto-content").appendChild(script);
+  }
+  loadGiscus();
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

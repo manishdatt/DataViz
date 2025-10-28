@@ -9,8 +9,8 @@ description: >-
 image: UK_weather.png
 categories:
 - Catplot
-- stripplot
 - TidyTuesday
+- PyDyTuesday
 slug: 25A3
 ---
 
