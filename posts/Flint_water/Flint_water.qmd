@@ -2,8 +2,8 @@
 title: Lead concentration in Flint water samples in 2015
 marimo-version: 0.17.0
 author: Manish Datt
-date: 2025-11-4
-iso-date: 2025-11-4
+date: 2025-11-04
+iso-date: 2025-11-04
 description: >-
   Descriptive statistics for the Lead distributions.
 image: Flint_water.png
