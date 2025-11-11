@@ -1,0 +1,91 @@
+---
+title: WHO TB Burden Data
+marimo-version: 0.17.0
+author: Manish Datt
+date: '2025-11-11'
+iso-date: '2025-11-11'
+description: >-
+  Timeline of global incidence and mortality.
+image: WHO_TB.png
+categories:
+- lineplot
+- TidyTuesday
+- PyDyTuesday
+slug: 25B2
+filters:
+- marimo-team/marimo
+---
+
+# TidyTuesday dataset of [{{<meta date>}}](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/{{<meta iso-date>}})
+
+```{python}
+import marimo as mo
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+from matplotlib.ticker import FuncFormatter
+```
+
+```{python}
+who_tb_data = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-11-11/who_tb_data.csv')
+who_tb_data
+```
+
+```{python}
+who_tb_data['g_whoregion'].unique()
+```
+
+```{python}
+who_tb_data.groupby('country')['c_newinc_100k'].sum().sort_values(ascending=False)
+```
+
+```{python}
+sns.lineplot(data=who_tb_data,x='year',y='cfr',hue='g_whoregion')
+plt.show()
+```
+
+```{python}
+bg_color="#FFF0FD"
+fg_color="#740C08"#"#333333"
+fg_color2="#E484AC"
+palette='tab20'
+fig, ax  = plt.subplots(1,2, figsize=(12,5), sharey=True)
+#sns.lineplot(data=who_tb_data,x='year',y='c_newinc_100k',hue='g_whoregion',ax=ax[0], legend=False, errorbar='se', estimator=np.sum, palette=['black'] * who_tb_data['g_whoregion'].nunique(), lw=2.5)
+sns.lineplot(data=who_tb_data,x='year',y='c_newinc_100k',hue='g_whoregion',ax=ax[0], legend=False, errorbar='se', estimator=np.sum, palette=palette, lw=2)
+#sns.lineplot(data=who_tb_data,x='year',y='e_mort_100k',hue='g_whoregion',ax=ax[1], errorbar='se', estimator=np.sum, palette=['black'] * who_tb_data['g_whoregion'].nunique(), lw=2.5, legend=False)
+sns.lineplot(data=who_tb_data,x='year',y='e_mort_100k',hue='g_whoregion',ax=ax[1], errorbar='se', estimator=np.sum, palette=palette, lw=2)
+
+sns.despine()
+
+
+def thousands(x, pos):
+    return f'{int(x/1000)}K'
+
+# Apply to y-axis
+ax[1].yaxis.set_major_formatter(FuncFormatter(thousands))
+for a in ax:
+    a.tick_params(axis='both', colors=fg_color)
+    for spine in a.spines.values():
+        spine.set_color(fg_color2) 
+
+ax[0].tick_params(axis='y', length=10, direction='inout')
+ax[1].tick_params(axis='y', length=10, direction='inout')
+ax[1].legend(frameon=False, ncol=2, loc='upper center', bbox_to_anchor=(0.5, 0.9))
+#ax[0].set_title("Number of cases", color=fg_color)
+#ax[1].set_title("Number of deaths", color=fg_color)
+ax[0].set_ylabel("Number per 100K", color=fg_color)
+ax[0].set_xlabel("")
+ax[1].set_xlabel("")
+plt.subplots_adjust(wspace=0)  
+fig.patch.set_facecolor(bg_color)
+ax[0].set_facecolor(bg_color)
+ax[1].set_facecolor(bg_color)
+fig.suptitle("Trends in Tuberculosis Cases (left) and Deaths (right) by WHO Region (2000-2023)", color=fg_color, fontsize=16, family='serif')
+plt.savefig('WHO_TB.png', dpi=300, bbox_inches='tight')
+plt.show()
+```
+
+```{python}
+
+```
