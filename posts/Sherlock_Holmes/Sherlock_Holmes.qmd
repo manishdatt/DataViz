@@ -1,0 +1,193 @@
+---
+title: Sherlock Holmes stories and novels
+marimo-version: 0.17.0
+author: Manish Datt
+date: '2025-11-18'
+iso-date: '2025-11-18'
+description: >-
+  Frequency of people and places in all the books.
+image: Sherlock_Holmes.png
+categories:
+- Spacy
+- TidyTuesday
+- PyDyTuesday
+slug: 25B3
+filters:
+- marimo-team/marimo
+---
+
+# TidyTuesday dataset of [{{<meta date>}}](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/{{<meta iso-date>}})
+
+```{python}
+import marimo as mo
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import spacy
+import textwrap
+```
+
+```{python}
+holmes = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-11-18/holmes.csv')
+holmes
+```
+
+```{python}
+concatenated = holmes.groupby('book')['text'].apply(lambda x: ' '.join(x.dropna())).reset_index()
+concatenated
+```
+
+```{python}
+concatenated['text'].str.count('Holmes').sort_values(ascending=False)
+```
+
+```{python}
+import re
+
+def regex_sent_tokenize(text):
+    return re.split(r'(?<=[.!?])\s+', text)
+
+concatenated['sentences'] = concatenated['text'].apply(regex_sent_tokenize)
+sentences_df = concatenated['sentences'].apply(pd.Series)
+result1 = pd.concat([concatenated[['book']], sentences_df], axis=1)
+```
+
+```{python}
+
+from spacy.cli import download
+
+download("en_core_web_sm")   # installs the model
+nlp1 = spacy.load("en_core_web_sm")  # load it after install
+```
+
+```{python}
+nlp = spacy.load("en_core_web_sm") 
+def extract_entities(sentence):
+    doc = nlp(sentence)
+    return [(ent.text, ent.label_) for ent in doc.ents]
+
+# Apply to your DataFrame
+concatenated['entities'] = concatenated['text'].apply(extract_entities)
+concatenated.head()
+```
+
+```{python}
+# Keep only entities labeled as PERSON
+concatenated['persons'] = concatenated['entities'].apply(
+    lambda ents: [text for text, label in ents if label == "PERSON"]
+)
+```
+
+```{python}
+concatenated.head()
+```
+
+```{python}
+len(set(concatenated['persons'][0]))
+```
+
+```{python}
+from collections import Counter
+concatenated['unique_persons'] = concatenated['persons'].apply(lambda x: Counter(x))
+```
+
+```{python}
+concatenated
+```
+
+```{python}
+concatenated['places'] = concatenated['entities'].apply(
+    lambda ents: [text for text, label in ents if label == "GPE"]
+)
+```
+
+```{python}
+concatenated['persons_sorted'] = concatenated['unique_persons'].apply(
+    lambda d: dict(sorted(d.items(), key=lambda item: item[1], reverse=True))
+)
+```
+
+```{python}
+concatenated['unique_person_count'] = concatenated['persons'].apply(lambda x: len(set(x)))
+concatenated['unique_places_count'] = concatenated['places'].apply(lambda x: len(set(x)))
+```
+
+```{python}
+concatenated.sort_values(['unique_person_count', 'unique_places_count'], inplace=True, ascending=False)
+```
+
+```{python}
+concatenated.reset_index(drop=True, inplace=True)
+concatenated
+```
+
+```{python}
+concatenated["word_count"] = concatenated["text"].apply(
+    lambda x: f"{len(x.split())/1000:.1f}k" if len(x.split()) >= 1000 else str(len(x.split()))
+)
+concatenated["book_with_count"] = concatenated.apply(
+    lambda row: f"{row['book']} ({row['word_count']})", axis=1
+)
+```
+
+```{python}
+
+```
+
+```{python}
+concatenated['unique_places'] = concatenated['places'].apply(lambda x: Counter(x))
+concatenated['places_sorted'] = concatenated['unique_places'].apply(
+    lambda d: dict(sorted(d.items(), key=lambda item: item[1], reverse=True))
+)
+```
+
+```{python}
+bg_color = '#E8F4EC'
+people_color = '#248C54'
+places_color = '#89618E'
+text_color = '#444444'
+sns.set_theme(style="white", rc={
+    "font.family": "monospace", 
+    "text.color": text_color,   
+    "axes.labelcolor": text_color, 
+    "xtick.color": text_color,     
+    "ytick.color": text_color      
+})
+items = [f"{k} ({v})" for k, v in concatenated.iloc[0]['persons_sorted'].items()][:20]
+max_persons = "".join(item + (", " if i % 2 == 0 and i < len(items)-1 else "\n" if i < len(items)-1 else "")
+                 for i, item in enumerate(items))
+items2 = [f"{k} ({v})" for k, v in concatenated.iloc[-1]['persons_sorted'].items()]
+min_persons = "".join(item + (", " if i % 2 == 0 and i < len(items2)-1 else "\n" if i < len(items2)-1 else "")
+                 for i, item in enumerate(items2))
+
+places_items = [f"{k} ({v})" for k, v in concatenated.iloc[0]['places_sorted'].items()][:20]
+max_places = "".join(item + (", " if i % 2 == 0 and i < len(places_items)-1 else "\n" if i < len(places_items)-1 else "") for i, item in enumerate(places_items))
+places_items2 = [f"{k} ({v})" for k, v in concatenated.iloc[-1]['places_sorted'].items()]
+min_places = "".join(item + (", " if i % 2 == 0 and i < len(places_items2)-1 else "\n" if i < len(places_items2)-1 else "") for i, item in enumerate(places_items2))
+
+fig1, ax1 = plt.subplots(figsize=(8,10))
+sns.scatterplot(data=concatenated, x='unique_person_count', y='book_with_count', ax=ax1, color=people_color, edgecolor=None)
+sns.scatterplot(data=concatenated, x='unique_places_count', y='book_with_count', marker='s', ax=ax1, color=places_color,edgecolor=None)
+ax1.annotate(max_persons, xy=(concatenated.iloc[0]['unique_person_count'], concatenated.iloc[0]['book_with_count']), xytext=(concatenated.iloc[0]['unique_person_count']-43, 0 + 17), arrowprops=dict(arrowstyle="->", color=people_color), fontsize=10, color=people_color)
+ax1.annotate(min_persons, xy=(concatenated.iloc[-1]['unique_person_count'], concatenated.iloc[-1]['book_with_count']), xytext=(concatenated.iloc[-1]['unique_person_count']+20, 48), arrowprops=dict(arrowstyle="->", color=people_color), fontsize=10, color=people_color)
+ax1.annotate(max_places, xy=(concatenated.iloc[0]['unique_places_count'], concatenated.iloc[0]['book_with_count']), xytext=(concatenated.iloc[0]['unique_places_count']-15, 0 + 17), arrowprops=dict(arrowstyle="->", color=places_color), fontsize=10, color=places_color)
+ax1.annotate(min_places, xy=(concatenated.iloc[-1]['unique_places_count'], concatenated.iloc[-1]['book_with_count']), xytext=(concatenated.iloc[-1]['unique_person_count']+20, 40), arrowprops=dict(arrowstyle="->", color=places_color), fontsize=10, color=places_color)
+sns.despine(left=True)
+ax1.tick_params(axis="y", length=0, pad=-10)
+plt.xlabel("Unique counts")
+plt.ylabel("")
+title1 = "series. Entities and their frequencies are shown for the min and max (partial) values. Word count for the text from each book is given in parenthesis." 
+
+ax1.text(90,25, textwrap.fill("People", width=35),fontsize=14, family='Serif', color=people_color, fontweight='bold')
+ax1.text(116,25, "and",fontsize=14, family='Serif')
+ax1.text(130,25, "Places",fontsize=14, family='Serif', color=places_color, fontweight='bold')
+ax1.text(155,25, "in Sherlock Holmes",fontsize=14, family='Serif')
+
+
+ax1.text(90,31, textwrap.fill(title1, width=40),fontsize=14, family='Serif')
+
+ax1.set_facecolor(bg_color)
+fig1.patch.set_facecolor(bg_color)
+plt.savefig("Sherlock_Holmes.png", dpi=300, bbox_inches='tight')
+plt.show()
+```
