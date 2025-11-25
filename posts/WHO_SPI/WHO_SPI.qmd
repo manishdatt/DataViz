@@ -1,0 +1,125 @@
+---
+title: WHO Statistical Performance Indicators
+marimo-version: 0.17.0
+author: Manish Datt
+date: '2025-11-25'
+iso-date: '2025-11-25'
+description: >-
+  Top 10 countries with the biggest improvement in SPI.
+image: WHO_SPI.png
+categories:
+- relplot
+- TidyTuesday
+- PyDyTuesday
+slug: 25B4
+filters:
+- marimo-team/marimo
+---
+
+# TidyTuesday dataset of [{{<meta date>}}](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/{{<meta iso-date>}})
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import matplotlib.dates as mdates
+import matplotlib.transforms as mtransforms
+```
+
+```{python}
+spi_indicators = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-11-25/spi_indicators.csv')
+spi_indicators
+```
+
+```{python}
+spi_indicators['year'] = pd.to_datetime(spi_indicators['year'], format='%Y')
+
+```
+
+```{python}
+spi_indicators.columns
+```
+
+```{python}
+country_desc = spi_indicators.groupby(['country'])['overall_score'].describe()
+country_desc['diff'] = country_desc['max']-country_desc['min']
+top10_diff = country_desc.nlargest(10, 'diff')
+spi_top10 = spi_indicators[spi_indicators['country'].isin(top10_diff.index)]
+spi_top10
+```
+
+```{python}
+df_melt_top10 = pd.melt(spi_top10, id_vars=['country','year'], \
+            value_vars=['overall_score', 'data_use_score', 'data_services_score', 'data_products_score', 'data_sources_score', 'data_infrastructure_score'],\
+            var_name='Score_type', value_name='Scores')
+df_melt_top10
+```
+
+```{python}
+sns.set_context("notebook", font_scale=1.5)
+
+g = sns.relplot(data=df_melt_top10, x='year', y='Scores', hue='country', kind='line', col='Score_type', \
+            col_wrap=3, legend=False, col_order=['data_use_score', 'data_sources_score', 'data_infrastructure_score', 'data_products_score', 'data_services_score', 'overall_score'])
+
+original_ticks = g.axes.flatten()[0].get_xticks()   # or use one representative axis
+
+keep = original_ticks#[::2]
+#if original_ticks[-1] not in keep:
+#    keep = list(keep) + [original_ticks[-1]]
+
+for ind, ax in enumerate(g.axes.flatten()):
+    new_title = ' '.join(ax.get_title().removesuffix('_score').split()[-1].split('_')).capitalize()
+    
+    ax.set_title(new_title, y=0.9, color='#555555')
+#    ax.tick_params(axis='x', rotation=45)
+    ax.set_xlabel("")
+    ax.set_xticks(keep)
+    ax.xaxis.set_major_formatter(mdates.DateFormatter("%y"))
+    ax.margins(x=0)
+    ax.set_facecolor('#F5F5F5')
+    for labelx, labely in zip(ax.get_xticklabels(), ax.get_yticklabels()):
+        labelx.set_fontfamily('monospace')
+        labely.set_fontfamily('monospace')
+    if (ind not in [0,3]):
+        ax.spines['left'].set_visible(False)
+        ax.tick_params(axis='y', left=False, labelleft=False)
+        labels = ax.get_xticklabels()
+        if labels:
+            labels[1].set_visible(False)   
+
+fig = g.fig
+ax = g.axes.flatten()[1]   # facet to annotate
+
+# create an offset transform: 5 points right, 0 points up
+text_trans = mtransforms.offset_copy(ax.transData, fig=fig,
+                                     x=5, y=0, units='points')
+
+y_offset = 3
+for line, country in zip(ax.lines, df_melt_top10['country'].unique()):
+    x_end = line.get_xdata()[-1]
+    y_end = line.get_ydata()[-1]
+
+    if (country in ['Uzbekistan', 'Lebanon']):
+        y_end += y_offset
+    if (country in ['Marshall Islands', 'Zimbabwe']):
+        y_end -= y_offset
+    
+
+    fig.text(
+        x_end,
+        y_end,
+        country,
+        transform=text_trans,   
+        ha='left',
+        va='center',
+        color=line.get_color(),
+        clip_on=False           
+    )
+
+
+g.fig.subplots_adjust(wspace=0, hspace=0)
+g.fig.suptitle("Top 10 countries with the greatest improvement in the overall score \nof the World Bank Statistical Performance Indicators from 2004 \u2013 2023", fontfamily='Serif', y=1.025)
+g.fig.patch.set_facecolor('#F5F5F5')
+plt.savefig('WHO_SPI.png', dpi=300, bbox_inches='tight')
+plt.show()
+```
