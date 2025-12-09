@@ -1,0 +1,119 @@
+---
+title: Cars in Qatar
+marimo-version: 0.17.0
+author: Manish Datt
+date: '2025-12-09'
+iso-date: '2025-12-09'
+description: >-
+  Price distribution of cars by type and engine type.
+image: Qatarcars.png
+categories:
+- Swarmplot
+- TidyTuesday
+- PyDyTuesday
+slug: 25C2
+filters:
+- marimo-team/marimo
+---
+
+# TidyTuesday dataset of [{{<meta date>}}](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/{{<meta iso-date>}})
+
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+import matplotlib.ticker as ticker
+import matplotlib.patches as patches
+import matplotlib as mpl
+```
+
+```{python}
+qatarcars = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-12-09/qatarcars.csv')
+qatarcars
+```
+
+```{python}
+def millions_formatter(x, pos):
+    """The two args are the value and tick position"""
+    return f'{x / 1000000:.1f}M'
+```
+
+```{python}
+df_melted = pd.melt(qatarcars, id_vars=['type', 'enginetype'], value_vars=['price'])
+df_melted['type_engine'] = df_melted['type'] + '_' + df_melted['enginetype']
+df_melted.sort_values(by=['type', 'enginetype'], ascending=False, inplace=True)
+df_melted
+```
+
+```{python}
+df_max = qatarcars.loc[qatarcars.groupby(['type', 'enginetype'])['price'].idxmax()]
+df_max.sort_values(by=['type', 'enginetype'], ascending=False, inplace=True)
+df_max
+```
+
+```{python}
+bg_color = '#F5F5F5'
+plot_colors = mpl.rcParams["axes.prop_cycle"].by_key()["color"]
+fig, ax = plt.subplots(figsize=(8, 4))
+sns.swarmplot(data=df_melted, x='type_engine', y='value', log_scale=True, hue='enginetype', legend=False)
+ax.yaxis.set_major_formatter(ticker.FuncFormatter(millions_formatter))
+plt.ylabel('Qatari Riyal (1M QAR ≈ 275K USD)')
+plt.xlabel('')
+
+ax.axvspan(2.5, 5.5, color='#FAFAFA', zorder=0)
+ax.axvspan(6.5, 9.25, color='#FAFAFA', zorder=0)
+
+ax.text(1, 25000, "Sedan", ha='center')
+ax.text(4, 25000, "SUV", ha='center')
+ax.text(6, 25000, "Hatchback", ha='center')
+ax.text(8, 25000, "Coupe", ha='center')
+
+# label the max values
+for ind, (i, row) in enumerate(df_max.iterrows()):
+    price_M = f"{row['price']/1000000:.2f}M"
+    if (row['enginetype'] == 'Petrol'):
+      ax.text(ind, row['price']*1.2, f"{row['make']}, {row['model']} \n {price_M}", ha='center', color=plot_colors[0])
+    elif (row['enginetype'] == 'Hybrid'):
+      if(row['model'] == 'Flying Spur'):
+        ax.text(ind, row['price']*0.45, f"{row['make']}, {row['model']} \n {price_M}", ha='center', color=plot_colors[1])
+      else:
+        ax.text(ind, row['price']*1.2, f"{row['make']}, {row['model']} \n {price_M}", ha='center', color=plot_colors[1])
+    else:
+      ax.text(ind, row['price']*1.2, f"{row['make']}, {row['model']} \n {price_M}", ha='center', color=plot_colors[2])
+
+
+sns.despine(bottom=True, left=True)
+ax.tick_params(bottom=False, labelbottom=False)
+ax.tick_params(axis='y', which='both', left=False, pad=-5)
+ax.grid(True, axis='y', linestyle=':', alpha=0.5)
+ax.figure.set_facecolor(bg_color)
+ax.set_facecolor(bg_color)
+
+plt.title("Price distribution of qatarcars by type and engine type.\nMax in each category is labelled.", \
+          ha='left', x=-0.05, fontfamily='Serif', fontsize=14)
+ax.annotate(
+    'Petrol', 
+    xy=(-0.09, 1), xycoords='axes fraction',
+    xytext=(0.015, 0.10), textcoords='axes fraction', color=plot_colors[0],
+    rotation=90, fontfamily='monospace'
+)
+
+ax.annotate(
+    'Electric', 
+    xy=(-0.09, 1), xycoords='axes fraction',
+    xytext=(0.54, 0.03), textcoords='axes fraction', color=plot_colors[2],
+    rotation=90, fontfamily='monospace'
+)
+
+ax.annotate(
+    'Hybrid', 
+    xy=(-0.09, 1), xycoords='axes fraction',
+    xytext=(0.83, 0.3), textcoords='axes fraction', color=plot_colors[1],
+    rotation=90, fontfamily='monospace'
+)
+plt.tight_layout()
+plt.savefig('Qatarcars.png', dpi=300, bbox_inches='tight')
+plt.show()
+```

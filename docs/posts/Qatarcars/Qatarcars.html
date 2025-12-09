@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Manish Datt">
-<meta name="dcterms.date" content="2025-12-02">
-<meta name="description" content="Exploding snowman and the summer season.">
+<meta name="dcterms.date" content="2025-12-09">
+<meta name="description" content="Price distribution of cars by type and engine type.">
 
-<title>Zurich’s “Sechselaeuten” spring festival – DViz.manishdatt.com</title>
+<title>Cars in Qatar – DViz.manishdatt.com</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -147,14 +147,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Zurich’s “Sechselaeuten” spring festival</h1>
+      <h1 class="title">Cars in Qatar</h1>
                   <div>
         <div class="description">
-          Exploding snowman and the summer season.
+          Price distribution of cars by type and engine type.
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Scatterplot</div>
+                <div class="quarto-category">Swarmplot</div>
                 <div class="quarto-category">TidyTuesday</div>
                 <div class="quarto-category">PyDyTuesday</div>
               </div>
@@ -174,7 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 2, 2025</p>
+        <p class="date">December 9, 2025</p>
       </div>
     </div>
     
@@ -194,16 +194,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <section id="tidytuesday-dataset-of" class="level1">
-<h1>TidyTuesday dataset of <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-12-02">December 2, 2025</a></h1>
-<div id="cb749f0e" class="cell" data-execution_count="1">
+<h1>TidyTuesday dataset of <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-12-09">December 9, 2025</a></h1>
+<div id="9501c3c1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> textwrap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.ticker <span class="im">as</span> ticker</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> patches</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a33ac17a" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sechselaeuten <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-12-02/sechselaeuten.csv'</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sechselaeuten</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="18fe9dcb" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>qatarcars <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-12-09/qatarcars.csv'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>qatarcars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
@@ -212,77 +215,113 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">year</th>
-<th data-quarto-table-cell-role="th">duration</th>
-<th data-quarto-table-cell-role="th">tre200m0</th>
-<th data-quarto-table-cell-role="th">tre200mn</th>
-<th data-quarto-table-cell-role="th">tre200mx</th>
-<th data-quarto-table-cell-role="th">sre000m0</th>
-<th data-quarto-table-cell-role="th">sremaxmv</th>
-<th data-quarto-table-cell-role="th">rre150m0</th>
-<th data-quarto-table-cell-role="th">record</th>
+<th data-quarto-table-cell-role="th">origin</th>
+<th data-quarto-table-cell-role="th">make</th>
+<th data-quarto-table-cell-role="th">model</th>
+<th data-quarto-table-cell-role="th">length</th>
+<th data-quarto-table-cell-role="th">width</th>
+<th data-quarto-table-cell-role="th">height</th>
+<th data-quarto-table-cell-role="th">seating</th>
+<th data-quarto-table-cell-role="th">trunk</th>
+<th data-quarto-table-cell-role="th">economy</th>
+<th data-quarto-table-cell-role="th">horsepower</th>
+<th data-quarto-table-cell-role="th">price</th>
+<th data-quarto-table-cell-role="th">mass</th>
+<th data-quarto-table-cell-role="th">performance</th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">enginetype</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>1923</td>
-<td>60.00</td>
-<td>16.67</td>
-<td>7.03</td>
-<td>32.47</td>
-<td>247.43</td>
-<td>56.33</td>
-<td>73.97</td>
-<td>False</td>
+<td>Germany</td>
+<td>BMW</td>
+<td>3 Series Sedan</td>
+<td>4.713</td>
+<td>1.827</td>
+<td>1.440</td>
+<td>5</td>
+<td>59</td>
+<td>7.6</td>
+<td>386</td>
+<td>164257</td>
+<td>1653</td>
+<td>4.3</td>
+<td>Sedan</td>
+<td>Petrol</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>1952</td>
-<td>6.00</td>
-<td>18.73</td>
-<td>9.10</td>
-<td>33.70</td>
-<td>269.70</td>
-<td>61.67</td>
-<td>93.67</td>
-<td>False</td>
+<td>Germany</td>
+<td>BMW</td>
+<td>X1</td>
+<td>4.505</td>
+<td>1.845</td>
+<td>1.642</td>
+<td>5</td>
+<td>505</td>
+<td>6.6</td>
+<td>313</td>
+<td>264000</td>
+<td>1701</td>
+<td>5.4</td>
+<td>SUV</td>
+<td>Petrol</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>1953</td>
-<td>8.00</td>
-<td>16.67</td>
-<td>7.17</td>
-<td>29.97</td>
-<td>209.53</td>
-<td>48.67</td>
-<td>157.90</td>
-<td>False</td>
+<td>Germany</td>
+<td>Audi</td>
+<td>RS Q8</td>
+<td>5.012</td>
+<td>1.694</td>
+<td>1.998</td>
+<td>5</td>
+<td>605</td>
+<td>12.1</td>
+<td>600</td>
+<td>630000</td>
+<td>2490</td>
+<td>3.6</td>
+<td>SUV</td>
+<td>Petrol</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>1956</td>
-<td>4.00</td>
-<td>15.07</td>
-<td>6.80</td>
-<td>28.77</td>
-<td>172.83</td>
-<td>39.67</td>
-<td>174.90</td>
-<td>False</td>
+<td>Germany</td>
+<td>Audi</td>
+<td>RS3</td>
+<td>4.542</td>
+<td>1.851</td>
+<td>1.412</td>
+<td>5</td>
+<td>321</td>
+<td>8.7</td>
+<td>400</td>
+<td>310000</td>
+<td>1565</td>
+<td>3.8</td>
+<td>Sedan</td>
+<td>Petrol</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>1958</td>
-<td>8.00</td>
-<td>17.00</td>
-<td>8.23</td>
-<td>30.67</td>
-<td>230.30</td>
-<td>53.00</td>
-<td>177.87</td>
-<td>False</td>
+<td>Germany</td>
+<td>Audi</td>
+<td>A3</td>
+<td>4.456</td>
+<td>1.960</td>
+<td>1.416</td>
+<td>5</td>
+<td>425</td>
+<td>6.5</td>
+<td>180</td>
+<td>165000</td>
+<td>1325</td>
+<td>6.7</td>
+<td>Sedan</td>
+<td>Petrol</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -295,93 +334,235 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>...</td>
 <td>...</td>
 <td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">62</td>
-<td>2021</td>
-<td>12.95</td>
-<td>17.97</td>
-<td>9.83</td>
-<td>30.13</td>
-<td>190.13</td>
-<td>44.67</td>
-<td>169.37</td>
-<td>False</td>
+<td data-quarto-table-cell-role="th">100</td>
+<td>South Korea</td>
+<td>Kia</td>
+<td>Picanto</td>
+<td>3.595</td>
+<td>1.595</td>
+<td>1.495</td>
+<td>5</td>
+<td>255</td>
+<td>6.0</td>
+<td>84</td>
+<td>58000</td>
+<td>976</td>
+<td>13.7</td>
+<td>Hatchback</td>
+<td>Petrol</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">63</td>
-<td>2022</td>
-<td>37.98</td>
-<td>20.40</td>
-<td>11.40</td>
-<td>34.40</td>
-<td>284.66</td>
-<td>66.67</td>
-<td>82.17</td>
-<td>True</td>
+<td data-quarto-table-cell-role="th">101</td>
+<td>PR China</td>
+<td>Bestune</td>
+<td>Oley</td>
+<td>4.555</td>
+<td>1.660</td>
+<td>1.465</td>
+<td>4</td>
+<td>300</td>
+<td>6.7</td>
+<td>101</td>
+<td>35000</td>
+<td>1150</td>
+<td>12.1</td>
+<td>Hatchback</td>
+<td>Petrol</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">64</td>
-<td>2023</td>
-<td>57.00</td>
-<td>20.07</td>
-<td>10.57</td>
-<td>33.23</td>
-<td>253.37</td>
-<td>59.33</td>
-<td>110.70</td>
-<td>True</td>
+<td data-quarto-table-cell-role="th">102</td>
+<td>Japan</td>
+<td>Mitsubishi</td>
+<td>Mirage</td>
+<td>3.780</td>
+<td>1.665</td>
+<td>1.500</td>
+<td>5</td>
+<td>235</td>
+<td>4.8</td>
+<td>77</td>
+<td>44000</td>
+<td>1050</td>
+<td>13.9</td>
+<td>Hatchback</td>
+<td>Petrol</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">65</td>
-<td>2024</td>
-<td>NaN</td>
-<td>19.50</td>
-<td>10.33</td>
-<td>31.40</td>
-<td>214.59</td>
-<td>50.67</td>
-<td>98.93</td>
-<td>True</td>
+<td data-quarto-table-cell-role="th">103</td>
+<td>South Korea</td>
+<td>Hyundai</td>
+<td>Grand i10</td>
+<td>3.665</td>
+<td>1.660</td>
+<td>1.500</td>
+<td>5</td>
+<td>252</td>
+<td>5.3</td>
+<td>86</td>
+<td>46900</td>
+<td>1840</td>
+<td>14.5</td>
+<td>Hatchback</td>
+<td>Petrol</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">66</td>
-<td>2025</td>
-<td>26.50</td>
-<td>19.60</td>
-<td>10.50</td>
-<td>32.80</td>
-<td>250.81</td>
-<td>58.67</td>
-<td>126.80</td>
-<td>True</td>
+<td data-quarto-table-cell-role="th">104</td>
+<td>PR China</td>
+<td>MG</td>
+<td>MG3 Luxury</td>
+<td>4.055</td>
+<td>1.729</td>
+<td>1.504</td>
+<td>5</td>
+<td>293</td>
+<td>6.7</td>
+<td>109</td>
+<td>57000</td>
+<td>1308</td>
+<td>10.8</td>
+<td>Hatchback</td>
+<td>Petrol</td>
 </tr>
 </tbody>
 </table>
 
-<p>67 rows × 9 columns</p>
+<p>105 rows × 15 columns</p>
 </div>
 </div>
 </div>
-<div id="4d0933f7" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sechselaeuten.dropna(inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sechselaeuten.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>Index(['year', 'duration', 'tre200m0', 'tre200mn', 'tre200mx', 'sre000m0',
-       'sremaxmv', 'rre150m0', 'record'],
-      dtype='object')</code></pre>
+<div id="a6c42845" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> millions_formatter(x, pos):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""The two args are the value and tick position"""</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f'</span><span class="sc">{</span>x <span class="op">/</span> <span class="dv">1000000</span><span class="sc">:.1f}</span><span class="ss">M'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div id="03da4ec9" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>duration_max <span class="op">=</span> sechselaeuten.loc[sechselaeuten[<span class="st">'duration'</span>].idxmax()]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>duration_min <span class="op">=</span> sechselaeuten.loc[sechselaeuten[<span class="st">'duration'</span>].idxmin()]</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>duration_max[<span class="st">'year'</span>], duration_min[<span class="st">'year'</span>], duration_max[<span class="st">'duration'</span>], duration_min[<span class="st">'duration'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cc893d3b" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_melted <span class="op">=</span> pd.melt(qatarcars, id_vars<span class="op">=</span>[<span class="st">'type'</span>, <span class="st">'enginetype'</span>], value_vars<span class="op">=</span>[<span class="st">'price'</span>])</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df_melted[<span class="st">'type_engine'</span>] <span class="op">=</span> df_melted[<span class="st">'type'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> df_melted[<span class="st">'enginetype'</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df_melted.sort_values(by<span class="op">=</span>[<span class="st">'type'</span>, <span class="st">'enginetype'</span>], ascending<span class="op">=</span><span class="va">False</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>df_melted</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>(np.int64(1923), np.int64(1956), np.float64(60.0), np.float64(4.0))</code></pre>
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">enginetype</th>
+<th data-quarto-table-cell-role="th">variable</th>
+<th data-quarto-table-cell-role="th">value</th>
+<th data-quarto-table-cell-role="th">type_engine</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Sedan</td>
+<td>Petrol</td>
+<td>price</td>
+<td>164257</td>
+<td>Sedan_Petrol</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Sedan</td>
+<td>Petrol</td>
+<td>price</td>
+<td>310000</td>
+<td>Sedan_Petrol</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Sedan</td>
+<td>Petrol</td>
+<td>price</td>
+<td>165000</td>
+<td>Sedan_Petrol</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Sedan</td>
+<td>Petrol</td>
+<td>price</td>
+<td>1281000</td>
+<td>Sedan_Petrol</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">19</td>
+<td>Sedan</td>
+<td>Petrol</td>
+<td>price</td>
+<td>458000</td>
+<td>Sedan_Petrol</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">98</td>
+<td>Coupe</td>
+<td>Petrol</td>
+<td>price</td>
+<td>224500</td>
+<td>Coupe_Petrol</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">99</td>
+<td>Coupe</td>
+<td>Petrol</td>
+<td>price</td>
+<td>125000</td>
+<td>Coupe_Petrol</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">69</td>
+<td>Coupe</td>
+<td>Hybrid</td>
+<td>price</td>
+<td>1150000</td>
+<td>Coupe_Hybrid</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">78</td>
+<td>Coupe</td>
+<td>Hybrid</td>
+<td>price</td>
+<td>945700</td>
+<td>Coupe_Hybrid</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75</td>
+<td>Coupe</td>
+<td>Electric</td>
+<td>price</td>
+<td>8010200</td>
+<td>Coupe_Electric</td>
+</tr>
+</tbody>
+</table>
+
+<p>105 rows × 5 columns</p>
 </div>
 </div>
-<div id="6db03b45" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sechselaeuten[sechselaeuten[<span class="st">'record'</span>]<span class="op">==</span><span class="va">True</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="976e3ae8" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_max <span class="op">=</span> qatarcars.loc[qatarcars.groupby([<span class="st">'type'</span>, <span class="st">'enginetype'</span>])[<span class="st">'price'</span>].idxmax()]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df_max.sort_values(by<span class="op">=</span>[<span class="st">'type'</span>, <span class="st">'enginetype'</span>], ascending<span class="op">=</span><span class="va">False</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df_max</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
@@ -390,137 +571,203 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">year</th>
-<th data-quarto-table-cell-role="th">duration</th>
-<th data-quarto-table-cell-role="th">tre200m0</th>
-<th data-quarto-table-cell-role="th">tre200mn</th>
-<th data-quarto-table-cell-role="th">tre200mx</th>
-<th data-quarto-table-cell-role="th">sre000m0</th>
-<th data-quarto-table-cell-role="th">sremaxmv</th>
-<th data-quarto-table-cell-role="th">rre150m0</th>
-<th data-quarto-table-cell-role="th">record</th>
+<th data-quarto-table-cell-role="th">origin</th>
+<th data-quarto-table-cell-role="th">make</th>
+<th data-quarto-table-cell-role="th">model</th>
+<th data-quarto-table-cell-role="th">length</th>
+<th data-quarto-table-cell-role="th">width</th>
+<th data-quarto-table-cell-role="th">height</th>
+<th data-quarto-table-cell-role="th">seating</th>
+<th data-quarto-table-cell-role="th">trunk</th>
+<th data-quarto-table-cell-role="th">economy</th>
+<th data-quarto-table-cell-role="th">horsepower</th>
+<th data-quarto-table-cell-role="th">price</th>
+<th data-quarto-table-cell-role="th">mass</th>
+<th data-quarto-table-cell-role="th">performance</th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">enginetype</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">25</td>
-<td>1983</td>
-<td>24.33</td>
-<td>19.07</td>
-<td>9.10</td>
-<td>31.37</td>
-<td>207.14</td>
-<td>48.67</td>
-<td>52.83</td>
-<td>True</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>Germany</td>
+<td>Mercedes</td>
+<td>Maybach</td>
+<td>5.469</td>
+<td>1.921</td>
+<td>1.510</td>
+<td>4</td>
+<td>500</td>
+<td>13.3</td>
+<td>612</td>
+<td>1281000</td>
+<td>2376</td>
+<td>4.1</td>
+<td>Sedan</td>
+<td>Petrol</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">36</td>
-<td>1994</td>
-<td>21.92</td>
-<td>19.13</td>
-<td>9.57</td>
-<td>31.70</td>
-<td>217.18</td>
-<td>51.33</td>
-<td>85.03</td>
-<td>True</td>
+<td data-quarto-table-cell-role="th">68</td>
+<td>UK</td>
+<td>Bentley</td>
+<td>Flying Spur</td>
+<td>5.316</td>
+<td>2.013</td>
+<td>1.483</td>
+<td>5</td>
+<td>351</td>
+<td>10.9</td>
+<td>521</td>
+<td>1300000</td>
+<td>2646</td>
+<td>3.5</td>
+<td>Sedan</td>
+<td>Hybrid</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">45</td>
-<td>2003</td>
-<td>5.70</td>
-<td>21.67</td>
-<td>11.30</td>
-<td>34.57</td>
-<td>281.84</td>
-<td>67.00</td>
-<td>83.50</td>
-<td>True</td>
+<td data-quarto-table-cell-role="th">88</td>
+<td>PR China</td>
+<td>BYD</td>
+<td>Seal</td>
+<td>4.800</td>
+<td>1.875</td>
+<td>1.460</td>
+<td>5</td>
+<td>400</td>
+<td>NaN</td>
+<td>204</td>
+<td>164000</td>
+<td>2185</td>
+<td>3.8</td>
+<td>Sedan</td>
+<td>Electric</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">56</td>
-<td>2015</td>
-<td>20.65</td>
-<td>20.17</td>
-<td>9.63</td>
-<td>33.17</td>
-<td>259.30</td>
-<td>61.00</td>
-<td>80.60</td>
-<td>True</td>
+<td data-quarto-table-cell-role="th">6</td>
+<td>Germany</td>
+<td>Mercedes</td>
+<td>G-Wagon</td>
+<td>4.613</td>
+<td>1.984</td>
+<td>1.969</td>
+<td>5</td>
+<td>480</td>
+<td>13.1</td>
+<td>585</td>
+<td>1011500</td>
+<td>2588</td>
+<td>4.3</td>
+<td>SUV</td>
+<td>Petrol</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">58</td>
-<td>2017</td>
-<td>9.93</td>
-<td>19.53</td>
-<td>10.13</td>
-<td>32.37</td>
-<td>226.42</td>
-<td>53.33</td>
-<td>119.87</td>
-<td>True</td>
+<td data-quarto-table-cell-role="th">65</td>
+<td>Sweden</td>
+<td>Volvo</td>
+<td>XC90</td>
+<td>4.953</td>
+<td>2.140</td>
+<td>1.776</td>
+<td>7</td>
+<td>71</td>
+<td>7.1</td>
+<td>249</td>
+<td>245000</td>
+<td>2315</td>
+<td>5.3</td>
+<td>SUV</td>
+<td>Hybrid</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">59</td>
-<td>2018</td>
-<td>20.52</td>
-<td>20.17</td>
-<td>9.40</td>
-<td>32.63</td>
-<td>267.33</td>
-<td>62.67</td>
-<td>80.33</td>
-<td>True</td>
+<td data-quarto-table-cell-role="th">7</td>
+<td>Germany</td>
+<td>Mercedes</td>
+<td>EQS</td>
+<td>5.216</td>
+<td>1.926</td>
+<td>1.512</td>
+<td>5</td>
+<td>610</td>
+<td>NaN</td>
+<td>333</td>
+<td>564500</td>
+<td>2495</td>
+<td>5.6</td>
+<td>SUV</td>
+<td>Electric</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">60</td>
-<td>2019</td>
-<td>17.73</td>
-<td>19.73</td>
-<td>9.83</td>
-<td>33.50</td>
-<td>251.68</td>
-<td>59.00</td>
-<td>109.37</td>
-<td>True</td>
+<td data-quarto-table-cell-role="th">28</td>
+<td>Japan</td>
+<td>Honda</td>
+<td>Civic Type R</td>
+<td>4.594</td>
+<td>1.890</td>
+<td>1.407</td>
+<td>5</td>
+<td>609</td>
+<td>9.8</td>
+<td>315</td>
+<td>189999</td>
+<td>1446</td>
+<td>5.4</td>
+<td>Hatchback</td>
+<td>Petrol</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">63</td>
-<td>2022</td>
-<td>37.98</td>
-<td>20.40</td>
-<td>11.40</td>
-<td>34.40</td>
-<td>284.66</td>
-<td>66.67</td>
-<td>82.17</td>
-<td>True</td>
+<td data-quarto-table-cell-role="th">18</td>
+<td>Italy</td>
+<td>Bugatti</td>
+<td>Centodieci</td>
+<td>4.544</td>
+<td>2.047</td>
+<td>1.200</td>
+<td>2</td>
+<td>0</td>
+<td>22.5</td>
+<td>1600</td>
+<td>33000000</td>
+<td>1976</td>
+<td>2.4</td>
+<td>Coupe</td>
+<td>Petrol</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">64</td>
-<td>2023</td>
-<td>57.00</td>
-<td>20.07</td>
-<td>10.57</td>
-<td>33.23</td>
-<td>253.37</td>
-<td>59.33</td>
-<td>110.70</td>
-<td>True</td>
+<td data-quarto-table-cell-role="th">69</td>
+<td>UK</td>
+<td>Bentley</td>
+<td>Continental GT</td>
+<td>4.806</td>
+<td>2.227</td>
+<td>1.403</td>
+<td>5</td>
+<td>235</td>
+<td>10.9</td>
+<td>521</td>
+<td>1150000</td>
+<td>2459</td>
+<td>3.3</td>
+<td>Coupe</td>
+<td>Hybrid</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">66</td>
-<td>2025</td>
-<td>26.50</td>
-<td>19.60</td>
-<td>10.50</td>
-<td>32.80</td>
-<td>250.81</td>
-<td>58.67</td>
-<td>126.80</td>
-<td>True</td>
+<td data-quarto-table-cell-role="th">75</td>
+<td>UK</td>
+<td>Lotus</td>
+<td>Evija</td>
+<td>4.459</td>
+<td>2.000</td>
+<td>1.122</td>
+<td>2</td>
+<td>0</td>
+<td>NaN</td>
+<td>1973</td>
+<td>8010200</td>
+<td>1887</td>
+<td>2.9</td>
+<td>Coupe</td>
+<td>Electric</td>
 </tr>
 </tbody>
 </table>
@@ -528,76 +775,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="5ef75875" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>bg_color <span class="op">=</span> <span class="st">"#550000"</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>text_color <span class="op">=</span> <span class="st">"#ED8E8E"</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plot_color1 <span class="op">=</span> <span class="st">'#BA55D3'</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"white"</span>, rc<span class="op">=</span>{</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"font.family"</span>: <span class="st">"monospace"</span>, </span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"text.color"</span>: text_color,   </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"axes.labelcolor"</span>: text_color, </span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"xtick.color"</span>: text_color,     </span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ytick.color"</span>: text_color      </span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>custom_palette <span class="op">=</span> {</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="va">True</span>: <span class="st">"#FC0000"</span>,</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="va">False</span>: plot_color1</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">5</span>))</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>sechselaeuten, x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'tre200mx'</span>, hue<span class="op">=</span><span class="st">'record'</span>, size<span class="op">=</span><span class="st">'duration'</span>,<span class="op">\</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>                sizes<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">200</span>), alpha<span class="op">=</span><span class="fl">0.8</span>, edgecolor<span class="op">=</span><span class="st">'none'</span>, palette<span class="op">=</span>custom_palette, legend<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>sns.despine(bottom<span class="op">=</span><span class="va">True</span>, left<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>fig.patch.set_facecolor(bg_color)</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>ax.set_facecolor(bg_color)</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">""</span>)</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Maximum Temperature (°C)"</span>)</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, axis<span class="op">=</span><span class="st">'y'</span>, which<span class="op">=</span><span class="st">'major'</span>, color<span class="op">=</span><span class="st">'#820000'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>plt.yticks(<span class="bu">range</span>(<span class="dv">28</span>, <span class="dv">35</span>, <span class="dv">2</span>))</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co">#title = "Timeline of yearly maximum temperature. Years with average temp &gt; 19°C are red."</span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.title(textwrap.fill(title, width=50))</span></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'The burning of the Böögg'</span>, fontsize<span class="op">=</span><span class="dv">16</span>, family<span class="op">=</span><span class="st">'Serif'</span>)</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>ax.annotate(</span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    textwrap.fill(<span class="ss">f"Big circle for longer burning duration (</span><span class="sc">{</span>duration_max[<span class="st">'duration'</span>]<span class="sc">:.0f}</span><span class="ss"> mins)"</span>, <span class="dv">20</span>),   <span class="co"># the text</span></span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    xy<span class="op">=</span>(duration_max[<span class="st">'year'</span>], duration_max[<span class="st">'tre200mx'</span>]),           <span class="co"># point to annotate</span></span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    xytext<span class="op">=</span>(duration_max[<span class="st">'year'</span>]<span class="op">+</span><span class="dv">5</span>, duration_max[<span class="st">'tre200mx'</span>] <span class="op">-</span> <span class="fl">1.5</span>),   <span class="co"># position of text</span></span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>, fontsize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span>plot_color1,</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    arrowprops<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>        arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>, color<span class="op">=</span>plot_color1, lw<span class="op">=</span><span class="fl">1.5</span>, shrinkB<span class="op">=</span><span class="fl">7.5</span></span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>ax.annotate(</span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>    textwrap.fill(<span class="ss">f"Small circle for shorter burning duration (</span><span class="sc">{</span>duration_min[<span class="st">'duration'</span>]<span class="sc">:.0f}</span><span class="ss"> mins)"</span>, <span class="dv">25</span>),</span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>    xy<span class="op">=</span>(duration_min[<span class="st">'year'</span>], duration_min[<span class="st">'tre200mx'</span>]),           <span class="co"># point to annotate</span></span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>    xytext<span class="op">=</span>(duration_min[<span class="st">'year'</span>]<span class="op">-</span><span class="dv">5</span>, duration_min[<span class="st">'tre200mx'</span>] <span class="op">-</span> <span class="fl">1.5</span>),   <span class="co"># position of text</span></span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>    ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>, fontsize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span>plot_color1,</span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>    arrowprops<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>        arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>, color<span class="op">=</span>plot_color1, lw<span class="op">=</span><span class="fl">1.5</span>, shrinkB<span class="op">=</span><span class="fl">7.5</span></span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>ax.annotate(</span>
-<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>    textwrap.fill(<span class="st">"Average summer temperature &gt;19°C"</span>, <span class="dv">25</span>),</span>
-<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>    xy<span class="op">=</span>(<span class="dv">1983</span>, sechselaeuten[sechselaeuten[<span class="st">'year'</span>]<span class="op">==</span><span class="dv">1983</span>][<span class="st">'tre200mx'</span>]),   </span>
-<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>    xytext<span class="op">=</span>(<span class="dv">1983</span>, <span class="fl">33.5</span>),  </span>
-<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>    ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>, fontsize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">"#FC0000"</span>,</span>
-<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>    arrowprops<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>        arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>, color<span class="op">=</span><span class="st">"#FC0000"</span>, lw<span class="op">=</span><span class="fl">1.5</span>, shrinkB<span class="op">=</span><span class="fl">7.5</span></span>
-<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>ax.annotate(</span>
-<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>    textwrap.fill(<span class="st">"Average summer temperature &gt;19°C"</span>, <span class="dv">25</span>),</span>
-<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>    xy<span class="op">=</span>(<span class="dv">2015</span>, sechselaeuten[sechselaeuten[<span class="st">'year'</span>]<span class="op">==</span><span class="dv">2015</span>][<span class="st">'tre200mx'</span>]),   </span>
-<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>    xytext<span class="op">=</span>(<span class="dv">1983</span>, <span class="fl">33.5</span>),  </span>
-<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>    ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"center"</span>, fontsize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">"#FC0000"</span>,</span>
-<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>    arrowprops<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>        arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>, color<span class="op">=</span><span class="st">"#FC0000"</span>, lw<span class="op">=</span><span class="fl">1.5</span>, shrinkB<span class="op">=</span><span class="fl">7.5</span></span>
-<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"sechselaeuten.png"</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
-<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="13320c40" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>bg_color <span class="op">=</span> <span class="st">'#F5F5F5'</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plot_colors <span class="op">=</span> mpl.rcParams[<span class="st">"axes.prop_cycle"</span>].by_key()[<span class="st">"color"</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sns.swarmplot(data<span class="op">=</span>df_melted, x<span class="op">=</span><span class="st">'type_engine'</span>, y<span class="op">=</span><span class="st">'value'</span>, log_scale<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">'enginetype'</span>, legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>ax.yaxis.set_major_formatter(ticker.FuncFormatter(millions_formatter))</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Qatari Riyal (1M QAR ≈ 275K USD)'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">''</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>ax.axvspan(<span class="fl">2.5</span>, <span class="fl">5.5</span>, color<span class="op">=</span><span class="st">'#FAFAFA'</span>, zorder<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>ax.axvspan(<span class="fl">6.5</span>, <span class="fl">9.25</span>, color<span class="op">=</span><span class="st">'#FAFAFA'</span>, zorder<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="dv">1</span>, <span class="dv">25000</span>, <span class="st">"Sedan"</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="dv">4</span>, <span class="dv">25000</span>, <span class="st">"SUV"</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="dv">6</span>, <span class="dv">25000</span>, <span class="st">"Hatchback"</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="dv">8</span>, <span class="dv">25000</span>, <span class="st">"Coupe"</span>, ha<span class="op">=</span><span class="st">'center'</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># label the max values</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ind, (i, row) <span class="kw">in</span> <span class="bu">enumerate</span>(df_max.iterrows()):</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    price_M <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>row[<span class="st">'price'</span>]<span class="op">/</span><span class="dv">1000000</span><span class="sc">:.2f}</span><span class="ss">M"</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (row[<span class="st">'enginetype'</span>] <span class="op">==</span> <span class="st">'Petrol'</span>):</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>      ax.text(ind, row[<span class="st">'price'</span>]<span class="op">*</span><span class="fl">1.2</span>, <span class="ss">f"</span><span class="sc">{</span>row[<span class="st">'make'</span>]<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>row[<span class="st">'model'</span>]<span class="sc">}</span><span class="ss"> </span><span class="ch">\n</span><span class="ss"> </span><span class="sc">{</span>price_M<span class="sc">}</span><span class="ss">"</span>, ha<span class="op">=</span><span class="st">'center'</span>, color<span class="op">=</span>plot_colors[<span class="dv">0</span>])</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> (row[<span class="st">'enginetype'</span>] <span class="op">==</span> <span class="st">'Hybrid'</span>):</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(row[<span class="st">'model'</span>] <span class="op">==</span> <span class="st">'Flying Spur'</span>):</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>        ax.text(ind, row[<span class="st">'price'</span>]<span class="op">*</span><span class="fl">0.45</span>, <span class="ss">f"</span><span class="sc">{</span>row[<span class="st">'make'</span>]<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>row[<span class="st">'model'</span>]<span class="sc">}</span><span class="ss"> </span><span class="ch">\n</span><span class="ss"> </span><span class="sc">{</span>price_M<span class="sc">}</span><span class="ss">"</span>, ha<span class="op">=</span><span class="st">'center'</span>, color<span class="op">=</span>plot_colors[<span class="dv">1</span>])</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>      <span class="cf">else</span>:</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>        ax.text(ind, row[<span class="st">'price'</span>]<span class="op">*</span><span class="fl">1.2</span>, <span class="ss">f"</span><span class="sc">{</span>row[<span class="st">'make'</span>]<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>row[<span class="st">'model'</span>]<span class="sc">}</span><span class="ss"> </span><span class="ch">\n</span><span class="ss"> </span><span class="sc">{</span>price_M<span class="sc">}</span><span class="ss">"</span>, ha<span class="op">=</span><span class="st">'center'</span>, color<span class="op">=</span>plot_colors[<span class="dv">1</span>])</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>      ax.text(ind, row[<span class="st">'price'</span>]<span class="op">*</span><span class="fl">1.2</span>, <span class="ss">f"</span><span class="sc">{</span>row[<span class="st">'make'</span>]<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>row[<span class="st">'model'</span>]<span class="sc">}</span><span class="ss"> </span><span class="ch">\n</span><span class="ss"> </span><span class="sc">{</span>price_M<span class="sc">}</span><span class="ss">"</span>, ha<span class="op">=</span><span class="st">'center'</span>, color<span class="op">=</span>plot_colors[<span class="dv">2</span>])</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>sns.despine(bottom<span class="op">=</span><span class="va">True</span>, left<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>ax.tick_params(bottom<span class="op">=</span><span class="va">False</span>, labelbottom<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">'y'</span>, which<span class="op">=</span><span class="st">'both'</span>, left<span class="op">=</span><span class="va">False</span>, pad<span class="op">=-</span><span class="dv">5</span>)</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, axis<span class="op">=</span><span class="st">'y'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>ax.figure.set_facecolor(bg_color)</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>ax.set_facecolor(bg_color)</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Price distribution of qatarcars by type and engine type.</span><span class="ch">\n</span><span class="st">Max in each category is labelled."</span>, <span class="op">\</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>          ha<span class="op">=</span><span class="st">'left'</span>, x<span class="op">=-</span><span class="fl">0.05</span>, fontfamily<span class="op">=</span><span class="st">'Serif'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>ax.annotate(</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Petrol'</span>, </span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>    xy<span class="op">=</span>(<span class="op">-</span><span class="fl">0.09</span>, <span class="dv">1</span>), xycoords<span class="op">=</span><span class="st">'axes fraction'</span>,</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>    xytext<span class="op">=</span>(<span class="fl">0.015</span>, <span class="fl">0.10</span>), textcoords<span class="op">=</span><span class="st">'axes fraction'</span>, color<span class="op">=</span>plot_colors[<span class="dv">0</span>],</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>    rotation<span class="op">=</span><span class="dv">90</span>, fontfamily<span class="op">=</span><span class="st">'monospace'</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>ax.annotate(</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Electric'</span>, </span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>    xy<span class="op">=</span>(<span class="op">-</span><span class="fl">0.09</span>, <span class="dv">1</span>), xycoords<span class="op">=</span><span class="st">'axes fraction'</span>,</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>    xytext<span class="op">=</span>(<span class="fl">0.54</span>, <span class="fl">0.03</span>), textcoords<span class="op">=</span><span class="st">'axes fraction'</span>, color<span class="op">=</span>plot_colors[<span class="dv">2</span>],</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>    rotation<span class="op">=</span><span class="dv">90</span>, fontfamily<span class="op">=</span><span class="st">'monospace'</span></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>ax.annotate(</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Hybrid'</span>, </span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>    xy<span class="op">=</span>(<span class="op">-</span><span class="fl">0.09</span>, <span class="dv">1</span>), xycoords<span class="op">=</span><span class="st">'axes fraction'</span>,</span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>    xytext<span class="op">=</span>(<span class="fl">0.83</span>, <span class="fl">0.3</span>), textcoords<span class="op">=</span><span class="st">'axes fraction'</span>, color<span class="op">=</span>plot_colors[<span class="dv">1</span>],</span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>    rotation<span class="op">=</span><span class="dv">90</span>, fontfamily<span class="op">=</span><span class="st">'monospace'</span></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'Qatarcars.png'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Boogg_burn_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="Qatarcars_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
