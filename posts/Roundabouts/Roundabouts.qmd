@@ -1,0 +1,425 @@
+---
+title: Roundabouts across the world
+author: Manish Datt
+date: '2025-12-16'
+iso-date: '2025-12-16'
+description: >-
+  Distribution of roundabouts based on type and number of approaches.
+image: Roundabouts.jpeg
+categories:
+- ObservablePlot
+- TidyTuesday
+slug: 25C3
+---
+
+# TidyTuesday dataset of [{{<meta date>}}](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/{{<meta iso-date>}})
+
+```{=html}
+<head>
+<title>Roundabouts Line Plot</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/dist/plot.umd.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+</head>
+
+<div id="controls"></div>
+<div id="scatterplot" class="mb-4"></div>
+<div id="table"></div>
+<script>
+d3.csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-12-16/roundabouts_clean.csv').then(data => {
+  // Parse numbers
+  data.forEach(d => {
+    d.approaches = +d.approaches;
+  });
+  // Filter for existing status
+  data = data.filter(d => d.status === "Existing");
+  // Get min and max approaches
+  const minApp = d3.min(data, d => d.approaches);
+  const maxApp = d3.max(data, d => d.approaches);
+  // Aggregate by type
+  const counts = d3.rollup(data, v => v.length, d => d.type);
+  const sumApproaches = d3.rollup(data, v => d3.sum(v, d => d.approaches), d => d.type);
+  const aggregated = Array.from(counts, ([type, count]) => ({type, count, sumApp: sumApproaches.get(type)}));
+  // Sort by count descending
+  aggregated.sort((a, b) => b.count - a.count);
+  const types = aggregated.map(d => d.type);
+
+  // Create checkboxes
+  const controls = document.getElementById('controls');
+  controls.style.display = 'flex';
+  controls.style.flexWrap = 'wrap';
+
+  // All checkbox
+  const allCheckbox = document.createElement('input');
+  allCheckbox.type = 'checkbox';
+  allCheckbox.id = 'all';
+  allCheckbox.onchange = () => {
+    const checked = allCheckbox.checked;
+    types.forEach(type => {
+      document.getElementById(`type-${type}`).checked = checked;
+    });
+    updatePlots();
+  };
+  const allLabel = document.createElement('label');
+  allLabel.htmlFor = 'all';
+  allLabel.textContent = 'All';
+  allLabel.style.marginRight = '20px';
+  controls.appendChild(allCheckbox);
+  controls.appendChild(allLabel);
+
+  types.forEach((type, i) => {
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = `type-${type}`;
+    checkbox.checked = true; // default all checked
+    checkbox.onchange = updatePlots;
+    const label = document.createElement('label');
+    label.htmlFor = `type-${type}`;
+    label.textContent = type;
+    label.style.marginRight = '10px';
+    controls.appendChild(checkbox);
+    controls.appendChild(label);
+  });
+
+  // Add slider for max approaches
+  const sliderDiv = document.createElement('div');
+  sliderDiv.style.marginTop = '20px';
+  const slider = document.createElement('input');
+  slider.type = 'range';
+  slider.id = 'approachesSlider';
+  slider.min = 4;
+  slider.max = maxApp;
+  slider.value = maxApp;
+  sliderDiv.appendChild(slider);
+  const sliderLabel = document.createElement('label');
+  sliderLabel.htmlFor = 'approachesSlider';
+  sliderLabel.textContent = 'Max Approaches: ';
+  const sliderValue = document.createElement('span');
+  sliderValue.id = 'sliderValue';
+  sliderValue.textContent = maxApp;
+  sliderLabel.appendChild(sliderValue);
+  sliderDiv.appendChild(sliderLabel);
+  document.getElementById('scatterplot').before(sliderDiv);
+  slider.addEventListener('input', () => {
+    document.getElementById('sliderValue').textContent = slider.value;
+    updatePlots();
+  });
+
+  function updatePlots() {
+    const selectedTypes = types.filter(type => document.getElementById(`type-${type}`).checked);
+    const maxApproaches = +document.getElementById('approachesSlider').value;
+    const filteredData = data.filter(d => selectedTypes.includes(d.type) && d.approaches <= maxApproaches);
+    const filteredAggregated = d3.rollup(filteredData, v => v.length, d => d.type);
+    const aggregatedArray = Array.from(filteredAggregated, ([type, count]) => ({type, count}));
+    aggregatedArray.sort((a, b) => b.count - a.count);
+
+    // Scatter plot
+    const countMap = new Map();
+    filteredData.forEach(d => {
+      const key = `${d.type}-${d.approaches}`;
+      countMap.set(key, (countMap.get(key) || 0) + 1);
+    });
+    const maxApp = d3.max(filteredData, d => d.approaches) || 10;
+//    console.log("Y-tick labels:", filteredAggregated.map(d => d.type));
+    const scatterplot = Plot.plot({
+      title: `Distribution of types of roundabouts based on the number of approaches. There are ${data.filter(d => d.type === "Roundabout" && d.approaches === 4).length.toLocaleString()} roundabouts with four approaches.`,
+      x: { label: "Number of Approaches", tickSize: 0, ticks: d3.range(0, maxApp + 1), tickFormat: d => d.toFixed(0), labelOffset: 35 },
+      y: { label: "", domain: aggregatedArray.map(d => d.type), tickSize: 0 },
+      color: { scheme: "plasma", reverse: true },
+      marginLeft: 200,
+      marginBottom: 45,
+      height: 200,
+      style: "background-color: lightgray; font-size: 14px;",
+      marks: [
+        Plot.dot(filteredData, { x: "approaches", y: "type", fill: d => countMap.get(`${d.type}-${d.approaches}`), r: 5, stroke: "none", tip: {format: {x: false}} })
+      ]
+    });
+    document.getElementById('scatterplot').innerHTML = '';
+    const legend = Plot.legend({color: scatterplot.scale("color"), label: "Count"});
+//    legend.style.transform = "rotate(90deg)";
+//    legend.style.transformOrigin = "left top";
+    legend.style.backgroundColor = "transparent";
+    legend.style.width = "150px";
+    legend.style.position = "relative";
+    legend.style.top = "240px";
+    legend.style.left = "10px";
+    legend.style.fontSize = "14px";
+    document.getElementById('scatterplot').appendChild(legend);
+    document.getElementById('scatterplot').appendChild(scatterplot);
+
+  }
+  // Create table
+  const tableDiv = document.getElementById('table');
+  tableDiv.style.width = '100vw';
+  tableDiv.style.overflowX = 'auto';
+  const table = document.createElement('table');
+  table.id = 'dataTable';
+  table.style.width = '100%';
+  const thead = document.createElement('thead');
+  const headerRow = document.createElement('tr');
+  Object.keys(data[0]).forEach(key => {
+    const th = document.createElement('th');
+    th.textContent = key;
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+  const tbody = document.createElement('tbody');
+  data.slice(0, 100).forEach(row => {
+    const tr = document.createElement('tr');
+    Object.values(row).forEach(val => {
+      const td = document.createElement('td');
+      td.textContent = val;
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  tableDiv.appendChild(table);
+
+  // Initialize DataTable
+  $('#dataTable').DataTable({
+    pageLength: 5,
+    lengthMenu: [5, 10, 25] 
+  });
+
+  updatePlots(); // initial render
+});
+</script>
+  <style>
+    figure {
+  background-color: lightgray;
+  margin: 0;
+  width: 640px;
+  }
+  figure h2 {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0;
+  margin-bottom: -10px;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+}
+  </style>
+```
+
+## Import required libraries
+
+```javascript
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/dist/plot.umd.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+```
+
+## Create placeholders
+
+```html
+<div id="controls"></div>
+<div id="scatterplot"></div>
+<div id="table"></div>
+```
+
+## Plotting
+
+```javascript
+<script>
+d3.csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-12-16/roundabouts_clean.csv').then(data => {
+  // Parse numbers
+  data.forEach(d => {
+    d.approaches = +d.approaches;
+  });
+  // Filter for existing status
+  data = data.filter(d => d.status === "Existing");
+  // Get min and max approaches
+  const minApp = d3.min(data, d => d.approaches);
+  const maxApp = d3.max(data, d => d.approaches);
+  // Aggregate by type
+  const counts = d3.rollup(data, v => v.length, d => d.type);
+  const sumApproaches = d3.rollup(data, v => d3.sum(v, d => d.approaches), d => d.type);
+  const aggregated = Array.from(counts, ([type, count]) => ({type, count, sumApp: sumApproaches.get(type)}));
+  // Sort by count descending
+  aggregated.sort((a, b) => b.count - a.count);
+  const types = aggregated.map(d => d.type);
+
+  // Create checkboxes
+  const controls = document.getElementById('controls');
+  controls.style.display = 'flex';
+  controls.style.flexWrap = 'wrap';
+
+  // All checkbox
+  const allCheckbox = document.createElement('input');
+  allCheckbox.type = 'checkbox';
+  allCheckbox.id = 'all';
+  allCheckbox.onchange = () => {
+    const checked = allCheckbox.checked;
+    types.forEach(type => {
+      document.getElementById(`type-${type}`).checked = checked;
+    });
+    updatePlots();
+  };
+  const allLabel = document.createElement('label');
+  allLabel.htmlFor = 'all';
+  allLabel.textContent = 'All';
+  allLabel.style.marginRight = '20px';
+  controls.appendChild(allCheckbox);
+  controls.appendChild(allLabel);
+
+  types.forEach((type, i) => {
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = `type-${type}`;
+    checkbox.checked = true; // default all checked
+    checkbox.onchange = updatePlots;
+    const label = document.createElement('label');
+    label.htmlFor = `type-${type}`;
+    label.textContent = type;
+    label.style.marginRight = '10px';
+    controls.appendChild(checkbox);
+    controls.appendChild(label);
+  });
+
+  // Add slider for max approaches
+  const sliderDiv = document.createElement('div');
+  sliderDiv.style.marginTop = '20px';
+  const slider = document.createElement('input');
+  slider.type = 'range';
+  slider.id = 'approachesSlider';
+  slider.min = 4;
+  slider.max = maxApp;
+  slider.value = maxApp;
+  sliderDiv.appendChild(slider);
+  const sliderLabel = document.createElement('label');
+  sliderLabel.htmlFor = 'approachesSlider';
+  sliderLabel.textContent = 'Max Approaches: ';
+  const sliderValue = document.createElement('span');
+  sliderValue.id = 'sliderValue';
+  sliderValue.textContent = maxApp;
+  sliderLabel.appendChild(sliderValue);
+  sliderDiv.appendChild(sliderLabel);
+  document.body.insertBefore(sliderDiv, document.getElementById('scatterplot'));
+  slider.addEventListener('input', () => {
+    document.getElementById('sliderValue').textContent = slider.value;
+    updatePlots();
+  });
+
+  function updatePlots() {
+    const selectedTypes = types.filter(type => document.getElementById(`type-${type}`).checked);
+    const maxApproaches = +document.getElementById('approachesSlider').value;
+    const filteredData = data.filter(d => selectedTypes.includes(d.type) && d.approaches <= maxApproaches);
+    const filteredAggregated = d3.rollup(filteredData, v => v.length, d => d.type);
+    const aggregatedArray = Array.from(filteredAggregated, ([type, count]) => ({type, count}));
+    aggregatedArray.sort((a, b) => b.count - a.count);
+
+    // Bar plot
+    const barplot = Plot.plot({
+      x: { label: "Total Count" },
+      y: { label: "Type", domain: aggregatedArray.map(d => d.type), padding: 0 },
+      marginLeft: 150,
+      marginBottom: 40,
+      height: 200,
+      marks: [
+        Plot.barX(aggregatedArray, { x: "count", y: "type" })
+      ]
+    });
+    document.getElementById('barplot').innerHTML = '';
+    document.getElementById('barplot').appendChild(barplot);
+
+    // Scatter plot
+    const countMap = new Map();
+    filteredData.forEach(d => {
+      const key = `${d.type}-${d.approaches}`;
+      countMap.set(key, (countMap.get(key) || 0) + 1);
+    });
+    const maxApp = d3.max(filteredData, d => d.approaches) || 10;
+//    console.log("Y-tick labels:", filteredAggregated.map(d => d.type));
+    const scatterplot = Plot.plot({
+      title: `Distribution of types of roundabouts based on the number of approaches. There are ${data.filter(d => d.type === "Roundabout" && d.approaches === 4).length.toLocaleString()} roundabouts with four approaches.`,
+      x: { label: "Number of Approaches", tickSize: 0, ticks: d3.range(0, maxApp + 1), tickFormat: d => d.toFixed(0), labelOffset: 35 },
+      y: { label: "", domain: aggregatedArray.map(d => d.type), tickSize: 0 },
+      color: { scheme: "plasma", reverse: true },
+      marginLeft: 200,
+      marginBottom: 45,
+      height: 200,
+      style: "background-color: lightgray; font-size: 14px;",
+      marks: [
+        Plot.dot(filteredData, { x: "approaches", y: "type", fill: d => countMap.get(`${d.type}-${d.approaches}`), r: 5, stroke: "none", tip: {format: {x: false}} })
+      ]
+    });
+    document.getElementById('scatterplot').innerHTML = '';
+    const legend = Plot.legend({color: scatterplot.scale("color"), label: "Count"});
+//    legend.style.transform = "rotate(90deg)";
+//    legend.style.transformOrigin = "left top";
+    legend.style.backgroundColor = "transparent";
+    legend.style.width = "150px";
+    legend.style.position = "relative";
+    legend.style.top = "240px";
+    legend.style.left = "10px";
+    legend.style.fontSize = "14px";
+    document.getElementById('scatterplot').appendChild(legend);
+    document.getElementById('scatterplot').appendChild(scatterplot);
+
+  }
+  // Create table
+  const tableDiv = document.getElementById('table');
+  tableDiv.style.width = '100vw';
+  tableDiv.style.overflowX = 'auto';
+  const table = document.createElement('table');
+  table.id = 'dataTable';
+  table.style.width = '100%';
+  const thead = document.createElement('thead');
+  const headerRow = document.createElement('tr');
+  Object.keys(data[0]).forEach(key => {
+    const th = document.createElement('th');
+    th.textContent = key;
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+  const tbody = document.createElement('tbody');
+  data.slice(0, 100).forEach(row => {
+    const tr = document.createElement('tr');
+    Object.values(row).forEach(val => {
+      const td = document.createElement('td');
+      td.textContent = val;
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  tableDiv.appendChild(table);
+
+  // Initialize DataTable
+  $('#dataTable').DataTable({
+    pageLength: 5,
+    lengthMenu: [5, 10, 25] 
+  });
+
+  updatePlots(); // initial render
+});
+</script>
+  <style>
+    figure {
+  background-color: lightgray;
+  margin: 0;
+  width: 640px;
+  }
+  figure h2 {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0;
+  margin-bottom: -10px;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+}
+  </style>
+
+```

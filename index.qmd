@@ -1,5 +1,5 @@
 ---
-title: "Visualization of various datasets using Python and R"
+title: "Visualization of various datasets using Python, R and Observable Plot"
 listing:
   contents: posts
   sort: "date desc"
