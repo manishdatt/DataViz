@@ -779,13 +779,13 @@ slug: 25C4
 
                 // Define unique colors for each status code (0-6)
                 const statusColors = {
-                    "0": "#BDBDBD",  // Blue for NA
-                    "1": "#2E7D32",  // Orange for not endangered
-                    "2": "#9CCC65",  // Green for vulnerable
-                    "3": "#FBC02D",  // Red for shifting
-                    "4": "#EF6C00",  // Purple for moribund
-                    "5": "#C62828",  // Brown for nearly extinct
-                    "6": "#6D5C6D"   // Pink for extinct
+                    "0": "#BDBDBD",  
+                    "1": "#2E7D32",  
+                    "2": "#9CCC65",  
+                    "3": "#FBC02D",  
+                    "4": "#EF6C00",  
+                    "5": "#C62828",  
+                    "6": "#6D5C6D"   
                 };
 
                 // Create mapping from status code to status label

@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources: 
+    - posts/**/*.csv
   post-render:
     - cmd.exe /c copy CNAME docs\\CNAME
   pre-render: generate_redirects.py
