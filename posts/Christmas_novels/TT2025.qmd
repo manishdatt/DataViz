@@ -1,0 +1,114 @@
+---
+title: Christmas Novels
+author: Manish Datt
+date: '2025-12-30'
+iso-date: '2025-12-30'
+description: >-
+  Counts for Santa and Christmas in different novels.
+image: Christmas_novels.png
+categories:
+- PydyTuesday
+- TidyTuesday
+slug: 25C5
+---
+
+# TidyTuesday dataset of [{{<meta date>}}](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/{{<meta iso-date>}})
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
+```{python}
+christmas_novel_authors = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-12-30/christmas_novel_authors.csv')
+christmas_novel_text = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-12-30/christmas_novel_text.csv')
+christmas_novels = pd.read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-12-30/christmas_novels.csv')
+```
+
+```{python}
+christmas_novel_authors
+```
+
+```{python}
+christmas_novel_text
+```
+
+```{python}
+christmas_novels
+```
+
+```{python}
+# find duplicates in christmas_novels based on 'gutenberg_id'
+duplicates = christmas_novels[christmas_novels.duplicated(subset=['gutenberg_id'], keep=False)]
+duplicates
+```
+
+```{python}
+# remove row with nan
+christmas_novel_text['text'] = christmas_novel_text['text'].fillna('')
+
+grp_novel_text = (
+    christmas_novel_text
+    .groupby('gutenberg_id')['text']
+    .apply(' '.join)
+    .reset_index()
+)
+```
+
+```{python}
+grp_novel_text
+```
+
+```{python}
+# count how many times "santa" appears in each row of col text
+grp_novel_text['santa_count'] = grp_novel_text['text'].str.lower().str.count('santa')
+grp_novel_text['christmas_count'] = grp_novel_text['text'].str.lower().str.count('christmas')
+grp_novel_text['word_count'] = grp_novel_text['text'].str.split().apply(len)
+# sort by santa_count descending
+grp_novel_text.sort_values(by=['christmas_count','santa_count'], ascending=False, inplace=True)
+grp_novel_text
+```
+
+```{python}
+# merge grp_novel_text with christmas_novels to get title
+merged_novels = pd.merge(grp_novel_text, christmas_novels[['gutenberg_id', 'title']], on='gutenberg_id', how='left')
+merged_novels[['gutenberg_id', 'title', 'santa_count', 'christmas_count', 'word_count']].sort_values(by=['christmas_count','santa_count'], ascending=False)
+merged_novels['title_words'] = merged_novels.apply(lambda x: f"{x['title']} ({x['word_count']:,})", axis=1)
+```
+
+```{python}
+fig, ax = plt.subplots(1, 2, figsize=(10, 10), gridspec_kw={'wspace':0, 'hspace':0})
+sns.scatterplot(data=merged_novels, x='santa_count', y='title', ax=ax[0], s=100, alpha=0.5, marker='s', color='crimson')
+sns.scatterplot(data=merged_novels, x='christmas_count', y='title_words', ax=ax[1], s=100, alpha=0.5, marker='s', color='forestgreen')
+ax[0].invert_xaxis()
+ax[0].spines[['left', 'top', 'right','bottom']].set_visible(False)
+ax[1].spines[['left', 'top', 'right', 'bottom']].set_visible(False)
+ax[0].set_yticks([])
+ax[1].tick_params(axis='y', length=0)
+for label in ax[1].get_yticklabels():
+    label.set_horizontalalignment('center')
+ax[0].set_ylabel('')
+ax[1].set_ylabel('')
+ax[0].set_xlabel('')
+ax[1].set_xlabel('')
+ax[0].tick_params(axis='x', length=0)
+ax[1].tick_params(axis='x', length=0)
+for a in ax:
+    a.grid(axis='x', color='gray', linestyle='--', linewidth=0.5, alpha=0.5)
+    a.set_axisbelow(True) # Ensures dots stay on top of the gridlines
+
+#fig.suptitle('Christmas vs Santa Mentions in Novels on Christmas', fontsize=16, y=1, fontfamily='serif')
+
+ax[0].annotate('Santa', xy=(1, 1), xytext=(5, -1.8), fontsize=16, fontfamily='serif', color='crimson')
+ax[0].annotate('vs', xy=(1, 1), xytext=(0.1, -1.8), fontsize=16, fontfamily='serif', color='black')
+ax[1].annotate('Christmas', xy=(1, 1), xytext=(0, -1.8), fontsize=16, fontfamily='serif', color='forestgreen')
+fig.supxlabel('Mentions', y=-0.01)
+plt.subplots_adjust(bottom=0.15)
+
+fig.savefig('Christmas_novels.png', dpi=300, bbox_inches='tight')
+plt.tight_layout()
+plt.show()
+
+```
+
