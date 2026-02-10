@@ -19,7 +19,6 @@ filters:
 # TidyTuesday dataset of [{{<meta date>}}](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/{{<meta iso-date>}})
 
 ```{python}
-import marimo as mo
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
